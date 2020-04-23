@@ -562,6 +562,7 @@ transform:rotate(360deg)
 	border-radius: 50%;
 	background-color: #112350;
 }
+
 @keyframes loading{
 	to{
 		transform: rotate(1turn);

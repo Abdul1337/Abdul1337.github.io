@@ -31,5 +31,4 @@ $("#querySubmitBtn").html("Submitting");
 
   })    
 const form = document.getElementsByClassName('product-enquery')[0];
-
 form.addEventListener('submit', handleFormSubmit);
