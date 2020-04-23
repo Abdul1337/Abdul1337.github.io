@@ -602,6 +602,41 @@ students submit the assignment after completing it.</p>
                 </div>
             </div>
         </div>
+            <!-- Refferal Form -->
+            <div class="refferal_form_section" id="scroll-enquery" style="display: none;">
+                <div class="close_btn" onclick="document.getElementsByClassName('refferal_form_section')[0].style.display = 'none'">&times;</div>
+                <div class="container">
+                    <h2> Thanks for Watching ChannelX </h2>
+                    <p> Fill this form to Contact Us </p>
+                    <div class="sectionContent">
+                        <div class=row>
+                            <div class="row text-center">
+                                <form class="product-enquery refferal_form" id="queryForm">
+                                    <input type="hidden" id="Source" name="Source/Messenger ID" value="LMS Website">
+                                    <div class="form-group col-md-6">
+                                        <input class="form-control" id="org_name" type="text" name="Organisation Name" placeholder="Your Organisation's Name" required maxlength='30' pattern="^(?![ .]+$)[a-zA-Z .]*$">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input class="form-control" id="Mob_num" type="text" name="Contact" placeholder="Your Mobile Number" required maxlength='10' pattern="^(?![ .]+$)\d{10}$">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input class="form-control" id="city_name" type="text" name="Contact" placeholder="Your City" required maxlength='10' pattern="^(?![ .]+$)\d{10}$">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input class="form-control" id="emain_addr" type="text" name="Contact" placeholder="Referral Code" required maxlength='10' pattern="^(?![ .]+$)\d{10}$">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-12 col-xs-6" style="display: flex;align-items: center;">
+                                        <button class="btn btn-primary col-xs-6" type="submit" id="querySubmitBtn">Send</button>
+                                        <span id="querySubmitting" style="display: none;"></span>
+                                    </div>
+                            </form>
+            `					</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     <footer id="footer" class="footer">
         <div class="row">
             <div class="container">
@@ -663,5 +698,13 @@ students submit the assignment after completing it.</p>
     }, 1000);
 });
 </script>	
+<script>
+    $(document).ready(()=>{
+        setTimeout(()=>{
+            document.getElementsByClassName('refferal_form_section')[0].style.display = 'block';
+        },3000)
+        
+    })
+</script>
 <script src="js/querySubmission.js"></script>
 </html>

@@ -742,7 +742,7 @@ html,body{
 	height:36px;
 	user-select:none;
 	vertical-align:top;
-	z-index:1200000
+	z-index:120000
 }
 .navToggle-icon{
 	position:absolute;
@@ -2887,4 +2887,59 @@ blockquote.blockquote-3 {
 
 .blogContainer {
 	margin-bottom: 20px;
+}
+
+/* refferal_form */
+.close_btn{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 2.5em;
+	text-align: center;
+	line-height: 25px;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.refferal_form_section{
+	position: fixed;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255);
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	transform: translate(-50%,-50%);
+	border-radius: 7px;
+	border: 1px solid rgba(0, 0, 0, 0.632);
+
+	box-shadow: 0 0 15px 0px #00000026;
+}
+.refferal_form_section h2{
+	text-align: center;
+}
+.refferal_form_section p{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.refferal_form .form-control{
+	height: 45px;
+	/* width: 80%; */
+	font-size: 1.2em;
+}
+@media(max-width:650px){
+	.refferal_form .form-control{
+		height: 35px;
+		font-size: 1.0em;
+	}
+	.refferal_form_section h2{
+		font-size: 1.2em;
+	}
+	.refferal_form_section p{
+		font-size: .9em;
+	}
+	.refferal_form_section .btn-primary{
+		height: 40px;
+		font-size: 1.3em;
+	}
 }
