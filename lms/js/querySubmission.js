@@ -25,7 +25,9 @@ $("#querySubmitBtn").html("Submitting");
     // alert("Success");
     // alert('Thank You! We will get back to you soon! success');
     $("#querySubmitting").css("display","none");
+    document.getElementById("queryForm").reset();
     $("#querySubmitBtn").html("Submitted");
+
     setTimeout(()=>{$("#querySubmitBtn").html("Send");},2000)
 
 
