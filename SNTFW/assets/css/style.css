@@ -782,17 +782,23 @@ html {
 .gallery .is-selected .response-card .message{
   color: var(--bg-color);
 }
-
+.gallery .is-selected .response-card .name
+{
+  font-weight: bolder;
+}
 
 .gallery-cell {
   width: 25%;
-  /* height: 200px; */
+  height: 180px;
   margin-right: 10px;
   border: 3px solid var(--text-color-secondary);
   background: var(--bg-color);
-  counter-increment: gallery-cell;
+  display: flex;
+  justify-content: center;
 }
-
+.flickity-viewport{
+  height: 180px;
+}
 .gallery-cell .response-card{
   padding: 7px;
   display: flex;
