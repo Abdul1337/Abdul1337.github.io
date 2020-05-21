@@ -1,1 +1,478 @@
-var url="https://script.google.com/macros/s/AKfycbwMaBN1Eq3xPikGUCKQuk8IzjGtc6Mga8nhQoJZcl-WkjAElLvj/exec";$.ajaxSetup({async:!0}),$.ajax({type:"GET",url:url,success:function(t){setTimeout(()=>{$(".loading").css("display","none"),$("#subCount").html(t.Stats.TotalSubmissions),$("#submissions").html(t.Stats.TotalSubmissions+(0==t.Stats.TotalSubmissions?"":"+")),$("#directors").html(t.Stats.directors+(0==t.Stats.directors?"":"+")),$("#principals").html(t.Stats.principals+(0==t.Stats.principals?"":"+"))},500)}});const handleReffFormSubmit=t=>{t.preventDefault();const e=formToJSON(reff.elements);$.ajax({url:url,method:"GET",dataType:"json",data:e,error:function(){console.log("Error"),$("#refFormSubmitBtn").html("Not Submitted! :("),setTimeout(()=>{$("#refFormSubmitBtn").html("Submit")},2e3)},success:function(){resetForm(reff.elements),$("#successAnimation").css("display","block"),$("#refFormSubmitBtn").html("Thank You :)"),console.log("Success"),$("#refferal_form").trigger("reset")}});$("#refFormSubmitBtn").html("Submitting...")},formToJSON=t=>[].reduce.call(t,(t,e)=>(t[e.name]=e.value,t),{}),reff=document.getElementsByClassName("refferal_form")[0];function resetForm(t){for(i in t)console.log(t[i]),t[i].value=""}reff.addEventListener("submit",handleReffFormSubmit);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#SayNoToSchoolFeeWaiver | Say no to School-Fee Waivers</title>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="icon" type="image/png" sizes="64x64" href="favicon.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"> -->
+    <meta name="theme-color" content="#ffffff">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-80332215-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    <style>
+        .language-select{
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 99999999999999999999;
+            background-color: var(--bg-color);
+        }
+        .lang-box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-color);
+            padding: 25px 20px;
+        }
+        .lang-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            width: 90px;
+            color: var(--primary-color);
+            border: none;
+            line-height: 17px;
+            margin: 0 10px;
+            background-color: var(--bg-color);
+        }
+        .lang-btn img{
+            max-width: 17px;
+            margin-right: 10px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=238638737154914&autoLogAppEvents=1"></script>
+    <div class="main-container">
+        <div class="img-container">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="Text-container">
+            <strong></strong>
+            <div class="heading">
+                <p class="en" style="display: block;"><b>Dear,</b><br>Teachers, Directors, <br>Principals and, Owners !!</p>
+                <p class="hi" style="display: none;"><b>प्रिय,</b><br>शिक्षक, निर्देशक,<br>प्रधानाचार्य और, स्वामी !!</p>
+            </div>
+            <div class="description en" style="display: block;"> Please provide your details and help us raise our voice at the highest level. Schools cannot be run if students don’t pay fees. <strong>Remember,</strong> millions of votes are always counted one vote at a time! Your vote is very important to provide support to our community, please fill the form and share with your fellow teacher.</div>
+            <div class="description hi" style="display: none;"> कृपया अपना विवरण प्रदान करें और उच्चतम स्तर पर अपनी आवाज़ उठाने में हमारी मदद करें। यदि छात्र शुल्क नहीं देते हैं तो स्कूल नहीं चलाए जा सकते हैं। <strong>याद रखें,</strong> लाखों वोट हमेशा एक समय में एक वोट से गिने जाते हैं! हमारे समुदाय को सहायता प्रदान करने के लिए आपका वोट बहुत महत्वपूर्ण है, कृपया फॉर्म भरें और अपने साथी शिक्षक के साथ साझा करें।</div>
+            <div class="act">
+                <p class="en" style="display: block;">Now is the time.&nbsp;&nbsp;</p>
+                <p class="hi" style="display: none;">अब समय आ गया है।&nbsp;&nbsp;</p>
+                <p class="en" style="display: block;"><a href="#pledgeForm" style="cursor: pointer;"><strong>Act now!</strong></a></p>
+                <p class="hi" style="display: none;"><a href="#pledgeForm" style="cursor: pointer;"><strong>अभी करो!</strong></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="Pledge-container" id="pledgeForm">
+        <h2 class="en" style="display: block;"> Submit Your details here ! </h2>
+        <h2 class="hi" style="display: none;"> यहाँ अपना विवरण जमा करें! </h2>
+        <p class="en" style="display: block;" > Save livelihood of Teachers, Peons, Admins, Bus-drivers and Vendors associated with each school</p>
+        <p class="hi" style="display: none;" > प्रत्येक स्कूल से जुड़े शिक्षक, चपरासी, प्रवेश, बस-चालक और विक्रेताओं की आजीविका को बचाएं</p>
+        <div class="sectionContent">
+            <div class=row>
+                <div class="row text-center">
+                    <form class="refferal_form" id="refForm" autocomplete="off">
+                        <div class="form-group col-md-6">
+                            <input class="form-control" id="name" type="text" name="Name" required maxlength='30'
+                                pattern="^(?![ .]+$)[a-zA-Z .]*$">
+                            <label class="form-control-placeholder" for="name"> Your Name </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" id="organisation" type="text" name="Organisation" required
+                                maxlength='30' pattern="^(?![ .]+$)[a-zA-Z .]*$">
+                            <label class="form-control-placeholder" for="organisation"> School Name </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" id="email" type="text" name="Email ID" required
+                                pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+                            <label class="form-control-placeholder" for="email"> Email </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" id="phone" type="text" name="Phone Number" required
+                                maxlength='10' pattern="[0-9]{10}">
+                            <label class="form-control-placeholder" for="phone"> Mobile No. </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control" id="state" name="State"
+                                style="font-weight: 700;color: rgba(51, 51, 51, 0.5);" required>
+                                <option value="" disabled selected>State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input class="form-control" id="city" type="text" name="City" required maxlength='30'
+                                pattern="^(?![ .]+$)[a-zA-Z .]*$">
+                            <label class="form-control-placeholder" for="city"> City </label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control" id="designation" name="Designation"
+                                style="font-weight: 700;color: rgba(51, 51, 51, 0.5);" required>
+                                <option value="" disabled selected>Designation</option>
+                                <option value="Principal">Principal</option>
+                                <option value="Director">Director</option>
+                                <option value="Teacher">Teacher</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control" id="board" name="Board"
+                                style="font-weight: 700;color: rgba(51, 51, 51, 0.5);" required>
+                                <option value="" disabled selected>Board</option>
+                                <option value="Central Board">Central Board</option>
+                                <option value="State Board">State Board</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea style="resize: vertical;height: 100px;" class="form-control" id="reason"
+                                name="Reason" required maxlength='150'></textarea>
+                            <label class="form-control-placeholder" for="reason"> Your Views on This! </label>
+                        </div>
+                        <div class="form-group col-md-12 col-xs-12 form-submit-Container"
+                            style="display: flex;justify-content: flex-end;float: right;">
+                            <svg id="successAnimation" class="animated" xmlns="http://www.w3.org/2000/svg" width="25"
+                                height="25" viewBox="0 0 70 70">
+                                <path id="successAnimationResult" fill="#D8D8D8"
+                                    d="M35,60 C21.1928813,60 10,48.8071187 10,35 C10,21.1928813 21.1928813,10 35,10 C48.8071187,10 60,21.1928813 60,35 C60,48.8071187 48.8071187,60 35,60 Z M23.6332378,33.2260427 L22.3667622,34.7739573 L34.1433655,44.40936 L47.776114,27.6305926 L46.223886,26.3694074 L33.8566345,41.59064 L23.6332378,33.2260427 Z" />
+                                <circle id="successAnimationCircle" cx="35" cy="35" r="24" stroke="#979797"
+                                    stroke-width="2" stroke-linecap="round" fill="transparent" />
+                                <polyline id="successAnimationCheck" stroke="#979797" stroke-width="2"
+                                    points="23 34 34 43 47 27" fill="transparent" />
+                            </svg>
+                            <button class="btn col-xs-6 submit-btn" type="submit" id="refFormSubmitBtn">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="why-container">
+        <div class="title">What will registering on <strong>#SayNoToSchoolFeeWaiver</strong> do?</div>
+        <div class="why-section">
+            <div class="reason">
+                <div class="icon">
+                    <img src="assets/img/reason1.png" alt="reason-1">
+                </div>
+                <p>Generate Buzz on <br> Social Media</p>
+            </div>
+            <div class="reason">
+                <div class="icon">
+                    <img src="assets/img/reason2.png" alt="reason-2">
+                </div>
+                <p>Help in Raising <br> Voice to Government</p>
+            </div>
+            <div class="reason">
+                <div class="icon">
+                    <img src="assets/img/reason3.png" alt="reason-3">
+                </div>
+                <p>Generate Unity <br> Among Schools</p>
+            </div>
+        </div>
+    </div>
+    <div class="why-container">
+        <div class="title">More Than <strong id="subCount">...</strong> Schools have <br class="opt-break"> Pledge to
+            Support <br> <strong>#SayNoToSchoolFeeWaiver</strong></div>
+        <div class="why-section">
+            <div class="reason">
+                <div class="counter">
+                    <p id="submissions">
+                        <div class="loading"><span style="--i:0">.</span><span style="--i:1">.</span><span
+                                style="--i:2">.</span></div>
+                    </p>
+                </div>
+                <p>Schools <br> Registered</p>
+            </div>
+            <div class="reason">
+                <div class="counter">
+                    <p id="principals">
+                        <div class="loading"><span style="--i:0">.</span><span style="--i:1">.</span><span
+                                style="--i:2">.</span></div>
+                    </p>
+                </div>
+                <p>Principals <br> Voted</p>
+            </div>
+            <div class="reason">
+                <div class="counter">
+                    <p id="directors">
+                        <div class="loading"><span style="--i:0">.</span><span style="--i:1">.</span><span
+                                style="--i:2">.</span></div>
+                    </p>
+                </div>
+                <p>Directors <br> Voted</p>
+            </div>
+        </div>
+    </div>
+    <div class="update-section">
+        <div class="vid-container">
+            <div class="title">Let us all Support our Schools in this time of crisis <br>
+                <strong>#SupportTheSchools</strong></div>
+            <!-- Youtube video -->
+            <div class="player-container" onClick="closePlayer()">
+                <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+                <div class="video-container">
+                    <div id="player"></div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=B2JARNVDbRI" target="_blank"><button>Open in YouTube</button></a>
+        </div>
+        <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true,"autoPlay": true }'>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">Cosmic Public School</div>
+                    <div class="school">Churu</div>
+                    <div class="message"> Teachers are working round the clock even during this lockdown. Supporting
+                        them is now our duty </div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">Unique Public School</div>
+                    <div class="school">Sikar</div>
+                    <div class="message"> Schools are the way to children’s future. They must be supported at all costs.
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">Rose Buds School</div>
+                    <div class="school">Kanpur</div>
+                    <div class="message"> When we are paying electricity bill, phone bill, dth bill, then what is the
+                        problem in paying school fees? </div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">Astha Public School</div>
+                    <div class="school">Sikar</div>
+                    <div class="message"> I have many known people in the education sector. Many have moved to online
+                        education to ensure proper value education to students. This has cost them huge. Fee Waiver is
+                        no solution to this problem, it only worsens it </div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">Matrix High School</div>
+                    <div class="school">Sikar</div>
+                    <div class="message"> The education sector is one of the worst sectors in this pandemic. At least
+                        the parents who can afford should pay the school fees. </div>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="response-card">
+                    <div class="name">S.B.R.L. School</div>
+                    <div class="school">Mainpuri</div>
+                    <div class="message"> 50 million people are employed in education sector. If school fees are not
+                        paid, how will their livelihood survive. That is why I am supporting this move. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        #LetsStandForOurSchools
+    </div>
+    <div class="share-section">
+        <p>Share On</p>
+        <div class="social-media">
+            <div class="app twitter">
+                <a href="https://twitter.com/share?text=I have Pledged that I would not promote School Fee Waiver&amp;url=https://saynotoschoolfeewaiver.com/"
+                    target="_blank">
+                    <img src="assets/img/twitter.png" alt="twitter">
+                </a>
+            </div>
+            <div class="app facebook" data-href="https://saynotoschoolfeewaiver.com/" data-layout="button" data-size="small">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsaynotoschoolfeewaiver.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                    <img src="assets/img/facebook.png" alt="facebook">
+                </a>
+            </div>
+            <!-- <div class="app facebook">
+                <a href="https:www.facebook.com/" target="_blank">
+                    <img src="assets/img/facebook.png" alt="facebook">
+                </a>
+            </div> -->
+            <div class="app whatsapp">
+                <a href="https://wa.me/?text=I%20have%20Pledged%20that%20I%20would%20not%20promote%20School%20Fee%20Waiver%20https%3A%2F%2Fsaynotoschoolfeewaiver.com%2F"
+                    target="_blank">
+                    <img src="assets/img/whatsapp.png" alt="whatsapp">
+                </a>
+            </div>
+            <div class="app Linkedin">
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsaynotoschoolfeewaiver.com/&title=I+have+Pledged+that+I+would+not+promote+School+Fee+Waiver" target="_blank">
+                    <img src="assets/img/linkedin.png" alt="Linkedin">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="language-select" id="lang-select">
+        <div style="color: var(--primary-color);margin-bottom: 20px;font-size: larger;font-weight: bolder;" >#SupportTheSchools</div>
+        <div class="lang-box">
+            <p style="color: var(--text-color-secondary);">Select your prefered language</p>
+            <div style="display: flex;" >
+                <button class="lang-btn" id="english" onclick="changeLanguage('en')" > <img src="assets/img/en.png" alt="en"> English</button>
+                <button class="lang-btn" id="hindi" onclick="changeLanguage('hi')" ><img src="assets/img/hi.png" alt="hi">Hindi</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: window.innerWidth > 650 ? '390' : (window.innerWidth * 0.609375).toString(),
+                width: window.innerWidth > 650 ? '640' : window.innerWidth.toString(),
+                videoId: 'B2JARNVDbRI',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': mountContainer
+                },
+                playerVars: {
+                    controls: 0,
+                }
+            });
+            // console.log("Player : ", player)
+        }
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            // event.target.playVideo();
+            document.getElementsByClassName("player-container")[0].style.display = "flex"
+        }
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function mountContainer(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                // setTimeout(stopVideo, 6000);
+                document.getElementsByClassName("player-container")[0].style.display = "flex"
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+        function closePlayer() {
+            player.destroy()
+            document.getElementsByClassName("player-container")[0].style.display = "none"
+        }
+    </script>
+    <script>
+        function changeLanguage(lg){
+            let popup = document.getElementById('lang-select');
+            let hi = document.getElementsByClassName('hi');
+            let en = document.getElementsByClassName('en');
+            console.log(hi,en)
+            if(lg==='en'){
+                popup.style.display = "none";
+                console.log("English")
+            }else if(lg==='hi'){
+                for(i=0;i<hi.length;i++){
+                    hi[i].style.display = "block"
+                    console.log(hi[i])
+                }
+                for(i=0;i<en.length;i++){
+                    en[i].style.display = "none"
+                    console.log(en[i])
+                }
+                popup.style.display = "none";
+                console.log("Hindi")
+            }
+        }
+    </script>
+</body>
+</html>
