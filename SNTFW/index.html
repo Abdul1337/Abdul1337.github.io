@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +50,11 @@
     </script>
     <!-- End Google Analytics -->
     <style>
+        .fixed-lang-select{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
         .language-select{
             position: fixed;
             display: flex;
@@ -102,8 +107,8 @@
         <div class="Text-container">
             <strong></strong>
             <div class="heading">
-                <p class="en" style="display: block;"><b>Dear,</b><br>Teachers, Directors, <br>Principals and, Owners !!</p>
-                <p class="hi" style="display: none;"><b>प्रिय,</b><br>शिक्षक, निर्देशक,<br>प्रधानाचार्य और, स्वामी !!</p>
+                <p class="en" style="display: block;"><b>Dear</b><br>Teachers, Directors, <br>Principals and, Owners !!</p>
+                <p class="hi" style="display: none;"><b>प्रिय</b><br>शिक्षक, निर्देशक,<br>प्रधानाचार्य और स्वामी !!</p>
             </div>
             <div class="description en" style="display: block;"> Please provide your details and help us raise our voice at the highest level. Schools cannot be run if students don’t pay fees. <strong>Remember,</strong> millions of votes are always counted one vote at a time! Your vote is very important to provide support to our community, please fill the form and share with your fellow teacher.</div>
             <div class="description hi" style="display: none;"> कृपया अपना विवरण प्रदान करें और उच्चतम स्तर पर अपनी आवाज़ उठाने में हमारी मदद करें। यदि छात्र शुल्क नहीं देते हैं तो स्कूल नहीं चलाए जा सकते हैं। <strong>याद रखें,</strong> लाखों वोट हमेशा एक समय में एक वोट से गिने जाते हैं! हमारे समुदाय को सहायता प्रदान करने के लिए आपका वोट बहुत महत्वपूर्ण है, कृपया फॉर्म भरें और अपने साथी शिक्षक के साथ साझा करें।</div>
@@ -402,6 +407,9 @@
             </div>
         </div>
     </div>
+    <div class="fixed-lang-select" >
+        <button class="lang-btn" id="langFixBtn"></button>
+    </div>
     <script src="assets/js/index.js"></script>
     <script>
         // 2. This code loads the IFrame Player API code asynchronously.
@@ -456,19 +464,36 @@
             let popup = document.getElementById('lang-select');
             let hi = document.getElementsByClassName('hi');
             let en = document.getElementsByClassName('en');
+            let fixBtn = document.getElementById('langFixBtn')
+
             console.log(hi,en)
             if(lg==='en'){
-                popup.style.display = "none";
+                for(i=0;i<en.length;i++){
+                    en[i].style.display = "block"
+                    console.log(en[i])
+                }
+                for(i=0;i<hi.length;i++){
+                    hi[i].style.display = "none"
+                    console.log(hi[i])
+                }
+                fixBtn.innerHTML = `<img src='assets/img/hi.png' alt='hi'>Hindi`
+                fixBtn.addEventListener('click',()=>changeLanguage('hi'))
                 console.log("English")
-            }else if(lg==='hi'){
+                popup.style.display = "none";
+
+            }
+            else if(lg==='hi'){
                 for(i=0;i<hi.length;i++){
                     hi[i].style.display = "block"
                     console.log(hi[i])
+                    var currLanguage = 'hi'
                 }
                 for(i=0;i<en.length;i++){
                     en[i].style.display = "none"
                     console.log(en[i])
                 }
+                fixBtn.innerHTML = `<img src='assets/img/en.png' alt='en'>English`
+                fixBtn.addEventListener('click',()=>changeLanguage('en'))
                 popup.style.display = "none";
                 console.log("Hindi")
             }
