@@ -1,0 +1,29 @@
+@media(max-width : 750px){
+    .big-text-1{
+        font-size: 3.5rem;
+        line-height: 5rem;
+        font-weight: 500;
+    }
+    .landing{
+        flex-direction: column;
+        padding: unset;
+    }
+    .landing .landing-content{
+        width: auto;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    .landing .landing-content .content{
+        /* text-align: center; */
+    }
+    .cta-btn{
+        margin: 4rem auto 0rem auto !important;
+    }
+    .landing-form{
+        margin: 0!important;
+        text-align: left;
+        max-width: unset;
+        padding: 2.7rem 2.6rem;
+        border-radius: 0px;
+    }
+}
