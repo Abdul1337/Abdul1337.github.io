@@ -134,12 +134,12 @@ body {
 }
 
 ::-moz-selection {
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     color: #fff
 }
 
 ::selection {
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     color: #fff
 }
 
@@ -538,7 +538,7 @@ td,th {
 .btn--bookADemo {
     padding: 1.6rem 3.4rem;
     font-size: 1.6rem;
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     background-image: var(--gradient-1);
     color: #fff;
     outline: none;
@@ -1068,7 +1068,7 @@ button {
 }
 
 .successPopup__content {
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     padding: 3rem 6rem;
     border-radius: 5px;
     width: 30%;
@@ -1253,7 +1253,7 @@ button {
     content: "";
     height: 16px;
     width: 16px;
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     border-radius: 50%
 }
 
@@ -1273,7 +1273,7 @@ button {
     list-style: none;
     height: 15px;
     width: 15px;
-    background-color: rgba(0,154,224,.24);
+    background-color: rgb(180, 180, 180);
     border-radius: 50%
 }
 
@@ -1298,12 +1298,12 @@ button {
 }
 
 .features__content .slick-dots .slick-active {
-    background-color: #009ae0
+    background-color: var(--primary-color-1)
 }
 
 .features__content .slick-dots .slick-active button {
-    background-color: #009ae0;
-    color: #009ae0
+    background-color: var(--primary-color-1);
+    color: var(--primary-color-1)
 }
 
 .features__content .slick-active,.features__content .slick-current {
@@ -1418,7 +1418,7 @@ button {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 18x;
-    color: #008489
+    color: var(--primary-color-2)
 }
 
 .Carousel__content--testimonial--text {
@@ -1566,7 +1566,7 @@ button {
 
 @media only screen and (max-width: 37.5em) {
     .News__list--item--content {
-        color:#008489;
+        color:var(--primary-color-2);
         padding: 0 1rem
     }
 }
@@ -1619,7 +1619,7 @@ button {
     display: block;
     width: 32px;
     height: 44px;
-    background: #009ae0;
+    background: var(--primary-color-1);
     border-radius: 50%;
     padding: 18px 20px 18px 28px
 }
@@ -1640,7 +1640,7 @@ button {
     display: block;
     width: 80px;
     height: 80px;
-    background: #009ae0;
+    background: var(--primary-color-1);
     border-radius: 50%
 }
 
@@ -1731,7 +1731,7 @@ button {
 }
 
 .video-overlay-close:hover {
-    color: #009ae0
+    color: var(--primary-color-1)
 }
 
 .video-overlay iframe {
@@ -1812,7 +1812,8 @@ button {
 
 @media only screen and (max-width: 37.5em) {
     .Reach__content--item--heading {
-        font-size:1.8rem!important
+        font-size: 1.7rem!important;
+        white-space: nowrap;
     }
 }
 
@@ -2201,8 +2202,8 @@ button {
 }
 @media only screen and (max-width: 37.5em) {
     .navigation__logo--img {
-        width:14rem;
-        height: 3.4rem
+        width: 22rem;
+        height: 5.4rem;
     }
 }
 
@@ -2295,7 +2296,7 @@ button {
     margin-top: 4.6rem;
     padding: 1.6rem 3.4rem;
     font-size: 1.6rem;
-    background-color: #009ae0;
+    background-color: var(--primary-color-1);
     color: #fff;
     outline: none;
     border: none;
