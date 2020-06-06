@@ -1,8 +1,8 @@
 
-Say No To School Fee Waivers : https://abdul1337.github.io/SNTFW
+Say No To School Fee Waivers : https://abdul1337.github.io/projects/SNTFW
 
 
-LMS Website : https://abdul1337.github.io/lms
+LMS Website : https://abdul1337.github.io/projects/lms
 
 
-Techtalisman Website : https://abdul1337.github.io/techtalisman
+Techtalisman Website : https://abdul1337.github.io/projects/techtalisman
