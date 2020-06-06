@@ -258,12 +258,33 @@ body {
     grid-auto-flow: column!important;
     grid-column-gap: 5rem!important
 }
-
+.grid--2-flex{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: row !important;
+}
+.grid--2-flex-reverse{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: row-reverse !important;
+}
 @media only screen and (max-width: 48em) {
     .grid--2 {
         display:flex!important;
         flex-direction: column!important;
         align-items: center
+    }
+    .grid--2-flex{
+        display: flex !important;
+        justify-content: space-evenly !important;
+        flex-direction: column !important;
+        margin-top: 75px !important;
+    }
+    .grid--2-flex-reverse{
+        display: flex !important;
+        justify-content: space-evenly !important;
+        flex-direction: column !important;
+        margin-top: 75px !important;
     }
 }
 
