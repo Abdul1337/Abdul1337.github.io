@@ -52,13 +52,14 @@
                         </div>
                         <div>
                             <div style="width: 100%;">
-                                <div></div>
-                                <form class="form"><input type="text" class="form__input" placeholder="Your Name *"
-                                        required="" value=""><input type="text" class="form__input"
-                                        placeholder="Your Mobile Number *" required="" value=""><input type="text"
-                                        class="form__input" placeholder="Your city *" required="" value=""><button
-                                        type="submit" class="btn btn--bookADemo form__button"
-                                        style="margin-bottom: 2.4rem;">Book a Free Demo</button></form>
+                                <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
+                                <form class="form" id="BookForm" >
+                                    <input type="text" class="form__input" name="Name" placeholder="Your Name *" required="" value="" >
+                                    <input type="text" class="form__input" name="Contact" placeholder="Your Mobile Number *" required="" value="">
+                                    <input type="text" class="form__input" name="Location" placeholder="Your city *" required="" value="">
+                                    <input type="hidden" name="Source/Messenger ID" value="Techtalisman Vebsite">
+                                    <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn" style="margin-bottom: 2.4rem;">Book a Free Demo</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -162,7 +163,7 @@
                                     
                                 </div>
                                 <div class="Carousel__content">
-                                    <div class="Carousel__content--heading heading--medium fontStore">IoT (Internet Of Things):
+                                    <div class="Carousel__content--heading heading--medium fontStore">IoT (Internet of Things):
                                     </div>
                                     <div class="Carousel__content--content">
                                         <p class="p--medium Carousel__content--content--text colored--text">
@@ -516,8 +517,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="News"
-                    style="background-image: url(&quot;static/media/background2.8e38db0f.svg&quot;); background-position: center center;">
+                <div class="News">
                     <div class="News__header">
                         <div class="News__header--heading heading--mega">Techtalisman in the media</div>
                         <div class="News__header--content p--medium colored--text">Our vision has inspired
