@@ -44,7 +44,7 @@ const handleReffFormSubmit = t => {
             setTimeout(() => {
                 $('#form_status').css({"color" : "#f00"})
                 $('#form_status').html("Somthing Went Wrong! Please Try again later");
-                $("#form_submit_btn").html("Book a Free Demo");
+                $("#form_submit_btn").html("Submit");
                 resetForm(t.target);
             }, 500)
         },
