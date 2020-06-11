@@ -1,596 +1,646 @@
-<head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
-    <title>Techtalisman</title>
-    <link href="static/css/main.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="version" content="v1.0.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="A cloud based Ai Powered online software for schools that manages academics and operations through it School Management System and Learning Management System Respectively">
+        <meta name="keywords" content="Techtalisman,Tech Talisman, TECHTALISMAN, TECH TALISMAN,SCHOOLLOG, schoollog, SCHOOL LOG, school log, SCHOOLOG, schoolog, scholog, schollog, School Management Software,School Management Software Erp,School Management System,Online School Erp System,School Erp Software,Education Erp Solutions,Cloud Based School Management System,Cloud School Erp Software System,School Management Enterprise Software,Best School Management Software Erp,School Management Erp,Online School Management,School Management Information System,Cloud School Management Software,Cloud School Management System,School Administration Software,System For Online School Administration Systems,School Administration System,Best School Administration Software,School Administration Management,Student Administration Software,Online School Administration Software,Online School Administration System,Institute Management Software,Institute Management System,Online Institute Management,Coaching Institute Management System,Student Information System,Student Information System Software,Student Information Management System,Student Management System Software,Best Student Information System,Student Enrollment Management System,Admission Management System,School Admission Software,Student Admission Management System,Admission Management Software,School Admission Management Software,Leave Management System,Online Leave Management System,Leave Management Software,School Library Management System,School Library Management Software,School Bus Transportation Management System,Transport Management System,School Transportation Software,School Transport Management System,School Bus Management,College Transport Management System,Inventory Management System,School Inventory Management System,College Inventory Management System,Inventory Management Software,Inventory Tracking System,Inventory Management System Software,Hostel Management System,Hostel Management Software,Student Hostel Management Software,Student Hostel Management System,Student Database Management System,Erp  For Schools,Student Management System,Academic Management System,Student Academic Management System,Student Assessment Management System,Assessment Management System,Report Card Software,Digital Report Card Software,Digital Student Report Card Software,Student Report Card Software,School Progress Report Card Software,Student Attendance Management System,Attendance Software,Student Attendance Management Software,Student Assignment Management System,Assignment Management System,Online Assignments Management System,Online Assignments Management,School Assignment Management System,Assignment Software,School Fees Collection Software,School Fee Management Software,School Fee Software,School Fee Management,Student Fees Management,Fee Management System,Fee Management Software,Online Fees Management" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Techtalisman | One Stop Solution for Schools and Institutes"/>
+        <meta property="og:url" content="http://www.techtalisman.com/"/>
+        <meta property="og:url" content="https://www.techtalisman.com.in"/>
+        <meta property="og:url" content="http://www.techtalisman.com.in"/>
+        <meta property="og:url" content="http://techtalisman.com.in"/>
+        <meta property="og:site_name" content="TECHTALISMAN"/>
+        <meta property="og:locale" content="en_US" />
 
-<body data-gr-c-s-loaded="true">
-    <div id="root">
-        <div class="App fade-in">
-            <div>
-                <div class="blueStrip"></div>
-                <div class="navigation">
-                    <div class="navigation__logo"><a href="/"><img src="static/media/techtalisman_logo.png"
-                                alt="techtalisman" class="navigation__logo--img"></a></div>
-                    <div class="navigation__book"><a href="http://saynotoschoolfeewaiver.com/" target="_blank"><button
-                                class="btn--bookADemo btn">Support The Schools</button></a></div>
-                </div>
-            </div>
-            <div class="super-container">
-                <div class="landing grid--1"
-                    style="background-image: var(--gradient-2); background-position: inherit; width: 100%; background-size: cover;">
-                    <div class="landing__content" style="width: 85%;">
-                        <div class="landing__content--main">
-                            <div>Empowering <span style="color: rgb(251, 212, 73);">Schools </span> through our <span
-                                    style="color: rgb(251, 212, 73);">Digital</span> Tools.</div>
-                            <!-- <div>Empowering Schools  through our Digital Tools.</div> -->
-                        </div>
-                        <div class="landing__content--sub">ERP.&nbsp;&nbsp;LMS.&nbsp;&nbsp;ASSESSMENT.&nbsp;&nbsp;IOT
-                        </div>
-                        <div class="cta-wa-btn">
-                            <div class=" cta-contact-btn btn form__button instantFix" style="cursor: pointer;" id="EnquiryPopup">
-                                <p style="padding-left: 8px;">Get in Touch </p>
-                                <!-- <p>></p> -->
-                            </div>
-                            <div
-                                class="landing__content--sub landing__content--sub--prompt landing__content--sub--prompt--2">
-                                #SupportTheSchools</div>
-                        </div>
-                    </div>
-                    <div class="landing__banner-image">
-                        <img src="static/media/main-banner.png" alt="kids">
-                    </div>
-                    <!-- <div class="landing__form">
-                        <div class="landing__form--header">
-                            <div class="landing__form--header--heading">Create your coaching institute's mobile app
-                            </div>
-                            <div class="landing__form--header--content colored--text"></div>
-                        </div>
-                        <div>
-                            <div style="width: 100%;">
-                                <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
-                                <form class="form" id="BookForm" >
-                                    <input type="text" class="form__input" name="Name" placeholder="Your Name *" required="" value="" >
-                                    <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number *" required="" value="" maxlength="10" pattern="^[0-9]*$">
-                                    <input type="text" class="form__input" name="Location" placeholder="Your city *" required="" value="">
-                                    <input type="hidden" name="Source/Messenger ID" value="Techtalisman Vebsite">
-                                    <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn" style="margin-bottom: 2.4rem;">Book a Free Demo</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="Reach">
-                    <div class="Reach__content grid--5">
-                        <div class="Reach__content--item">
-                            <div class="Reach__content--item--heading heading--mega">1000+ Schools</div>
-                        </div>
-                        <div class="Reach__content--item">
-                            <div class="Reach__content--item--heading heading--mega tutorsMobile">0.5M+ Students</div>
-                        </div>
-                        <div class="Reach__content--item">
-                            <div class="Reach__content--item--heading heading--mega">100K+ App Users </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div style="width: 100%; display: flex; justify-content: center;"><img
-                        src="static/media/Mobile9M.425a7c35.webp" class="funding funding--Phone"><img
-                        src="static/media/Web9M.7dea1817.webp" class="funding funding--Web"></div> -->
-                <!-- <div class="LifeStory">
-                    <div class="LifeStory--text">
-                        <div class="LifeStory__heading heading--mega">A special message from a Special Teacher</div>
-                    </div>
-                    <div class="marginTop3"><iframe
-                            src="https://www.youtube.com/embed/yCKgeYbssHU?rel=0&amp;enablejsapi=1" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen="" class="iframeVideo" title="Techtalisman Video"></iframe></div>
-                </div> -->
-                <div class="features" id="products">
-                    <div class="features__header">
-                        <div class="features__header--heading heading--mega">Our Products Empower Schools to get
-                            digital, improve processes and learning</div>
-                        <div class="features__header--content p--medium colored--text">Our products affirms our belief in our vision of providing a level playing field for all educational institutions may they be Urban or Rural
-                        </div>
-                    </div>
-                    <div class="features__content">
-                        <!-- Product Slick Slider Here -->
-                        <div class="slick-feature">
-                            <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
-                                <div class="Carousel__pic">
-                                    <img src="static/media/product-lms.png" alt="Carousel Mega"
-                                        class="Carousel__pic--img">
-                                </div>
-                                <div class="Carousel__content">
-                                    <div class="Carousel__content--heading heading--medium fontStore">LMS (Learning
-                                        Management System):</div>
-                                    <div class="Carousel__content--content">
-                                        <p class="p--medium Carousel__content--content--text colored--text">
-                                            Just like Word helps you write documents and Gmail helps you manage your
-                                            emails, LMS helps you to create, manage, and deliver eLearning courses. Now,
-                                            create lessons, organize them into courses, deliver the content, enroll
-                                            students to desired courses, and finally, monitor and assess their
-                                            performance from anywhere and anytime.
-                                        </p>
-                                        <a href="http://schoollog.ai/" target="_blank">
-                                            <button class="btn btn--bookADemo Carousel__content--content--button">Know
-                                                more</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
-                                <div class="Carousel__pic">
-                                    <img src="static/media/product-erp.png" alt="Carousel Mega"
-                                        class="Carousel__pic--img">
-                                </div>
-                                <div class="Carousel__content">
-                                    <div class="Carousel__content--heading heading--medium fontStore">ERP (Enterprise
-                                        Resource Planning):</div>
-                                    <div class="Carousel__content--content">
-                                        <p class="p--medium Carousel__content--content--text colored--text">
-                                            Think of all the core services required to run a school: accounts, queries,
-                                            admissions, fees, and a lot more. ERP helps you integrate all these
-                                            processes into a single system and makes your management hassle-free. Now
-                                            get higher productivity and better insights for your school for a better
-                                            tomorrow.
-                                        </p>
-                                        <a href="http://schoollog.in/" target="_blank">
-                                            <button class="btn btn--bookADemo Carousel__content--content--button">Know
-                                                more</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
-                                <div class="Carousel__pic">
-                                    <img src="static/media/product-assmnt.png" alt="Carousel Mega"
-                                        class="Carousel__pic--img">
-                                </div>
-                                <div class="Carousel__content">
-                                    <div class="Carousel__content--heading heading--medium fontStore">Assessment:</div>
-                                    <div class="Carousel__content--content">
-                                        <p class="p--medium Carousel__content--content--text colored--text">
-                                            Want your students to practice more and make them brush up the concepts
-                                            regularly? Now upload assignments online and make teaching more efficient
-                                            than ever before. Students can upload answers to the assignments and can
-                                            also raise doubts if any. Help your students to gain access to the maximum
-                                            number of questions and help them become confident about the lessons they
-                                            learn.
-                                        </p>
-                                        <!-- <a href="">
-                                            <button class="btn btn--bookADemo Carousel__content--content--button">Know
-                                                more</button>
-                                        </a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
-                                <div class="Carousel__pic">
-                                    <img src="static/media/product-iot.png" alt="Carousel Mega"
-                                        class="Carousel__pic--img">
-                                </div>
-                                <div class="Carousel__content">
-                                    <div class="Carousel__content--heading heading--medium fontStore">IoT (Internet of
-                                        Things):
-                                    </div>
-                                    <div class="Carousel__content--content">
-                                        <p class="p--medium Carousel__content--content--text colored--text">
-                                            With IoT bringing in a revolution in the present-day world, we have already
-                                            integrated it into our systems to make our products even more efficient and
-                                            also make things easier for you. With Alexa powered ERP and biometric
-                                            integration, we surely are bringing a revolution in the education system.
-                                            Along with a tablet and a portable printer used for managing visitors.
-                                        </p>
-                                        <!-- <a href="">
-                                            <button class="btn btn--bookADemo Carousel__content--content--button">Know
-                                                more</button>
-                                        </a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Institutes">
-                    <div class="Institutes--text">
-                        <div class="Institutes--heading heading--mega">1000+ Schools are part of the Techtalisman family
-                        </div>
-                        <!-- <div class="Institutes--content p--medium colored--text">Our clients are our foremost priority
-                            and we don't leave any efforts in making their lives awesome. Their love and support has
-                            made us what we are. We look forward to seeing you in the family and growing together.</div> -->
-                    </div>
-                    <div class="Institutes--container">
-                        <div class="Institutes--list slick-institute">
-                            <!-- Slick Slider Here -->
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_0.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Saffron Colors</span>
-                                            <span class="p--small colored--text--2">Jaipur</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_1.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Gurukripa Career Institute</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_2.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Pilani Public School</span>
-                                            <span class="p--small colored--text--2">Pilani</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_3.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Suraj Smart School</span>
-                                            <span class="p--small colored--text--2">Palsana</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_4.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Magpie Int. School</span>
-                                            <span class="p--small colored--text--2">Kota</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_5.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Daffodils World School</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_6.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Matrix High School</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_7.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Aristotle World School</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_8.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Vinayak Institution</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_9.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Euro Int. School</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_10.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Gyan Vihar</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_11.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">CSSG Institution</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="slick-slide" style="width: 254px;">
-                                <div>
-                                    <span class="Institutes--list--profile " tabindex="-1"
-                                        style="width: 100%; display: inline-block;">
-                                        <img src="static/media/clients/institute_12.jpg" alt="Institute Logo"
-                                            class="Institutes--list--profile--img">
-                                        <span class="flexColumn Institutes--list--profile--text">
-                                            <span class="p--small">Saplings Learning nest</span>
-                                            <span class="p--small colored--text--2">Sikar</span>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <link rel="shortcut icon" href="/favicon.ico">
 
-                <div class="News">
-                    <div class="News__header">
-                        <div class="News__header--heading heading--mega">Techtalisman in the media</div>
-                        <div class="News__header--content p--medium colored--text">Our vision has inspired
-                            national media to feature us in their stories on a regular basis.</div>
-                    </div>
-                    <div class="News__list grid--4">
-                        <div class="News__list--item" style="background: inherit;">
-                            <div class="News__list--item"><img src="static/media/bhasker.png" alt="circled"
-                                    class="News__list--item--img">
-                                <p class="News__list--item--content p--small"><i>"Son of Sikar, Rajasthan helping
-                                        schools automate their processes"</i></p>
-                                <!-- <a href="" target="_blank" style="color: rgb(65, 131, 196);">Read Full Story</a> -->
-                            </div>
-                        </div>
-                        <div class="News__list--item" style="background: inherit;">
-                            <div class="News__list--item"><img src="static/media/toi.png" alt="circled"
-                                    class="News__list--item--img">
-                                <p class="News__list--item--content p--small"><i> "3 IITROPAR Colleagues Collaborate to
-                                        bridge the parent-teacher communication gap"</i></p>
-                                <!-- <a href="" target="_blank" style="color: rgb(65, 131, 196);">Read Full Story</a> -->
-                            </div>
-                        </div>
-                        <div class="News__list--item" style="background: inherit;">
-                            <div class="News__list--item"><img src="static/media/patrika.jpg" alt="circled"
-                                    class="News__list--item--img">
-                                <p class="News__list--item--content p--small"><i> "Schoollog Conducted Workshop in
-                                        Nagaur, Rajasthan"</i></p>
-                                <!-- <a href="" target="_blank" style="color: rgb(65, 131, 196);">Read Full Story</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="Team">
-                    <div class="News__header">
-                        <div class="News__header--heading heading--mega">Our Team</div>
-                    </div>
-                    <div class=" team-member-list grid--4">
-                        <div class="team-member">
-                            <div class="our-team">
-                                <div class="picture">
-                                    <img class="img-fluid" src="static/media/team_01.jpg">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="name">Abhishek Singh</h3>
-                                    <h4 class="title">Co-Founder</h4>
-                                </div>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/AbhiSchoollog" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-fb.svg" alt="fb">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/in/abhischoollog/" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-linkedin.svg" alt="In">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:caretechcaster@gmail.com"  target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-email.svg" alt="mail">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-member">
-                            <div class="our-team">
-                                <div class="picture">
-                                    <img class="img-fluid" src="static/media/team_03.jpg">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="name">Mohit Jasapara</h3>
-                                    <h4 class="title">Co-Founder</h4>
-                                </div>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/mohit.jasapara" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-fb.svg" alt="fb">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/in/mohitjasapara/" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-linkedin.svg" alt="In">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:mohit@techtalisman.com"  target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-email.svg" alt="mail">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-member">
-                            <div class="our-team">
-                                <div class="picture">
-                                    <img class="img-fluid" src="static/media/team_02.jpg">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="name">Manoj Kumar</h3>
-                                    <h4 class="title">Co-Founder</h4>
-                                </div>
-                                <ul class="social">
-                                    <li>
-                                        <a href="https://www.facebook.com/profile.php?id=100002483895615" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-fb.svg" alt="fb">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/in/schoollog-manoj/" target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-linkedin.svg" alt="In">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:manoj@techtalisman.com"  target="_blank"  aria-hidden="true">
-                                            <img src="static/media/social-email.svg" alt="mail">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="Footer">
-                    <div class="comp_logo">
-                        <a href="#">
-                            <img src="static/media/techtalisman_logo.png"
-                                style="filter: brightness(999%) grayscale(1) contrast(999%);" alt="logo">
-                        </a>
-                        <a href="http://schoollog.in/" target="_blank">
-                            <img src="static/media/schoollog_logo.png"
-                                style="filter: brightness(999%) grayscale(1) contrast(102%);" alt="logo">
-                        </a>
-                    </div>
-                    <div class="contact-info">
-                        <h3 class="info-heading">Contact Us</h3>
-                        <div class="info">Narayan Vihar, Jaipur</div>
-                        <div class="info">info@techtalisman.com</div>
-                        <div class="info"><span><img src="static/media/SVGPhone.27df0e91.svg" alt="phone"></span>(+91)
-                            9785718555</div>
-                        <div class="info"><span><img src="static/media/SVGPhone.27df0e91.svg" alt="phone"></span>(+91)
-                            9785717666</div>
-                    </div>
-                    <div class="quick-links">
-                        <h3 class="info-heading">Quick Links</h3>
-                        <a href="#">
-                            <div class="info">Home</div>
-                        </a>
-                        <a href="products.html">
-                            <div class="info">Products</div>
-                        </a>
-                        <a href="#">
-                            <div class="info">Contact Us</div>
-                        </a>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="enquiry-popup">
-            <div class="landing__form">
-                <div class="close-btn" id="enquiry-popup-close-btn"></div>
-                <div class="landing__form--header">
-                    <div class="landing__form--header--heading">Contact Us
-                    </div>
-                    <div class="landing__form--header--content colored--text"></div>
-                </div>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <link defer href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
+        <title>Techtalisman</title>
+        <link href="static/css/main.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link  rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <script  type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <div id="root">
+            <div class="content-wrapper App fade-in" id="home">
                 <div>
-                    <div style="width: 100%;">
-                        <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
-                        <form class="form" id="BookForm">
-                            <input type="text" class="form__input" name="Name" placeholder="Your Name *" required=""
-                                value="">
-                            <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number *"
-                                required="" value="" maxlength="10" pattern="^[0-9]*$">
-                            <input type="text" class="form__input" name="Location" placeholder="Your city *" required=""
-                                value="">
-                            <input type="hidden" name="Source/Messenger ID" value="Techtalisman Vebsite">
-                            <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn"
-                                style="margin-bottom: 2.4rem;">Submit</button>
-                        </form>
+                    <div class="blueStrip"></div>
+                    <div class="navigation">
+                        <div class="navigation__logo"><a href="/"><img src="static/media/techtalisman_logo.png"
+                                    alt="techtalisman" class="navigation__logo--img"></a></div>
+                        <div class="navigation__book"><a href="http://saynotoschoolfeewaiver.com/" target="_blank"><button
+                                    class="btn--bookADemo btn">Support The Schools</button></a></div>
+                    </div>
+                </div>
+                <div class="super-container">
+                    <div class="landing grid--1"
+                        style="background-image: var(--gradient-2); background-position: inherit; width: 100%; background-size: cover;">
+                        <div class="landing__content" style="width: 85%;">
+                            <div class="landing__content--main">
+                                <div>Empowering <span style="color: rgb(251, 212, 73);">Schools </span> through our <span
+                                        style="color: rgb(251, 212, 73);">Digital</span> Tools.</div>
+                            </div>
+                            <div class="landing__content--sub">ERP.&nbsp;&nbsp;LMS.&nbsp;&nbsp;ASSESSMENT.&nbsp;&nbsp;IOT
+                            </div>
+                            <div class="cta-wa-btn">
+                                <div class=" cta-contact-btn btn form__button instantFix" style="cursor: pointer;"
+                                    id="EnquiryPopup">
+                                    <p style="padding-left: 8px;">Get in Touch </p>
+                                    <!-- <p>></p> -->
+                                </div>
+                                <div
+                                    class="landing__content--sub landing__content--sub--prompt landing__content--sub--prompt--2">
+                                    #SupportTheSchools</div>
+                            </div>
+                        </div>
+                        <div class="landing__banner-image">
+                            <img src="static/media/kids-back.webp" alt="kids">
+                        </div>
+                    </div>
+                    <div class="Reach">
+                        <div class="Reach__content grid--5">
+                            <div class="Reach__content--item">
+                                <div class="Reach__content--item--heading heading--mega">1000+ Schools</div>
+                            </div>
+                            <div class="Reach__content--item">
+                                <div class="Reach__content--item--heading heading--mega tutorsMobile">0.5M+ Students</div>
+                            </div>
+                            <div class="Reach__content--item">
+                                <div class="Reach__content--item--heading heading--mega">100K+ App Users </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features" id="products">
+                        <div class="features__header">
+                            <div class="features__header--heading heading--mega">Our Products Empower Schools to get
+                                digital, improve processes and learning</div>
+                            <div class="features__header--content p--medium colored--text">Our products affirms our belief
+                                in our vision of providing a level playing field for all educational institutions may they
+                                be Urban or Rural
+                            </div>
+                        </div>
+                        <div class="features__content">
+                            <div class="slick-feature">
+                                <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
+                                    <div class="Carousel__pic">
+                                        <img src="static/media/product-lms.png" alt="Carousel Mega"
+                                            class="Carousel__pic--img">
+                                    </div>
+                                    <div class="Carousel__content">
+                                        <div class="Carousel__content--heading heading--medium fontStore">LMS (Learning
+                                            Management System):</div>
+                                        <div class="Carousel__content--content">
+                                            <p class="p--medium Carousel__content--content--text colored--text">
+                                                Just like Word helps you write documents and Gmail helps you manage your
+                                                emails, LMS helps you to create, manage, and deliver eLearning courses. Now,
+                                                create lessons, organize them into courses, deliver the content, enroll
+                                                students to desired courses, and finally, monitor and assess their
+                                                performance from anywhere and anytime.
+                                            </p>
+                                            <a href="http://schoollog.ai/" target="_blank">
+                                                <button class="btn btn--bookADemo Carousel__content--content--button">Know
+                                                    more</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
+                                    <div class="Carousel__pic">
+                                        <img src="static/media/product-erp.png" alt="Carousel Mega"
+                                            class="Carousel__pic--img">
+                                    </div>
+                                    <div class="Carousel__content">
+                                        <div class="Carousel__content--heading heading--medium fontStore">ERP (Enterprise
+                                            Resource Planning):</div>
+                                        <div class="Carousel__content--content">
+                                            <p class="p--medium Carousel__content--content--text colored--text">
+                                                Think of all the core services required to run a school: accounts, queries,
+                                                admissions, fees, and a lot more. ERP helps you integrate all these
+                                                processes into a single system and makes your management hassle-free. Now
+                                                get higher productivity and better insights for your school for a better
+                                                tomorrow.
+                                            </p>
+                                            <a href="http://schoollog.in/" target="_blank">
+                                                <button class="btn btn--bookADemo Carousel__content--content--button">Know
+                                                    more</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
+                                    <div class="Carousel__pic">
+                                        <img src="static/media/product-assmnt.png" alt="Carousel Mega"
+                                            class="Carousel__pic--img">
+                                    </div>
+                                    <div class="Carousel__content">
+                                        <div class="Carousel__content--heading heading--medium fontStore">Assessment:</div>
+                                        <div class="Carousel__content--content">
+                                            <p class="p--medium Carousel__content--content--text colored--text">
+                                                Want your students to practice more and make them brush up the concepts
+                                                regularly? Now upload assignments online and make teaching more efficient
+                                                than ever before. Students can upload answers to the assignments and can
+                                                also raise doubts if any. Help your students to gain access to the maximum
+                                                number of questions and help them become confident about the lessons they
+                                                learn.
+                                            </p>
+                                            <!-- <a href="">
+                                                <button class="btn btn--bookADemo Carousel__content--content--button">Know
+                                                    more</button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
+                                    <div class="Carousel__pic">
+                                        <img src="static/media/product-iot.png" alt="Carousel Mega"
+                                            class="Carousel__pic--img">
+                                    </div>
+                                    <div class="Carousel__content">
+                                        <div class="Carousel__content--heading heading--medium fontStore">IoT (Internet of
+                                            Things):
+                                        </div>
+                                        <div class="Carousel__content--content">
+                                            <p class="p--medium Carousel__content--content--text colored--text">
+                                                With IoT bringing in a revolution in the present-day world, we have already
+                                                integrated it into our systems to make our products even more efficient and
+                                                also make things easier for you. With Alexa powered ERP and biometric
+                                                integration, we surely are bringing a revolution in the education system.
+                                                Along with a tablet and a portable printer used for managing visitors.
+                                            </p>
+                                            <!-- <a href="">
+                                                <button class="btn btn--bookADemo Carousel__content--content--button">Know
+                                                    more</button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Institutes">
+                        <div class="Institutes--text">
+                            <div class="Institutes--heading heading--mega">1000+ Schools are part of the Techtalisman family
+                            </div>
+                        </div>
+                        <div class="Institutes--container">
+                            <div class="Institutes--list slick-institute">
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_0.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Saffron Colors</span>
+                                                <span class="p--small colored--text--2">Jaipur</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_1.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Gurukripa Career Institute</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_2.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Pilani Public School</span>
+                                                <span class="p--small colored--text--2">Pilani</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_3.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Suraj Smart School</span>
+                                                <span class="p--small colored--text--2">Palsana</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_4.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Magpie Int. School</span>
+                                                <span class="p--small colored--text--2">Kota</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_5.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Daffodils World School</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_6.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Matrix High School</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_7.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Aristotle World School</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_8.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Vinayak Institution</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_9.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Euro Int. School</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_10.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Gyan Vihar</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_11.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">CSSG Institution</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slick-slide" style="width: 254px;">
+                                    <div>
+                                        <span class="Institutes--list--profile " tabindex="-1"
+                                            style="width: 100%; display: inline-block;">
+                                            <img src="static/media/clients/institute_12.jpg" alt="Institute Logo"
+                                                class="Institutes--list--profile--img">
+                                            <span class="flexColumn Institutes--list--profile--text">
+                                                <span class="p--small">Saplings Learning nest</span>
+                                                <span class="p--small colored--text--2">Sikar</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="News">
+                        <div class="News__header">
+                            <div class="News__header--heading heading--mega">Techtalisman in the media</div>
+                            <div class="News__header--content p--medium colored--text">Our vision has inspired
+                                national media to feature us in their stories on a regular basis.</div>
+                        </div>
+                        <div class="News__list grid--4">
+                            <div class="News__list--item" style="background: inherit;">
+                                <div class="News__list--item"><img src="static/media/bhasker.png" alt="circled"
+                                        class="News__list--item--img">
+                                    <p class="News__list--item--content p--small"><i>"Son of Sikar, Rajasthan helping
+                                            schools automate their processes"</i></p>
+                                </div>
+                            </div>
+                            <div class="News__list--item" style="background: inherit;">
+                                <div class="News__list--item"><img src="static/media/toi.png" alt="circled"
+                                        class="News__list--item--img">
+                                    <p class="News__list--item--content p--small"><i> "3 IITROPAR Colleagues Collaborate to
+                                            bridge the parent-teacher communication gap"</i></p>
+                                </div>
+                            </div>
+                            <div class="News__list--item" style="background: inherit;">
+                                <div class="News__list--item"><img src="static/media/patrika.jpg" alt="circled"
+                                        class="News__list--item--img">
+                                    <p class="News__list--item--content p--small"><i> "Schoollog Conducted Workshop in
+                                            Nagaur, Rajasthan"</i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Team" id="team">
+                        <div class="News__header">
+                            <div class="News__header--heading heading--mega">Our Team</div>
+                        </div>
+                        <div class=" team-member-list grid--4">
+                            <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_01.jpg">
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Abhishek Singh</h3>
+                                        <h4 class="title">Co-Founder</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/AbhiSchoollog" target="_blank"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/abhischoollog/" target="_blank"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:caretechcaster@gmail.com" target="_blank" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_03.jpg">
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Mohit Jasapara</h3>
+                                        <h4 class="title">Co-Founder</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/mohit.jasapara" target="_blank"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/mohitjasapara/" target="_blank"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:mohit@techtalisman.com" target="_blank" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_02.jpg">
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Manoj Kumar</h3>
+                                        <h4 class="title">Co-Founder</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/profile.php?id=100002483895615"
+                                                target="_blank" aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/schoollog-manoj/" target="_blank"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:manoj@techtalisman.com" target="_blank" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="#">
-            <div class="btt-btn" id="btt-btn">
-                <img src="static/media/SVGUp-Arrow.svg" alt="top">
+            <div class="Footer">
+                <div class="footer-content grid--4">
+                    <div class="footer-item">
+                        <div class="cmp-name p--medium">TECHTALISMAN</div>
+                        <div class="cmp-moto p--small">One Stop Solution for Schools and Institutes</div>
+                        <div class="social-links">
+                            <div class="social-item">
+                                <a href="https://facebook.com/schoollog" target="_blank">
+                                    <img src="static/media/facebook.png" alt="" class="social-icon">
+                                </a>
+                            </div>
+                            <div class="social-item">
+                                <a href="https://www.linkedin.com/company/7599231" target="_blank">
+                                    <img src="static/media/linkedin.png" alt="" class="social-icon">
+                                </a>
+                            </div>
+                            <div class="social-item">
+                                <a href="https://api.whatsapp.com/send?phone=919785718555" target="_blank">
+                                    <img src="static/media/whatsapp.png" alt="" class="social-icon">
+                                </a>
+                            </div>
+                            <div class="social-item">
+                                <a href="https://www.youtube.com/channel/UCpDf-7sWHt6lJxwnB_iuOMA" target="_blank">
+                                    <img src="static/media/youtube.png" alt="" class="social-icon">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sc-websites">
+                            <a href="https://schoollog.in" target="_blank">Schoollog ERP</a>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="https://schoollog.ai" target="_blank">Schoollog LMS</a>
+                        </div>
+                    </div>
+                    <div class="footer-item">
+                        <div class="item-name p--medium">Contact Us</div>
+                        <div class="item-list">
+                            <div class="p--small">
+                                <a href="https://goo.gl/maps/VtCBB6L4HvDKQVim6" target="_blank" class=" item">
+                                    <img src="static/media/location.png" alt="" class="social-icon">
+                                    <p class="value">Narayan Vihar, Jaipur</p>
+                                </a>
+                            </div>
+                            <div class="p--small">
+                                <a href="tel:8448443326" class=" item">
+                                    <img src="static/media/phone.png" alt="" class="social-icon">
+                                    <p class="value">+91-8448443326</p>
+                                </a>
+                            </div>
+                            <div class="p--small">
+                                <a href="tel:9785718555" class=" item">
+                                    <img src="static/media/phone.png" alt="" class="social-icon">
+                                    <p class="value">+91-9785718555</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-item">
+                        <div class="item-name p--medium">Sitemap</div>
+                        <div class="item-list">
+                            <div class="p--small" onclick="changeUrl('Home')">
+                                <a class=" item">
+                                    <img src="static/media/home.png" alt="" class="social-icon">
+                                    <p class="value">Home</p>
+                                </a>
+                            </div>
+                            <div class="p--small" onclick="changeUrl('Products')">
+                                <a class=" item">
+                                    <img src="static/media/product.png" alt="" class="social-icon">
+                                    <p class="value">Products</p>
+                                </a>
+                            </div>
+                            <div class="p--small" onclick="changeUrl('Team')">
+                                <a class="item">
+                                    <img src="static/media/team.png" alt="" class="social-icon">
+                                    <p class="value">Team</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p class="text">Copyright &copy; 2020 Techtalisman Engineering All rights reserved.</p>
+                </div>
             </div>
-        </a>
-        <!-- <script src="static/js/2.6e434843.chunk.js"></script> -->
-        <script src="static/js/main.js"></script>
-        <script> window.addEventListener('scroll', (e) => showBTT(e)) function showBTT(e) { var btt = document.getElementById("btt-btn") if (window.scrollY > 600) { btt.style.opacity = "0.5" btt.style.transform = "rotateZ(360deg)" } else { btt.style.transform = "rotateZ(180deg)" btt.style.opacity = "0" } } </script>
-        <script>
-            document.getElementById("EnquiryPopup").addEventListener('click',showEnquiryPopUp);
-            document.getElementById("enquiry-popup-close-btn").addEventListener('click',hideEnquiryPopUp);
-
-            function showEnquiryPopUp(){
-                // alert("Hello")
-                document.getElementsByClassName('enquiry-popup')[0].style.transform = "translateY(0)";
-                document.getElementsByClassName('super-container')[0].style.filter = "blur(10px)";
-            }
-            function hideEnquiryPopUp(){
-                // alert("Hello")
-                document.getElementsByClassName('enquiry-popup')[0].style.transform = "translateY(100vh)";
-                document.getElementsByClassName('super-container')[0].style.filter = "blur(0px)";
-            }
-        </script>
-    </div>
-</body>
+            <div class="enquiry-popup">
+                <div class="landing__form">
+                    <div class="close-btn" id="enquiry-popup-close-btn"></div>
+                    <div class="landing__form--header">
+                        <div class="landing__form--header--heading">Contact Us
+                        </div>
+                        <div class="landing__form--header--content colored--text"></div>
+                    </div>
+                    <div>
+                        <div style="width: 100%;">
+                            <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
+                            <form class="form" id="BookForm">
+                                <input type="text" class="form__input" name="Name" placeholder="Your Name *" required=""
+                                    value="">
+                                <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number *"
+                                    required="" value="" maxlength="10" pattern="^[0-9]*$">
+                                <input type="text" class="form__input" name="Location" placeholder="Your city *" required=""
+                                    value="">
+                                <input type="hidden" name="Source/Messenger ID" value="Techtalisman Vebsite">
+                                <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn"
+                                    style="margin-bottom: 2.4rem;">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="btt-btn" id="btt-btn">
+                    <img src="static/media/SVGUp-Arrow.svg" alt="top">
+                </div>
+            </a>
+            <script src="static/js/main.min.js"></script>
+            <script>
+                window.addEventListener('scroll', (e) => showBTT(e));
+                function showBTT(e){
+                    varbtt = document.getElementById("btt-btn");
+                    console.log("Hello")
+                    if (window.scrollY > 600) {
+                        btt.style.opacity = "0.5";
+                        btt.style.transform = "rotateZ(360deg)"
+                    } else {
+                        btt.style.transform = "rotateZ(180deg)";
+                        btt.style.opacity = "0"
+                    }
+                }
+            </script>
+            <script>
+                document.getElementById("EnquiryPopup").addEventListener('click', showEnquiryPopUp);
+                document.getElementById("enquiry-popup-close-btn").addEventListener('click', hideEnquiryPopUp);
+    
+                function showEnquiryPopUp() {
+                    document.getElementsByClassName('enquiry-popup')[0].style.transform = "translateY(0)";
+                    document.getElementsByClassName('super-container')[0].style.filter = "blur(10px)";
+                }
+    
+                function hideEnquiryPopUp() {
+                    document.getElementsByClassName('enquiry-popup')[0].style.transform = "translateY(100vh)";
+                    document.getElementsByClassName('super-container')[0].style.filter = "blur(0px)";
+                }
+            </script>
+            <script>
+                function changeUrl(st) {
+                    var section = document.getElementById(st.toLocaleLowerCase());
+                    history.replaceState('', '', st);
+                    section.scrollIntoView();
+                }
+            </script>
+        </div>
+    </body>
+</html>

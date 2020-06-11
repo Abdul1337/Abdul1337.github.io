@@ -33,7 +33,7 @@ $.ajaxSetup({
 const handleReffFormSubmit = t => {
     t.preventDefault();
     const e = formToJSON(reff.elements);
-    console.log("Data : ",e)
+    // console.log("Data : ",e)
 
     $.ajax({
         url: url,
@@ -66,9 +66,8 @@ const handleReffFormSubmit = t => {
 
 formToJSON = t => [].reduce.call(t, (t, e) => (t[e.name] = e.value, t), {}),
 reff = document.getElementById("BookForm");
-console.log("reff");
 function resetForm(t) {
-    console.log("t",t);
+    // console.log("t",t);
     for (i in t){t[i].value = ""}
 }
 reff.addEventListener("submit", handleReffFormSubmit);
