@@ -214,7 +214,7 @@ body {
 }
 
 .colored--text--2 {
-    color: var(--primary-color-1)
+    color: var(--primary-color-)
 }
 
 .grid--1 {
@@ -2780,3 +2780,5 @@ button {
     }
     
 }
+
+

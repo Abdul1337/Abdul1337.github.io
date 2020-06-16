@@ -1,8 +1,8 @@
 :root {
-    --gradient-1: linear-gradient(to right, #8e2de2, #4a00e0);
-    --gradient-2: linear-gradient(to right, #000046, #1cb5e0);
+    --gradient-1: linear-gradient(to right, #11998e, #38ef7d);
+    --gradient-2: linear-gradient(to right, #0f0c29, #302b63, #24243e);
     --gradient-whatsapp: linear-gradient(to right, #11998e, #38ef7d);
-    --primary-color-1: #4a00e0;
+    --primary-color-1: #11998e;
     --primary-color-2: #4b6cb7
 }
 
@@ -589,7 +589,7 @@ button {
 }
 
 .landing__form--header--content {
-    margin-top: 3rem;
+    margin-top: 0.2rem;
     font-size: 1.6rem;
     line-height: 2.4rem;
     font-weight: 500

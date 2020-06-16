@@ -1,0 +1,167 @@
+<div class="feature-cards">
+
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Smart Attendance</h1>
+       </div>
+       <div class="back">
+          <h2>Smart Attendance</h2>
+          <p>Keep parents updated with live attendance and monthly reports.</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Insighful Student Reports</h1>
+       </div>
+       <div class="back">
+          <h2>Insighful Student Reports</h2>
+          <p>Personalised performance reports for all your students</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Parent Communication Module</h1>
+       </div>
+       <div class="back">
+          <h2>Parent Communication Module</h2>
+          <p>Chat with parents, anytime, anywhere. Disable chat when you're busy</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Fee Records</h1>
+       </div>
+       <div class="back">
+          <h2>Fee Records</h2>
+          <p>Automatic reminders and receipts for instalments of students' due fees</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Create Online Courses</h1>
+       </div>
+       <div class="back">
+          <h2>Create Online Courses</h2>
+          <p>Easily create your online courses and sell on your mobile app</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Secured Video Selling</h1>
+       </div>
+       <div class="back">
+          <h2>Secured Video Selling</h2>
+          <p>Forget worrying about content piracy on our secured platform</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Online Test</h1>
+       </div>
+       <div class="back">
+          <h2>Online Test</h2>
+          <p>Conduct your online tests powered with automatic checking and solutions.</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Class Management</h1>
+       </div>
+       <div class="back">
+          <h2>Class Management</h2>
+          <p>Forget tons of paperwork and manage your institute completely digitally</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Privacy Control</h1>
+       </div>
+       <div class="back">
+          <h2>Privacy Control</h2>
+          <p>Control what info your faculties and admin can view for your batches</p>
+       </div>
+    </div>
+    <div class="flip">
+       <div class="front">
+          <h1 class="feature-name">Unlimited Cloud Space and Data Security</h1>
+       </div>
+       <div class="back">
+          <h2>Unlimited Cloud Space and Data Security</h2>
+          <p>Your data is secured using SSL AES 256-bit encryption of courses providing maximum security</p>
+       </div>
+    </div>
+ 
+ </div>
+ 
+ <style>
+ 
+ .feature-cards{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   grid-gap: 4rem;
+ }
+ 
+  .flip {
+      position: relative;
+ }
+  .flip > .front, .flip > .back {
+     text-align: center;
+      display: block;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-duration: 0.6s;
+      transition-property: transform, opacity;
+ }
+  .flip > .front {
+      transform: rotateY(0deg);
+ }
+  .flip > .back {
+      position: absolute;
+      opacity: 0;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(-180deg);
+ }
+  .flip:hover > .front {
+      transform: rotateY(180deg);
+ }
+  .flip:hover > .back {
+      opacity: 1;
+      transform: rotateY(0deg);
+ }
+  .flip.flip-vertical > .back {
+      transform: rotateX(-180deg);
+ }
+  .flip.flip-vertical:hover > .front {
+      transform: rotateX(180deg);
+ }
+  .flip.flip-vertical:hover > .back {
+      transform: rotateX(0deg);
+ }
+  .flip {
+      position: relative;
+      display: inline-block;
+      /* margin-right: 2px; */
+      /* margin-bottom: 1em; */
+ }
+  .flip > .front, .flip > .back {
+      display: block;
+      color: black;
+      width: inherit;
+      background-size: cover !important;
+      background-position: center !important;
+      height: 220px;
+      padding: 1em 2em;
+      background: #fff;
+      border-radius: 10px;
+ }
+  .flip > .front p, .flip > .back p {
+      font-size: 0.9125rem;
+      line-height: 160%;
+      color: black;
+ }
+ .feature-name{
+    font-size: 1.5rem;
+ }
+ </style> 
