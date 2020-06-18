@@ -16,10 +16,18 @@ const handleReffFormSubmit = t => {
         dataType: "json",
         data: e,
         error: function () {
-            alert('Error')
+            // alert('Error');
+            document.querySelector('.form-progress').style.bottom = '0px';
+            document.querySelector('.form-progress').style.background = '#f32f2f';
+            document.querySelector('.form-progress').style.color = 'white';
+            $('#form-state').html('Somthing Went Wrong, Please Try Again !');
         },
         success: function () {
-            alert('Success')
+            // alert('Success');
+            document.querySelector('.form-progress').style.bottom = '0px';
+            document.querySelector('.form-progress').style.background = '#00d079';
+            document.querySelector('.form-progress').style.color = 'white';
+            $('#form-state').html('Thank You, Your response has been submitted!');
         }
     });
     return false;

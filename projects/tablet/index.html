@@ -81,7 +81,9 @@
         <div class="nav-wrapper">
          <div class="grad-bar"></div>
          <nav class="navbar">
-           <img src="static/media/schoollog_logo.png" alt="Company Logo">
+            <a href="index.html">
+                <img src="static/media/schoollog_logo.png" alt="Company Logo">
+            </a>
            <div class="menu-toggle" id="mobile-menu">
              <span class="bar"></span>
              <span class="bar"></span>
@@ -99,15 +101,16 @@
 
 
     <section class="text-gray-700 body-font">
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col-reverse items-center">
+        <div class="container mx-auto flex px-5 py-4 md:py-24 md:flex-row flex-col-reverse items-center">
             <div
                 class="lg:flex-grow md:w-1/2 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h1 class="title-font sm:text-6xl text-4xl mb-4 font-medium text-gray-900">Introducing
                     <br class="hidden lg:inline-block">Schoollog Tablet
                 </h1>
-                <p class="mb-8 leading-relaxed text-1xl md:text-2xl">Schoollog Tablet powered by Samsung gives you <br>peace of mind, while your student is keeping pace <br>with online learning</p>
+                <p class="mb-8 leading-relaxed text-1xl md:text-2xl">Schoollog Tablet Samsung gives you <br>peace of mind, while your student is keeping pace <br>with online learning</p>
                 <div class="flex justify-center">
                     <button
+                        onclick="document.getElementById('register-section').scrollIntoView()"
                         class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Now</button>
                 </div>
             </div>
@@ -116,8 +119,13 @@
             </div>
         </div>
     </section>
-    <div class="flex flex-col text-center w-full mb-5">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Are you Facing These issues ?</h1>
+    <a href="#facing-issues">
+        <div class="scroll-arrow"> 
+            <span></span>
+        </div>
+    </a>
+    <div class="flex flex-col text-center w-full mb-5 pt-20" id="facing-issues">
+        <h1 class="sm:text-3xl text-1xl font-medium title-font mb-4 text-gray-900">Are you Facing These issues ?</h1>
     </div>
     <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 pt-10 mx-auto flex flex-wrap sm:flex-no-wrap">
@@ -181,15 +189,20 @@
                         </svg>
                     </div>
                     <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl sm:text-left text-center">Want Controle ?</h2>
+                        <h2 class="font-medium title-font text-gray-900 mb-1 text-xl sm:text-left text-center">Want Control ?</h2>
                         <p class="leading-relaxed text-center sm:text-left ">Do you want to track and Record Student's Learning Behaviour?</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="flex flex-col text-center w-full mb-5" id="about-section">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">DON'T WORRY !</h1>
+    <a href="#about-section">
+        <div class="scroll-arrow"> 
+            <span></span>
+        </div>
+    </a>
+    <div class="flex flex-col text-center w-full mb-5 pt-24" id="about-section">
+        <h1 class="sm:text-3xl text-1xl font-medium title-font mb-4 text-gray-900">DON'T WORRY !</h1>
         <p class="text-gray-700 mx-auto leading-relaxed mb-1"> Your School Has Tied-Up with Schoollog to Solve all these
             issues </p>
     </div>
@@ -233,8 +246,7 @@
                             <h2 class="text-gray-900 text-lg title-font font-medium">Full Controle</h2>
                         </div>
                         <div class="flex-grow">
-                            <p class="leading-relaxed text-base">Controle everything from what website the student can
-                                access all the way to what Applications he or she can install on the device.</p>
+                            <p class="leading-relaxed text-base">Control everything, the website student can access or the application he installes on the device</p>
                         </div>
                     </div>
                 </div>
@@ -252,9 +264,7 @@
                             <h2 class="text-gray-900 text-lg title-font font-medium">No Mischievous Activities</h2>
                         </div>
                         <div class="flex-grow">
-                            <p class="leading-relaxed text-base"> Parents can be assured whether or not the student is
-                                Studying with Pre-Whitlisted website that the sudent can Surf and Pre Installed Apps by
-                                the School. </p>
+                            <p class="leading-relaxed text-base"> Parents can be assured that the student is away from mischievous activities. </p>
                         </div>
                     </div>
                 </div>
@@ -326,10 +336,14 @@
             </div>
         </div>
     </section>
-    <div class="flex flex-col text-center w-full mb-12" id="product-section">
+    <a href="#product-section">
+        <div class="scroll-arrow"> 
+            <span></span>
+        </div>
+    </a>
+    <div class="flex flex-col text-center w-full mb-12 pt-24" id="product-section">
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Choose What You Need</h1>
     </div>
-
     <section class="comparision-section">
         <div class="comparision">
             <div class="feature-values">
@@ -364,11 +378,13 @@
             </div>
         </div>
     </section>
-    
+    <p class="text-center text-gray-500 mx-auto leading-relaxed mb-1 mob-swipe-text">Swipe</p>
 
-    <section>
-
-    </section>
+    <a href="#register-section">
+        <div class="scroll-arrow"> 
+            <span></span>
+        </div>
+    </a>
 
 
     <section class="text-gray-700 body-font relative" id="register-section">
@@ -382,12 +398,15 @@
 
                 </div>
                 <form id="reg-form">
+                    <div class="form-progress">
+                        <span id="form-state">Form Stats</span>
+                    </div>
                     <div class="flex flex-wrap -m-2">
-                        <div class="p-2 w-1/2">
+                        <div class="p-2 w-full md:w-1/2">
                             <input class="w-full bg-gray-100 rounded border-2 border-indigo-200 focus:outline-none focus:border-indigo-600 text-base px-4 py-2"
                                 placeholder="Student's Name *" type="text" required name="Student's Name">
                         </div>
-                        <div class="p-2 w-1/2">
+                        <div class="p-2 w-full md:w-1/2">
                             <input class="w-full bg-gray-100 rounded border-2 border-indigo-200 focus:outline-none focus:border-indigo-600 text-base px-4 py-2"
                                 placeholder="Class Studying *" type="text" required name="Class">
                         </div>
@@ -511,7 +530,8 @@
     <footer class="text-gray-700 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <img src="static/media/schoollog_logo.png" alt="Company Logo" style="max-width: 70%;">
+            <img src="static/media/schoollog_logo.png" alt="Company Logo" style="max-width: 70%;opacity: 0.5;filter: grayscale(1) contrast(0.5) brightness(0.5);">
+
 
           </a>
           <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Schoollog —
