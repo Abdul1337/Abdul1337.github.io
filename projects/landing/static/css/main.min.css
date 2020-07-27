@@ -165,9 +165,18 @@ body {
 
 @media only screen and (max-width:37.5em) {
     .heading--mega {
-        font-size: 2.4rem;
-        font-weight: 700;
-        line-height: 3.2rem
+        font-size: 3.2rem;
+        font-weight: bold;
+        line-height: 3.2rem;
+    }
+    .features__header--content{
+        padding: 0 !important;
+    }
+    .stats-section{
+        padding: 5rem 0.2rem !important;
+    }
+    .pricing-table-wrapper{
+        max-width: 75vw !important;
     }
 }
 
