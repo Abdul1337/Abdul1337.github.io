@@ -14,7 +14,7 @@
         <meta property="og:site_name" content="TECHTALISMAN"/>
         <meta property="og:locale" content="en_US" />
 
-        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="static/media/favicon.ico">
 
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
         <link defer href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
@@ -30,10 +30,8 @@
                 <div>
                     <div class="blueStrip"></div>
                     <div class="navigation">
-                        <div class="navigation__logo"><a href="/"><img src="static/media/schoollog_logo.png"
-                                    alt="techtalisman" class="navigation__logo--img"></a></div>
-                        <div class="navigation__book"><a href="http://saynotoschoolfeewaiver.com/" target="_blank"><button
-                                    class="btn--bookADemo btn">Pricing</button></a></div>
+                        <div class="navigation__logo"><a href="/"><img src="static/media/schoollog_logo.png" alt="techtalisman" class="navigation__logo--img"></a></div>
+                    <div class="navigation__book"><button class="btn--bookADemo btn" onclick="changeUrl('plans')">Plans</button></div>
                     </div>
                 </div>
                 <div class="super-container">
@@ -89,7 +87,7 @@
                             
                         </div>
                     </div> -->
-                    <div class="Reach">
+                    <!-- <div class="Reach">
                         <div class="Reach__content grid--5">
                             <div class="Reach__content--item">
                                 <div class="Reach__content--item--heading heading--mega">1000+ Schools</div>
@@ -101,47 +99,102 @@
                                 <div class="Reach__content--item--heading heading--mega">100K+ App Users </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="stats-section grid--4">
+                    <div class="stats-section grid--3">
+                        <div class="stat-item-wrapper">
                         <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
+                            <div class="stats-icon">
+                                <img src="static/media/stats/schools.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">1000+</div>
+                                <div class="stat_name">Schools</div>
+                            </div>
                         </div>
-                        <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
                         </div>
+                        <div class="stat-item-wrapper">
                         <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
+                            <div class="stats-icon">
+                                <img src="static/media/stats/cities.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">50+</div>
+                                <div class="stat_name">Cities</div>
+                            </div>
                         </div>
-                        <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
                         </div>
+                        <div class="stat-item-wrapper">
                         <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
+                            <div class="stats-icon">
+                                <img src="static/media/stats/students.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">0.8 Million</div>
+                                <div class="stat_name">Students</div>
+                            </div>
                         </div>
-                        <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
                         </div>
+                        <div class="stat-item-wrapper">
                         <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
+                            <div class="stats-icon">
+                                <img src="static/media/stats/parents.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">1.5 Million</div>
+                                <div class="stat_name">Parents</div>
+                            </div>
                         </div>
+                        </div>
+                        <div class="stat-item-wrapper">
                         <div class="stats-item">
-                            <div class="stats-heading">Stats</div>
-                            <div class="stats-text">This is Stat</div>
+                            <div class="stats-icon">
+                                <img src="static/media/stats/years.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">4</div>
+                                <div class="stat_name">Years</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="stat-item-wrapper">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <img src="static/media/stats/team.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">50+</div>
+                                <div class="stat_name">Team</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="stat-item-wrapper">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <img src="static/media/stats/iitiens.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">Founded By</div>
+                                <div class="stat_name">IITIANS</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="stat-item-wrapper">
+                        <div class="stats-item">
+                            <div class="stats-icon">
+                                <img src="static/media/stats/version.png" alt="">
+                            </div>
+                            <div class="stats-text">
+                                <div class="stat_value">4 ERP</div>
+                                <div class="stat_name">Versions</div>
+                            </div>
+                        </div>
                         </div>
                     </div>
 
                     <div class="features" id="products">
                         <div class="features__header">
-                            <div class="features__header--heading heading--mega">Our Products Empower Schools to get
-                                digital, improve processes and learning</div>
+                            <div class="features__header--heading heading--mega">Schoollog Products</div>
                             <div class="features__header--content p--medium colored--text">Our products affirms our belief
                                 in our vision of providing a level playing field for all educational institutions may they
                                 be Urban or Rural
@@ -151,7 +204,7 @@
                             <div class="slick-feature">
                                 <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
                                     <div class="Carousel__pic">
-                                        <img src="static/media/product-lms.png" alt="Carousel Mega"
+                                        <img src="static/media/product__lms.png" alt="Carousel Mega"
                                             class="Carousel__pic--img">
                                     </div>
                                     <div class="Carousel__content">
@@ -174,7 +227,7 @@
                                 </div>
                                 <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
                                     <div class="Carousel__pic">
-                                        <img src="static/media/product-erp.png" alt="Carousel Mega"
+                                        <img src="static/media/product__erp.png" alt="Carousel Mega"
                                             class="Carousel__pic--img">
                                     </div>
                                     <div class="Carousel__content">
@@ -197,7 +250,7 @@
                                 </div>
                                 <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
                                     <div class="Carousel__pic">
-                                        <img src="static/media/product-assmnt.png" alt="Carousel Mega"
+                                        <img src="static/media/product__assmnt.png" alt="Carousel Mega"
                                             class="Carousel__pic--img">
                                     </div>
                                     <div class="Carousel__content">
@@ -220,7 +273,7 @@
                                 </div>
                                 <div class="Carousel grid--2" tabindex="-1" style="width: 100%; display: inline-block;">
                                     <div class="Carousel__pic">
-                                        <img src="static/media/product-iot.png" alt="Carousel Mega"
+                                        <img src="static/media/product__iot.png" alt="Carousel Mega"
                                             class="Carousel__pic--img">
                                     </div>
                                     <div class="Carousel__content">
@@ -245,6 +298,74 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="pricing-table-wrapper" id="plans">
+                        <div class="features__header">
+                            <div class="features__header--heading heading--mega">Your Plan, Your Choice</div>
+                            <div class="features__header--content p--medium colored--text">Choose the Plan That best suits your Institute</div>
+                        </div>
+                        <ul class="pricing-table">
+                          <li class="pricing-table__item">
+                            <img src="static/media/plan1.png" alt="" class="pricing-table__img" />
+                            <h3 class="pricing-table__title">Standard</h3>
+                            <p class="pricing-table__description">
+                              <span class="pricing-table__tagline">Best for Schools</span>
+                              <!-- <span class="pricing-table__price">800</span>
+                              <span class="pricing-table__label">900 is the real price</span>
+                              <span class="pricing-table__save">You save 100</span> -->
+                            </p>
+                            <ul class="pricing-table__products">
+                              <li class="pricing-table__product"><a href="">Schoollog Powered App</a></li>
+                              <li class="pricing-table__product"><a href="">CMS Ready Website</a></li>
+                              <li class="pricing-table__product"><a href="">Parent App, Teacher App</a></li>
+                              <li class="pricing-table__product"><a href="">24*7 Online Support</a></li>
+                            </ul>
+                            <!-- <a href="https://mojtabaseyedi.com" class="pricing-table__button">continue</a> -->
+                          </li>
+                          <li class="pricing-table__item pricing-table__item--popular" data-popular="Popular">
+                            <img src="static/media/plan2.png" alt="" class="pricing-table__img" />
+                            <h3 class="pricing-table__title">Premium</h3>
+                            <p class="pricing-table__description">
+                              <span class="pricing-table__tagline">Best for Coaching</span>
+                              <!-- <span class="pricing-table__price">800</span>
+                              <span class="pricing-table__label">900 is the real price</span>
+                              <span class="pricing-table__save">You save 100</span> -->
+                            </p>
+                            <ul class="pricing-table__products">
+                              <li class="pricing-table__product"><a href="">All of Standard +</a></li>
+                              <li class="pricing-table__product"><a href="">School Branded Apps</a></li>
+                              <li class="pricing-table__product"><a href="">Admin, Principal, Director Apps</a></li>
+                              <li class="pricing-table__product"><a href="">Alexa Integration</a></li>
+                            </ul>
+                            <!-- <a href="https://mojtabaseyedi.com" class="pricing-table__button">continue</a> -->
+                          </li>
+                          <li class="pricing-table__item">
+                            <img src="static/media/plan3.png" alt="" class="pricing-table__img" />
+                            <h3 class="pricing-table__title">Enterprise</h3>
+                            <p class="pricing-table__description">
+                              <span class="pricing-table__tagline">Best for Institutes</span>
+                              <!-- <span class="pricing-table__price">800</span>
+                              <span class="pricing-table__label">900 is the real price</span>
+                              <span class="pricing-table__save">You save 100</span> -->
+                            </p>
+                            <ul class="pricing-table__products">
+                              <li class="pricing-table__product"><a href="">All of Premium +</a></li>
+                              <li class="pricing-table__product"><a href="">Advanced Premium Features</a></li>
+                              <li class="pricing-table__product"><a href="">Voice SMS Integration</a></li>
+                              <li class="pricing-table__product"><a href="">Biometric Integration</a></li>
+                            </ul>
+                            <!-- <a href="https://mojtabaseyedi.com" class="pricing-table__button">continue</a> -->
+                          </li>
+                        </ul>
+                      </div>
+
+
+
+
+
+
+
+
                     <div class="Institutes">
                         <div class="Institutes--text">
                             <div class="Institutes--heading heading--mega">Our Esteemed Clients
@@ -424,7 +545,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="News">
+                    <!-- <div class="News">
                         <div class="News__header">
                             <div class="News__header--heading heading--mega">Techtalisman in the media</div>
                             <div class="News__header--content p--medium colored--text">Our vision has inspired
@@ -453,7 +574,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="Team" id="team">
                         <div class="News__header">
                             <div class="News__header--heading heading--mega">Our Team</div>
@@ -462,7 +583,7 @@
                             <div class="team-member">
                                 <div class="our-team">
                                     <div class="picture">
-                                        <img class="img-fluid" src="static/media/team_01.jpg">
+                                        <img class="img-fluid" src="static/media/team_01.jpg" alt="team-member" >
                                     </div>
                                     <div class="team-content">
                                         <h3 class="name">Abhishek Singh</h3>
@@ -470,19 +591,19 @@
                                     </div>
                                     <ul class="social">
                                         <li>
-                                            <a href="https://www.facebook.com/AbhiSchoollog" target="_blank"
+                                            <a href="https://www.facebook.com/AbhiSchoollog" target="_blank" rel="noopener"
                                                 aria-hidden="true">
                                                 <img src="static/media/social-fb.svg" alt="fb">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.linkedin.com/in/abhischoollog/" target="_blank"
+                                            <a href="https://www.linkedin.com/in/abhischoollog/" target="_blank" rel="noopener"
                                                 aria-hidden="true">
                                                 <img src="static/media/social-linkedin.svg" alt="In">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:caretechcaster@gmail.com" target="_blank" aria-hidden="true">
+                                            <a href="mailto:caretechcaster@gmail.com" target="_blank" rel="noopener" aria-hidden="true">
                                                 <img src="static/media/social-email.svg" alt="mail">
                                             </a>
                                         </li>
@@ -492,7 +613,7 @@
                             <div class="team-member">
                                 <div class="our-team">
                                     <div class="picture">
-                                        <img class="img-fluid" src="static/media/team_03.jpg">
+                                        <img class="img-fluid" src="static/media/team_03.jpg" alt="team-member" >
                                     </div>
                                     <div class="team-content">
                                         <h3 class="name">Mohit Jasapara</h3>
@@ -500,19 +621,19 @@
                                     </div>
                                     <ul class="social">
                                         <li>
-                                            <a href="https://www.facebook.com/mohit.jasapara" target="_blank"
+                                            <a href="https://www.facebook.com/mohit.jasapara" target="_blank" rel="noopener"
                                                 aria-hidden="true">
                                                 <img src="static/media/social-fb.svg" alt="fb">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.linkedin.com/in/mohitjasapara/" target="_blank"
+                                            <a href="https://www.linkedin.com/in/mohitjasapara/" target="_blank" rel="noopener"
                                                 aria-hidden="true">
                                                 <img src="static/media/social-linkedin.svg" alt="In">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:mohit@techtalisman.com" target="_blank" aria-hidden="true">
+                                            <a href="mailto:mohit@techtalisman.com" target="_blank" rel="noopener" aria-hidden="true">
                                                 <img src="static/media/social-email.svg" alt="mail">
                                             </a>
                                         </li>
@@ -522,7 +643,7 @@
                             <div class="team-member">
                                 <div class="our-team">
                                     <div class="picture">
-                                        <img class="img-fluid" src="static/media/team_02.jpg">
+                                        <img class="img-fluid" src="static/media/team_02.jpg" alt="team-member" >
                                     </div>
                                     <div class="team-content">
                                         <h3 class="name">Manoj Kumar</h3>
@@ -531,18 +652,18 @@
                                     <ul class="social">
                                         <li>
                                             <a href="https://www.facebook.com/profile.php?id=100002483895615"
-                                                target="_blank" aria-hidden="true">
+                                                target="_blank" rel="noopener" aria-hidden="true">
                                                 <img src="static/media/social-fb.svg" alt="fb">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.linkedin.com/in/schoollog-manoj/" target="_blank"
+                                            <a href="https://www.linkedin.com/in/schoollog-manoj/" target="_blank" rel="noopener"
                                                 aria-hidden="true">
                                                 <img src="static/media/social-linkedin.svg" alt="In">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="mailto:manoj@techtalisman.com" target="_blank" aria-hidden="true">
+                                            <a href="mailto:manoj@techtalisman.com" target="_blank" rel="noopener" aria-hidden="true">
                                                 <img src="static/media/social-email.svg" alt="mail">
                                             </a>
                                         </li>
@@ -550,14 +671,110 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--  -->
+                        <div class=" team-member-list grid--4">
+                            
+                            <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_04.jfif" alt="team-member" >
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Harish Jangra</h3>
+                                        <h4 class="title">Software Architect</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/Harish0212" target="_blank" rel="noopener"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="linkedin.com/in/harish-jangra-224bb2b8" target="_blank" rel="noopener"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:caretechcaster@gmail.com" target="_blank" rel="noopener" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div></div> -->
+                            <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_05.jpeg" alt="team-member" >
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Rhythm Garg</h3>
+                                        <h4 class="title">Head of Backend Dev.</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <!-- <li>
+                                            <a href="https://www.facebook.com/mohit.jasapara" target="_blank" rel="noopener"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li> -->
+                                        <li>
+                                            <a href="linkedin.com/in/rhgarg" target="_blank" rel="noopener"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:rhythmgarg18@gmail.com" target="_blank" rel="noopener" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="team-member">
+                                <div class="our-team">
+                                    <div class="picture">
+                                        <img class="img-fluid" src="static/media/team_02.jpg" alt="team-member" >
+                                    </div>
+                                    <div class="team-content">
+                                        <h3 class="name">Manoj Kumar</h3>
+                                        <h4 class="title">Co-Founder</h4>
+                                    </div>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="https://www.facebook.com/profile.php?id=100002483895615"
+                                                target="_blank" rel="noopener" aria-hidden="true">
+                                                <img src="static/media/social-fb.svg" alt="fb">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/schoollog-manoj/" target="_blank" rel="noopener"
+                                                aria-hidden="true">
+                                                <img src="static/media/social-linkedin.svg" alt="In">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:manoj@techtalisman.com" target="_blank" rel="noopener" aria-hidden="true">
+                                                <img src="static/media/social-email.svg" alt="mail">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="Footer">
                 <div class="footer-content grid--4">
                     <div class="footer-item">
-                        <div class="cmp-name p--medium">TECHTALISMAN</div>
-                        <div class="cmp-moto p--small">One Stop Solution for Schools and Institutes</div>
+                        <div class="cmp-name p--medium">SCHOOLLOG</div>
+                        <div class="cmp-moto p--small">A venture of Techtalisman Engg. Pvt. Ltd.</div>
                         <div class="social-links">
                             <div class="social-item">
                                 <a href="https://facebook.com/schoollog" target="_blank">
@@ -669,8 +886,8 @@
                 </div>
             </a>
             <script src="static/js/main.min.js"></script>
-            <script src="static/js/youtube-vid.js"></script>
-            <script>
+            <!-- <script src="static/js/youtube-vid.js"></script> -->
+            <!-- <script>
                 window.addEventListener('scroll', (e) => showBTT(e));
                 function showBTT(e){
                     varbtt = document.getElementById("btt-btn");
@@ -683,7 +900,7 @@
                         btt.style.opacity = "0"
                     }
                 }
-            </script>
+            </script> -->
             <script>
                 document.getElementById("EnquiryPopup").addEventListener('click', showEnquiryPopUp);
                 document.getElementById("enquiry-popup-close-btn").addEventListener('click', hideEnquiryPopUp);
@@ -708,3 +925,31 @@
         </div>
     </body>
 </html>
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
