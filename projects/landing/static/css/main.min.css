@@ -2069,9 +2069,15 @@ body {
 
 @media only screen and (max-width: 37.5em){
     .pricing-table__item{
-        margin: 2rem !important;
+        margin: 3rem !important;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.09) !important;
+
     }
     .our-team{
         margin: 2rem auto !important;
+    }
+    .pricing-table-wrapper {
+        max-width: 100vw !important;
+        padding: 10rem 3rem !important;
     }
 }
