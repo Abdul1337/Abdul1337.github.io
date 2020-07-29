@@ -865,7 +865,7 @@ button {
 .form_success{
     max-width: 40rem;
     height: fit-content;
-    margin: auto 0;
+    margin: auto;
     padding: 2rem;
     display: flex;
     flex-direction: column;
