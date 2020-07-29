@@ -2069,7 +2069,7 @@ body {
 
 @media only screen and (max-width: 37.5em){
     .pricing-table__item{
-        margin: 3.5rem !important;
+        margin: 2rem !important;
     }
     .our-team{
         margin: 2rem auto !important;
