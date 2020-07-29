@@ -854,7 +854,49 @@ button {
 }
 
 .form__button {
-    margin-top: 2.4rem
+    margin-top: 1.4rem
+}
+
+.form__button--disabled{
+    background-color: grey !important;
+    background-image: none;
+}
+
+.form_success{
+    width: 100%;
+    height: fit-content;
+    margin: auto 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    background-color: white;
+    text-align: center;
+
+
+}
+.success__heading{
+    font-size: 5rem;
+    color: var(--primary-color-1);
+    white-space: nowrap;
+}
+.success__text{
+    font-size: 1.8rem;
+    font-weight: lighter;
+    color: rgb(101, 101, 101);
+    font-family: sans-serif;
+    letter-spacing: 0.04rem;
+    line-height: 3rem;
+}
+
+/* CAPTCHA */
+#html_element{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 @-webkit-keyframes fadeOut {

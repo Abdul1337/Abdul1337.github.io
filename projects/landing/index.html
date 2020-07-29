@@ -23,6 +23,15 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <link  rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <script  type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript">
+            var onloadCallback = function() {
+              grecaptcha.render('html_element', {
+                'sitekey' : '6LeotrcZAAAAAP7oLOQ9XFAC7_G9LboQPApOrwVI',
+                'callback' : verifyCallback,
+
+              });
+            };
+          </script>
     </head>
     <body data-gr-c-s-loaded="true">
         <div id="root">
@@ -36,7 +45,7 @@
                 </div>
                 <div class="super-container">
                     <div class="landing grid--1"
-                        style="background-image: var(--gradient-2); background-position: inherit; width: 100%; background-size: cover;">
+                        style="background-image: var(--gradient-2); background-position: inherit; width: 100%; height:105vh;background-size: cover;">
                         <div class="landing__content" style="width: 85%;">
                             <div class="landing__content--main">
                                 <div>India's First <span style="color: var(--primary-color-1);text-shadow: 0 0 15px rgba(0, 0, 0, 0.455);">AI </span> Powered <br> <span
@@ -57,7 +66,7 @@
                         <!-- <div class="landing__banner-image">
                             <img src="static/media/kids-back.webp" alt="kids">
                         </div> -->
-                        <div class="landing__form">
+                        <div class="landing__form" id="BookFormContainer">
                             <!-- <div class="close-btn" id="enquiry-popup-close-btn"></div> -->
                             <div class="landing__form--header">
                                 <div class="landing__form--header--heading" style="color:var(--primary-color-1);text-align: center;">Apply Now For Free</div>
@@ -68,18 +77,36 @@
                                     <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
                                     <form class="form" id="BookForm">
                                         <input type="hidden" name="Source/Messenger ID" value="Schoollog Landing Website">
-                                        <input type="text" class="form__input" name="Name" placeholder="Your Name *" required="" value="">
-                                        <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number *" required="" value="" maxlength="10" pattern="^[0-9]*$">
-                                        <input type="text" class="form__input" name="Location" placeholder="Your city *" required="" value="">
-                                        <hr style=" width: 5%; border-bottom: 2px solid var(--primary-color-1); margin: 5px auto;" >
-                                        <input type="text" class="form__input" name="Location" placeholder="Your Institute's Name *" required="" value="">
-                                        <input type="text" class="form__input" name="Location" placeholder="Your Designation *" required="" value="">
-                                        <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn"
-                                            style="margin-bottom: 2.4rem;" onclick="alert('Cant\'t use form')" >Submit</button>
+                                        
+                                        <!-- <label for="Name">Name<span style="color: red;" >&nbsp;*</span></label> -->
+                                        <input type="text" class="form__input" name="Name" id="Name"  placeholder="Enter your Name" required="" value="">
+                                        
+                                        <!-- <label for="Contact">Mobile Number<span style="color: red;" >&nbsp;*</span></label> -->
+                                        <input type="tel" class="form__input" name="Contact" id="Contact"  placeholder="Enter your Mobile Number" required="" value="" maxlength="10" pattern="^[0-9]*$">
+                                        
+                                        <!-- <label for="Location">City<span style="color: red;" >&nbsp;*</span></label> -->
+                                        <input type="text" class="form__input" name="Location" id="Location"  placeholder="Enter your city" required="" value="">
+                                        
+                                        <!-- <hr style=" width: 5%; border-bottom: 2px solid var(--primary-color-1); margin: 5px auto;" > -->
+                                        
+                                        <!-- <label for="School Name">School Name<span style="color: red;" >&nbsp;*</span></label> -->
+                                        <input type="text" class="form__input" name="School Name" id="School Name"  placeholder="Enter your Institute's Name" required="" value="">
+                                        
+                                        <!-- <label for="Designation">Designation<span style="color: red;" >&nbsp;*</span></label> -->
+                                        <input type="text" class="form__input" name="Designation" id="Designation"  placeholder="Enter your Designation" required="" value="">
+                                        <div id="html_element" class="form__input"></div>
+                                        <button class="btn btn--bookADemo form__button form__button--disabled" id="form_submit_btn" style="margin-bottom: 2.4rem;" disabled="true" >Submit</button>
                                     </form>
                                     <!-- Multi Step Form -->
                                 </div>
                             </div>
+                        </div>
+                        <div id="formSubmissionSuccess" class="form_success" style="display: none;">
+                            <div class="success__icon">
+                                <img src="./static/media/SVGsuccess.svg" height="140" width="140" alt="Thank You">
+                            </div>
+                            <h1 class="success__heading">Thank You</h1>
+                            <p class="success__text">Your response has been Submitted, Our team will Contact you soon.</p>
                         </div>
                     </div>
                     <!-- <div class="campaign">
@@ -834,12 +861,12 @@
                     <div>
                         <div style="width: 100%;">
                             <div id="form_status" style="font-weight: bold;font-size: medium;">&nbsp;</div>
-                            <form class="form" id="BookForm">
-                                <input type="text" class="form__input" name="Name" placeholder="Your Name *" required=""
+                            <form class="form" id="BookForm2">
+                                <input type="text" class="form__input" name="Name" placeholder="Your Name" required=""
                                     value="">
-                                <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number *"
+                                <input type="tel" class="form__input" name="Contact" placeholder="Your Mobile Number"
                                     required="" value="" maxlength="10" pattern="^[0-9]*$">
-                                <input type="text" class="form__input" name="Location" placeholder="Your city *" required=""
+                                <input type="text" class="form__input" name="Location" placeholder="Your city" required=""
                                     value="">
                                 <input type="hidden" name="Source/Messenger ID" value="Schoollog Landing Website">
                                 <button type="submit" class="btn btn--bookADemo form__button" id="form_submit_btn"
@@ -891,37 +918,32 @@
                     section.scrollIntoView();
                 }
             </script>
-            <script>
-               
-            </script>
+             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"async defer></script>
         </div>
+
+
+
+        <script>
+            function verifyCallback(res){
+                console.log("captcha Response : ",res);
+                if(res.length){
+                    // form = document.getElementById('BookForm').submit();
+                    // alert('Submitted');
+                    sBtn = document.getElementById('form_submit_btn');
+                    sBtn.disabled = false;
+                    sBtn.setAttribute('type','submit');
+                    sBtn.classList.remove('form__button--disabled');
+    
+                }else{
+                    alert('Invailid Captcha, Please try again!');
+                }
+            }
+            // formToJSON = t => [].reduce.call(t, (t, e) => (t[e.name] = e.value, t), {}),
+            // document.getElementById('form_submit_btn').addEventListener('click',(e)=>{
+            //     e.preventDefault();
+            //     // document.getElementById('html_element').style.display = 'block';
+            // })
+        </script>
+
     </body>
 </html>
-
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
