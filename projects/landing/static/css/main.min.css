@@ -863,7 +863,7 @@ button {
 }
 
 .form_success{
-    width: 100%;
+    max-width: 40rem;
     height: fit-content;
     margin: auto 0;
     padding: 2rem;
