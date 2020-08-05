@@ -2108,6 +2108,33 @@ body {
 	background-color: #4cae4f;
 } */
 
+.plans__swipe-txt{
+    display: none;
+    text-align: center;
+    color: rgb(138, 138, 138);
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    font-size: small;
+    line-height: 2rem;
+
+}
+
+.plans__swipe-txt::before,
+.plans__swipe-txt::after{
+    color: var(--primary-color-1);
+    font-weight: bolder;
+    line-height: 2rem;
+}
+
+.plans__swipe-txt::before{
+    content: '<<<  ';
+    color: var(--primary-color-1);
+}
+.plans__swipe-txt::after{
+    content: '  >>>';
+
+}
+
 
 @media only screen and (max-width: 37.5em){
     .pricing-table__item{
@@ -2122,4 +2149,9 @@ body {
         max-width: 100vw !important;
         padding: 10rem 3rem !important;
     }
+    .plans__swipe-txt{
+        display: block;
+        white-space: nowrap;
+    }
 }
+
