@@ -406,7 +406,6 @@ a {
     transition: all .3s ease-in
 }
 
-
 .btn--bookADemo {
     padding: 1.6rem 3.4rem;
     font-size: 1.6rem;
@@ -836,7 +835,7 @@ button {
     border-radius: 4px;
     font-size: 1.6rem;
     padding: 1.4rem 1.6rem;
-    color: #999
+    color: #333
 }
 
 .form__input--2 {
@@ -1353,8 +1352,6 @@ button {
     }
 }
 
-
-
 .feature-name {
     font-size: 1.5rem
 }
@@ -1585,21 +1582,21 @@ button {
 }
 
 .our-team {
-    padding: 30px 0 70px;
+    padding: 30px 0 40px;
     margin-bottom: 30px;
     background-color: #fff;
     text-align: center;
     overflow: hidden;
     position: relative;
-    width: 70%;
+    width: 60%;
     border-radius: 12px;
-    box-shadow: 0 0 14px rgba(0, 0, 0, .149);
+    box-shadow: 0 0 14px rgba(0, 0, 0, .149)
 }
 
 .our-team .picture {
     display: inline-block;
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
     margin-bottom: 50px;
     z-index: 1;
     position: relative
@@ -1648,17 +1645,11 @@ button {
     box-shadow: 0 0 0 14px #f7f5ec;
     transform: scale(.7)
 }
-.our-team .name {
-    display: block;
-    font-size: 1.7rem;
-    color: var(--primary-color-1);
-    text-transform: capitalize
-}
 
 .our-team .title {
     display: block;
-    font-size: 1.3rem;
-    color: #4e5052ad;
+    font-size: 15px;
+    color: #000;
     text-transform: capitalize
 }
 

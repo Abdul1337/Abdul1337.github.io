@@ -374,6 +374,9 @@ body {
     }
 }
 
+
+
+
 .link {
     padding: 1rem 3rem;
     text-decoration: none;
@@ -1083,7 +1086,7 @@ button {
     border-radius: 4px;
     font-size: 1.6rem;
     padding: 1.4rem 1.6rem;
-    color: #999
+    color: #333
 }
 
 .form__input--2 {
@@ -2595,7 +2598,7 @@ button {
 .our-team .title {
     display: block;
     font-size: 15px;
-    color: #4e5052;
+    color: #000;
     text-transform: capitalize;
 }
 
