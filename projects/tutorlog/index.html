@@ -20,10 +20,11 @@
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap">
     <!-- <link defer href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"> -->
     <title>Schoollog | Tutorlog</title>
+    <link href="static/css/sementic.css" rel="stylesheet">
     <link href="static/css/main.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
     <!-- <script type="text/javascript">
             var onloadCallback = function() {
               grecaptcha.render('html_element', {
@@ -1175,13 +1176,15 @@
             </div>
         </a>
         <script>
-            console.log(window);
+            // console.log(window);
             // let navBar = document.getElementById('header_navbar');
             document.getElementById('root').addEventListener('scroll', function (e) {
                 console.log("scroll", e);
             });
         </script>
-        <script src="static/js/main.min.js"></script>
+        <script>(function () {"use strict";var jQueryPlugin = (window.jQueryPlugin = function (ident, func) {return function (arg) {if (this.length > 1) {this.each(function () {var $this = $(this);if (!$this.data(ident)) {$this.data(ident, func($this, arg));}});return this;} else if (this.length === 1) {if (!this.data(ident)) {this.data(ident, func(this, arg));}return this.data(ident);}};});})();(function () {"use strict";function Accordion($roots) {var element = $roots;var accordion = $roots.first("[data-accordion]");var accordion_target = $roots.find("[data-accordion-item]");var accordion_content = $roots.find("[data-accordion-content]");$(accordion_target).click(function () {$(this).toggleClass("opened");$(this).find(accordion_content).slideToggle("slow");$(this).siblings().find(accordion_content).slideUp("slow");$(this).siblings().removeClass("opened");});}$.fn.Accordion = jQueryPlugin("Accordion", Accordion);$("[data-accordion]").Accordion();function Ripple_Button($root) {var elements = $root;var ripple_btn = $root.first("[data-ripple]");$(ripple_btn).on("click", function (event) {event.preventDefault();var $div = $("<div/>"),btnOffset = ripple_btn.offset(),xPos = event.pageX - btnOffset.left,yPos = event.pageY - btnOffset.top;$div.addClass("ripple-effect");$div.css({height: ripple_btn.height(),width: ripple_btn.height(),top: yPos - $div.height() / 2,left: xPos - $div.width() / 2,background: ripple_btn.data("ripple") || "#ffffff26"});ripple_btn.append($div);window.setTimeout(function () {$div.remove();}, 2000);});}$.fn.Ripple_Button = jQueryPlugin("Ripple_Button", Ripple_Button);$("[data-ripple]").Ripple_Button();})();</script>
+
+        <!-- <script src="static/js/main.min.js"></script> -->
         <!-- <script src="static/js/youtube-vid.js"></script> -->
         <!-- <script>
                 window.addEventListener('scroll', (e) => showBTT(e));
