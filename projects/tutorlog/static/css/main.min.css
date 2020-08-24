@@ -1875,6 +1875,7 @@ button {
 
 .Footer {
     position: relative;
+    background-color: white;
     background-image: url(../media/footer_bg.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -2306,7 +2307,7 @@ body {
 
 .hero {
     background-color: rgb(227, 238, 252);
-    background-image: url("../media/hero__background_image.jpg");
+    background-image: url("../media/hero__background_image.webp");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100vh;
@@ -2615,7 +2616,9 @@ body {
 
 
 
+
 .premium__clients {
+    background-color: white;
     padding: 5rem 0;
 }
 
