@@ -4,10 +4,6 @@
     --gradient-whatsapp: linear-gradient(to right, #11998e, #38ef7d);
     --primary-color-1: #92cf34;
     --primary-color-2: #007497;
-    background: #000046;
-    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
-    background: linear-gradient(to right, #1CB5E0, #000046);
-
 }
 
 
@@ -2311,8 +2307,9 @@ body {
     background-color: rgb(227, 238, 252);
     background-image: url("../media/hero__background_image.webp");
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: 100% 0%;
     background-size: auto 100vh;
+    height: 100vh;
 }
 
 .hero-container {
@@ -2338,9 +2335,10 @@ body {
 }
 
 .hero-header {
-    font-size: 47.25px;
+    font-size: 35.25px;
     margin-bottom: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    line-height: 1.15;
 }
 
 .hero-subheader {
@@ -2560,10 +2558,10 @@ body {
     color: rgb(99, 99, 99);
     
 }
-
+/* 
 .aks-accordion-item-content > h2{
     font-size : 1.5rem;
-}
+} */
 
 .aks-accordion-item.opened .aks-accordion-item-icon-open {
     display: none;
