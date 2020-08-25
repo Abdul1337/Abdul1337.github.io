@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  
+        <div class="instruction_overlay" id="overlay">
+
+            <h1>HYPNOO</h1>
+            <h2>Don't Move the Mouse away</h2>
+            <p>Hit Start and Relax</p>
+
+            <button onclick="document.getElementById('overlay').style.display = 'none';requestFullScreen(document.body)" >Start</button>
+        </div>
+
         <div class="container">
             <div class="box1">
 
@@ -49,6 +58,19 @@ var makeSpiralPoints = function(origin, revolutions, pointCount, clockwise, padd
 }
 
 path.setAttribute('d', makeSpiralPoints({x:75,y:75},20, 2048, false, 4));
+function requestFullScreen(element) {
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
         </script>
 </body>
 </html>

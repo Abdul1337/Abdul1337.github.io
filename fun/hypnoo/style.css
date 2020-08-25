@@ -5,6 +5,26 @@ html,body{
     background-color: #000;
     
 }
+.instruction_overlay{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2rem;
+    color: white;
+    font-weight: bolder;
+}
+
+.instruction_overlay button{
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    padding: 0.5rem 1.5rem;
+}
+
 
 .container{
     height: 100vh;
