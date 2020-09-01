@@ -1870,6 +1870,10 @@ button {
 .our-team .social li a:hover>img {
     box-shadow: 0 0 30px #fff
 }
+.content-wrapper {
+    background-color: #fff !important;
+    z-index: 99
+}
 
 .Footer {
     position: relative;
@@ -1904,10 +1908,6 @@ button {
     color: rgba(0, 0, 0, .591)
 }
 
-.content-wrapper {
-    background-color: #fff !important;
-    z-index: 99
-}
 
 .footer-content {
     width: 100%;
@@ -2019,6 +2019,9 @@ button {
         color: rgba(0, 0, 0, .591)
     }
 }
+
+
+
 
 .stats-section {
     padding: 10rem 5rem;
