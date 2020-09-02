@@ -143,3 +143,48 @@ window.addEventListener('resize', ()=>{
     console.log(window.innerWidth);
 })
 
+
+// Form Submission
+var url = "https://script.google.com/macros/s/AKfycbxWQfbWKf9QyROa6SBHsxXvn5_YFSiu-h9n7ssPhB6IpWC6stqv/exec";
+// $.ajaxSetup({
+//     async: !0
+// })
+function resetForm(t) {
+    // console.log("t",t);
+    for (i in t){t[i].value = ""}
+}
+
+const handleReffFormSubmit = t => {
+    t.preventDefault();
+    // console.log("Data : ",e)
+    const e = formToJSON(reff.elements);
+    console.log('Form Data : ', e);
+    if(window.localStorage.getItem('FormSubmitted')){
+        alert('Your Response has already been submitted!');
+    }else{
+        $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: e,
+            error: function () {
+                alert('Error')
+            },
+            success: function () {
+                window.localStorage.setItem('FormSubmitted', 'submitted');
+                let status = document.querySelector('.form--error>p');
+                // status.style.color = '#fff';
+                document.querySelector('.contact_form--container').style.opacity = 1;
+                alert('Thank You!');
+            }
+        });    
+    }
+    resetForm(reff);
+
+    return false;
+}
+
+formToJSON = t => [].reduce.call(t, (t, e) => (t[e.name] = e.value, t), {}),
+
+reff = document.getElementById("contactForm");
+reff.addEventListener("submit", handleReffFormSubmit);

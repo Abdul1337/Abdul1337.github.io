@@ -28,7 +28,7 @@
 </head>
 <body>
     
-    <div class="root" id="root">
+    <div class="root" id="home">
         <div class="container">
             <div class="header">
                 <nav class="" id="navBar">
@@ -38,16 +38,16 @@
                     <div class="navigation">
                         <ul>
                             <li class="nav__item" >
-                                <a href="#">Home</a>
+                                <a href="#home">Home</a>
                             </li>
                             <li class="nav__item" >
-                                <a href="#">How it Works?</a>
+                                <a href="#how-it-works?">Why Us?</a>
                             </li>
                             <li class="nav__item" >
-                                <a href="#">Features</a>
+                                <a href="#features">Features</a>
                             </li>
                             <li class="nav__item" >
-                                <a href="#">Our Clients</a>
+                                <a href="#our-clients">Our Clients</a>
                             </li>
                             <li class="nav__item nav__cta" >
                                 <a href="#">Contact</a>
@@ -55,20 +55,20 @@
                         </ul>
                     </div>
                 </nav>
-                <span class="dropdown__toggle" id="dropToggle" style=""></span>
+                <span class="dropdown__toggle" id="dropToggle" ></span>
                 <div class="dropdown__menu" id="dropdown" style="display: none;transform: translateY(-100%);">
                     <ul>
                         <li class="nav__item" >
-                            <a href="#">Home</a>
+                            <a href="#home">Home</a>
                         </li>
                         <li class="nav__item" >
-                            <a href="#">How it Works?</a>
+                            <a href="#how-it-works?">Why Us?</a>
                         </li>
                         <li class="nav__item" >
-                            <a href="#">Features</a>
+                            <a href="#features">Features</a>
                         </li>
                         <li class="nav__item" >
-                            <a href="#">Our Clients</a>
+                            <a href="#our-clients">Our Clients</a>
                         </li>
                         <li class="nav__item nav__cta" >
                             <a href="#">Contact</a>
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="section__title">
+            <div class="section__title" id="section--1">
                 <div class="title">
                     <h2 class="text-big">Meet our numbers</h2>
                 </div>
@@ -181,7 +181,7 @@
             </section>
           
 
-            <section class="features__section">
+            <section class="features__section" id="how-it-works?">
                 <div class="section__title">
                     <div class="title">
                         <h2 class="text-big">Why we are The Best in Market ?</h2>
@@ -233,7 +233,7 @@
             </section>
 
 
-            <section class="detailed_feature__section">
+            <section class="detailed_feature__section" id="features">
                 <div class="section__title">
                     <div class="title">
                         <h2 class="text-big">Our Top Features</h2>
@@ -438,7 +438,7 @@
                 </div>
             </section>
 
-            <section class="testiomonials__section">
+            <section class="testiomonials__section" id="testimonials">
                 <div class="testiomonials__section--title">
                     <h1>Testimonials</h1>
                     <div class="sliderControles">
@@ -521,7 +521,7 @@
                     </div>
                 </div>
             </section>
-            <section class="esteemed_clients__section">
+            <section class="esteemed_clients__section" id="our-clients">
                      
                 <div class="section__title">
                     <div class="title">
@@ -566,8 +566,48 @@
                         </div>
                     </div>
                 </div>
-
             </section>
+
+            <section class="contact--section">
+                <div class="section__title">
+                    <div class="title">
+                        <h2 class="text-big">Reach Out to Us</h2>
+                    </div>
+                    <div class="sub-title">
+                        <h3 class="text-small-grey">Fill this form for any Queries</h3>
+                    </div>
+                </div> 
+                <div class="contact_form--container">
+                    <div class="form--fields">
+                        <div class="form--error">
+                            <p>&nbsp;</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="input--field">
+                                <label for="Name">Name <span style="color: tomato;" >*</span></label>
+                                <input type="text" name="Name" required >
+                            </div>
+                            <div class="input--field">
+                                <label for="City">City <span style="color: tomato;" >*</span></label>
+                                <input type="text" name="City" required >
+                            </div>
+                            <div class="input--field">
+                                <label for="Contact">Phone No. <span style="color: tomato;" >*</span></label>
+                                <input type="text" name="Contact" minlength="10" maxlength="10" pattern="^[0-9]*$" required >
+                            </div>
+                            <div class="input--field">
+                                <label for="Designation">Designation <span style="color: tomato;" >*</span></label>
+                                <input type="text" name="Designation" required >
+                            </div>
+                            <div class="input--field">
+                                <Button type="submit"> Send </Button>
+                            </div>
+                            <input type="hidden" name="Source/Messenger ID" value="Tutorlog Website">
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </div>
         <footer class="footer__section">
             <div class="footer__content">
@@ -605,10 +645,15 @@
                     </div>
                     <div class="column--links">
                         <ul class="links">
-                            <li class="link"><a href="#">Home </a></li>
-                            <li class="link"><a href="#">About Us </a></li>
-                            <li class="link"><a href="#">Product </a></li>
-                            <li class="link"><a href="#">Features</a></li>
+                            <li class="link" >
+                                <a href="#home">Home</a>
+                            </li>
+                            <li class="link" >
+                                <a href="#features">Features</a>
+                            </li>
+                            <li class="link" >
+                                <a href="#our-clients">Our Clients</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
