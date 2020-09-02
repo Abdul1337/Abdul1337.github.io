@@ -44,6 +44,7 @@ body,html{
     color: var(--text-color-black);
     font-family: 'Roboto', sans-serif;
     font-display: swap;
+    scroll-behavior: smooth;
 }
 
 a{
