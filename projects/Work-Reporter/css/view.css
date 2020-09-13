@@ -1,0 +1,31 @@
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(241, 241, 241);
+    background-color: rgb(24, 24, 24);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    --color-text: #00DABE;
+    height: fit-content;
+    overflow: unset;
+}
+
+.record--item{
+    margin: 1rem 0;
+    background-color: rgb(37, 37, 37);
+    padding: 1rem;
+    border-radius: 10px;
+}
+.client-data{
+    display: flex;
+    margin: 10px 0;
+}
+.client-data > .name{
+    width: 40%;
+}
+.client-data > .text{
+    width: 60%;
+}

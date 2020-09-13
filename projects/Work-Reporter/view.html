@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View My Records</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/view.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="/index.html" class="logo">Work Reporter</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="/index.html">Back to Home</a></li>
+            <li><a href="/view.html">View My Records</a></li>
+            <li><a href="/view.html?q=download">Download My Records</a></li>
+            <!-- <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li> -->
+        </ul>
+    </header>
+    <div class="container">
+        <div class="loading" id="loadingOverlay" >
+            <h3>Please wait</h3>
+            <p>Your request is being Processed</p>
+        </div>
+        <div class="records" id="records">
+        </div>
+
+        <p class="devText">Made with<span style="font-size: small;color: rgb(255, 20, 20);">&nbsp;&#10084;&nbsp;</span>by Abdul Aziz</p>
+    </div>
+    <script src="js/fetchData.js"></script>
+</body>
+
+</html>
