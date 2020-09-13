@@ -70,7 +70,7 @@ function prepareRecords(){
                     console.log('URL a.dataset.downloadurl', a.dataset.downloadurl)
                     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
                     a.dispatchEvent(e)
-                    window.location.replace(window.location.origin);
+                    window.location.replace(window.location.origin + window.location.pathname.split('/').slice(0,-1).join('/'));
                 }else{
                     prepareRecords();
                 }
