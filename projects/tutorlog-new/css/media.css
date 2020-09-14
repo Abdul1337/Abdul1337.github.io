@@ -1,0 +1,213 @@
+ @media (min-width: 1551px) {
+     .container {
+         max-width: 1440px;
+     }
+ }
+ 
+ @media (max-width: 1440px) {
+     .banner {
+         background-size: 80%;
+     }
+ }
+ 
+ @media (max-width: 1440px) {
+     .bannertitle h1 {
+         font-size: 37px;
+     }
+     .topnav .navbar-light .navbar-nav li {
+         padding: 0 14px;
+         font-size: 15px;
+     }
+     .meet-numbers {
+         padding-top: 49px;
+     }
+     .title {
+         font-size: 45px;
+     }
+     .meet-numbers-box span {
+         font-size: 40px;
+     }
+     .meet-numbers-box small.mil {
+         font-size: 16px;
+     }
+     .meetmember h3 {
+         font-size: 19px;
+     }
+     .meetmember p {
+         font-size: 15px;
+     }
+     .btn-send {
+         font-size: 21px;
+     }
+     .btn-h {
+         min-height: 65px;
+         min-width: 219px;
+     }
+     .meet-numbers-box span.foundar {
+         font-size: 24px;
+     }
+ }
+ 
+ @media (max-width: 1360px) {
+     .title {
+         font-size: 40px;
+     }
+ }
+ 
+ @media (max-width: 1280px) {
+     .meet-numbers ul li {
+         padding: 0 15px 45px 15px;
+         width: 25%;
+     }
+ }
+ 
+ @media (max-width: 991px) {
+     .meet-numbers ul {
+         width: 100%;
+         margin: 0;
+         display: block;
+         white-space: nowrap;
+         overflow: auto;
+         padding: 28px 20px;
+     }
+     .meet-numbers ul li {
+         width: 310px;
+         display: inline-block;
+         padding: 0 15px 45px 15px;
+     }
+     .meet-numbers-box {
+         box-shadow: 0px 0px 29.52px 6.48px rgba(213, 215, 225, 0.49);
+     }
+     .meetmember {
+         margin-bottom: 20px;
+     }
+     .best-market {
+         padding: 45px 0;
+     }
+     .features .nav-tabs {
+         width: auto;
+         white-space: nowrap;
+         overflow: auto;
+         padding-bottom: 15px;
+         overflow: auto;
+         display: block;
+         margin: 0 -15px;
+     }
+     .features .nav-tabs li {
+         display: inline-block;
+         width: auto;
+         padding: 0 15px;
+     }
+     .features .nav-tabs .nav-link {
+         padding: 0;
+     }
+     .features .nav-tabs .nav-item.show .nav-link,
+     .features .nav-tabs .nav-link.active:after {
+         width: 100%;
+         height: 2px;
+         background-color: #92cf34;
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 100%;
+     }
+     .tabscontent {
+         margin: 0;
+     }
+     .clientbox {
+         padding: 60px 5px 20px 5px
+     }
+     .clientbox-sub {
+         box-shadow: 0px 0px 29.52px 6.48px rgba(213, 215, 225, 0.49);
+     }
+     .bannertitle {
+         padding: 60px 0px 0 0;
+     }
+     .banner {
+         padding: 122px 0 0px 0;
+     }
+     .topnav {
+         padding: 0;
+     }
+     .topnav {
+         background-color: rgb(255, 255, 255);
+         box-shadow: 0px 0px 9.2px 0.8px rgba(213, 215, 225, 0.49);
+     }
+     .navbar .navbar-brand img,
+     .menu_scroll .navbar .navbar-brand img {
+         max-width: 117px;
+     }
+ }
+ 
+ @media (max-width: 767px) {
+     .banner .iphoneimg img {
+         max-width: 491px;
+         margin: 0 auto;
+     }
+     .bannertitle h1 {
+         font-size: 30px;
+     }
+ }
+ 
+ @media (max-width: 580px) {
+     .banner .iphoneimg img {
+         max-width: 100%;
+         margin: 0 auto;
+     }
+     .bannertitle {
+         text-align: center;
+     }
+     .bannertitle h1 {
+         font-size: 24px;
+         text-align: center;
+     }
+     .bannertitle p {
+         text-align: center;
+         font-size: 14px;
+     }
+     .iphoneimg {
+         text-align: center;
+     }
+     .banner .iphoneimg img {
+         max-width: 320px;
+         margin: 0 auto;
+     }
+     .title {
+         font-size: 29px;
+     }
+     .title p {
+         font-size: 14px;
+     }
+     .clientlogo ul {
+         display: flex;
+         white-space: nowrap;
+         overflow: auto;
+         padding: 0px;
+         padding-bottom: 15px;
+         margin: 0px -15px;
+         flex-wrap: nowrap;
+     }
+     .clientlogo ul li {
+         display: inline-block;
+         margin: 0px;
+     }
+     .clientlogo ul li .companylogo {
+         height: 100px;
+     }
+     .banner {
+         padding: 97px 0 0px 0;
+     }
+     .bannertitle {
+         padding: 30px 0px 0 0;
+     }
+     .title {
+         margin-bottom: 28px;
+     }
+     .features {
+         padding: 47px 0;
+     }
+     .meetmember {
+         min-height: auto;
+         padding: 37px 10px 0 10px;
+     }
+ }

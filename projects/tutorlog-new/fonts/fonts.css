@@ -1,0 +1,53 @@
+
+@font-face {
+font-family: 'New York Extra Large Semibold';
+font-style: normal;
+font-weight: normal;
+src: local('New York Extra Large Semibold'), url('NewYorkExtraLargeSemibold.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'New York Large Medium';
+font-style: normal;
+font-weight: normal;
+src: local('New York Large Medium'), url('NewYorkLargeMedium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Celias';
+    src: url('Celias-Light.woff2') format('woff2'),
+        url('Celias-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Celias';
+    src: url('Celias-Bold.woff2') format('woff2'),
+        url('Celias-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Celias';
+    src: url('Celias-Medium.woff2') format('woff2'),
+        url('Celias-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Celias';
+    src: url('Celias-Regular.woff2') format('woff2'),
+        url('Celias-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
