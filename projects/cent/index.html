@@ -14,9 +14,9 @@
 
 <body>
     <div id="root">
-        <div class='fixed-header fixed w-full z-50 bg-white py-2 shadow-md'>
+        <div class='fixed-header sticky top-0 w-full z-50 bg-white shadow-md'>
             <header class="text-gray-600 body-font">
-                <div class="container mx-auto flex flex-wrap px-2 pb-1 flex-col md:flex-row items-center">
+                <div class="container mx-auto flex flex-wrap p-2 pb-1 flex-col md:flex-row items-center">
                     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-yellow-500 rounded-full" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -73,31 +73,33 @@
                     Properties</a>
                 <!-- </nav> -->
             </div>
-            <div
-                class="container bg-gray-100 mx-auto flex py-2 px-3 flex-col md:flex-row justify-between items-center ">
-                <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                    <label for="hero-field0" class="leading-7 text-sm text-gray-600">Search Keywords</label>
-                    <input type="text" id="hero-field0" name="hero-field"
-                        placeholder="MLS#, address, neighbourhood, zip code"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
-                </div>
-                <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                    <label for="hero-field1" class="leading-7 text-sm text-gray-600">Price</label>
-                    <input type="text" id="hero-field1" name="hero-field"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
-                </div>
-                <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-                    <label for="hero-field2" class="leading-7 text-sm text-gray-600">Type</label>
-                    <select type="text" id="hero-field2" name="hero-field"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
-                        <option value="1" selected>Rentals</option>
-                        <option value="1" selected>Rentals</option>
-                        <option value="1" selected>Rentals</option>
-                    </select>
-                </div>
-                <div class="relative mr-4 lg:w-6/12 xl:w-1/2 pt-4 w-2/4 md:w-full text-left">
-                    <button
-                        class="text-white bg-yellow-500 border-0 py-2 w-full px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Search</button>
+        </div>
+        <div class="container bg-gray-200 mx-auto flex p-2 flex-col md:flex-row justify-between items-center ">
+            <div class="relative mr-4 lg:w-1/5 xl:w-1/2 w-2/4 md:w-full text-left">
+                <label for="hero-field0" class="leading-7 text-xs text-gray-600">Search Keywords</label>
+                <input type="text" id="hero-field0" name="hero-field"
+                    placeholder="MLS#, address, neighbourhood, zip code"
+                    class="text-xs w-full bg-white rounded ring-gray-500 ring-1 focus:ring-4 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mr-4 lg:w-1/5 xl:w-1/2 w-2/4 md:w-full text-left">
+                <label for="hero-field1" class="leading-7 text-xs text-gray-600">Price</label>
+                <input type="text" id="hero-field1" name="hero-field"
+                    class="text-xs w-full bg-white rounded ring-gray-500 ring-1 focus:ring-4 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mr-4 lg:w-1/5 xl:w-1/2 w-2/4 md:w-full text-left">
+                <label for="hero-field2" class="leading-7 text-xs text-gray-600">Type</label>
+                <select type="text" id="hero-field2" name="hero-field"
+                    class="text-xs w-full bg-white rounded ring-gray-500 ring-1 focus:ring-4 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                    <option value="1" selected>Rentals</option>
+                    <option value="1" selected>Rentals</option>
+                    <option value="1" selected>Rentals</option>
+                </select>
+            </div>
+            <div class="relative w-1/3 text-left flex justify-center flex-col items-center pt-4">
+                <button class="text-white bg-yellow-500 w-full border-0 py-2 px-4 focus:outline-none hover:bg-yellow-600 rounded text-lg"><i class="las la-search"></i>&nbsp;&nbsp;&nbsp;SEARCH</button>
+                <div class="text-xs flex justify-between w-full mt-2" >
+                    <a href="#" class='underline' >View All Properties</a>
+                    <a href="#" class='underline' >Advanced Search</a>
                 </div>
             </div>
         </div>
@@ -118,9 +120,9 @@
                     <div class=" lg:w-1/3">
                         <div
                             class="h-full flex flex-col justify-center uppercase px-10 py-3 overflow-hidden text-center relative">
-                            <h2 class="tracking-widest text-l title-font font-medium mb-1">Need Mortgage Advice?</h2>
-                            <h2 class="tracking-widest text-l title-font font-medium mb-1">Going into Foreclosure?</h2>
-                            <h2 class="tracking-widest text-l title-font font-medium mb-1">Thinking of Selling</h2>
+                            <h2 class="tracking-widest text-xl font-bold mb-1">Need Mortgage Advice?</h2>
+                            <h2 class="tracking-widest text-xl font-bold mb-1">Going into Foreclosure?</h2>
+                            <h2 class="tracking-widest text-xl font-bold mb-1">Thinking of Selling</h2>
                             <h4 class="tracking-widest text-xs title-font font-medium mt-2 text-yellow-500 mb-1">Call Us
                             </h4>
                             <h1 class="tracking-widest text-xl title-font font-bold mb-1">718-760-4500</h1>
@@ -128,31 +130,31 @@
                     </div>
                     <div class=" lg:w-1/3">
                         <div class=" center_form h-full px-10 py-3 overflow-hidden text-right relative">
-                            <h1 class="tracking-widest text-xl title-font font-bold mb-4 text-center">List Your <br />
+                            <h1 class="tracking-widest text-xl title-font font-bold mb-4 text-center uppercase">List Your <br />
                                 Property</h1>
                             <!-- <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2> -->
                             <div class="relative mb-2">
                                 <input type="text" id="full-name" placeholder="Name" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2">
                                 <input type="text" id="full-name" placeholder="Phone" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2">
                                 <input type="text" id="full-name" placeholder="Address" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2 flex justify-start">
-                                <input type="radio" id="sell" name="sell/rent" value="sell" class="h-6 mx-1 ">
+                                <input type="radio" id="sell" name="sell/rent" value="sell" class="h-6 mx-1 " checked>
                                 <label for="sell" class="mr-5 leading-5">Sell</label><br>
-                                <input type="radio" id="rent" name="sell/rent" value="sell" class="h-6 mr-1 ">
+                                <input type="radio" id="rent" name="sell/rent" value="rent" class="h-6 mr-1 ">
                                 <label for="rent" class="mr-5 leading-5">Rent</label><br>
                             </div>
                             <div class="relative mb-2">
                                 <textarea type="text" id="full-name" placeholder="Describe your property"
                                     name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"></textarea>
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"></textarea>
                             </div>
                             <button
                                 class="text-white bg-yellow-500 border-0 py-1 px-5 focus:outline-none hover:bg-yellow-600 rounded text-lg">Send
@@ -161,25 +163,25 @@
                     </div>
                     <div class=" lg:w-1/3">
                         <div class="h-full px-10 py-3 overflow-hidden text-right relative">
-                            <h1 class="tracking-widest text-xl title-font font-bold mb-1 text-center">Open House / New
+                            <h1 class="tracking-widest text-xl title-font font-bold mb-1 text-center uppercase">Open House / New
                                 <br /> Listing Alert</h1>
                             <h1 class="tracking-widest text-xs title-font font-medium mb-4 text-center">Don't let these
                                 listings pass you by!</h1>
                             <div class="relative mb-2">
                                 <input type="text" placeholder="Name" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2">
                                 <input type="text" placeholder="Phone" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2">
                                 <input type="text" placeholder="Email" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <div class="relative mb-2">
                                 <input type="text" placeholder="Briefly, what are you looking for?" name="full-name"
-                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
+                                    class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-xs outline-none text-gray-700 py-1 px-3 leading-4 transition-colors duration-200 ease-in-out">
                             </div>
                             <button
                                 class="text-white bg-yellow-500 border-0 py-1 px-5 focus:outline-none hover:bg-yellow-600 rounded text-lg">Sign
