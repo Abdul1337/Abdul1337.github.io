@@ -1,0 +1,22 @@
+:root{
+    font-size: 18px;
+}
+
+.center_form::after,
+.center_form::before
+{
+    content: ' ';
+    height: 60%;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.211);
+    position: absolute;
+    top: 20%;
+}
+
+.center_form::before{
+    left: 0;
+}
+
+.center_form::after{
+    right: 0;
+}
