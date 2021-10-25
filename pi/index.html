@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Digits Memorize Test</title>
+    <style>
+        .keys{
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .num{
+            height: 65px;
+            width: 65px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        .input_display{
+            border: 1px solid;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input_display">
+            <span class="prefix">3.</span>
+            <span id="input"></span>
+        </div>
+        <div class="keys">
+            <div class="row">
+                <button class="num 1" data-number='1'>1</button>
+                <button class="num 2" data-number='2'>2</button>
+                <button class="num 3" data-number='3'>3</button>
+            </div>
+            <div class="row">
+                <button class="num 4" data-number='4'>4</button>
+                <button class="num 5" data-number='5'>5</button>
+                <button class="num 6" data-number='6'>6</button>
+            </div>
+            <div class="row">
+                <button class="num 7" data-number='7'>7</button>
+                <button class="num 8" data-number='8'>8</button>
+                <button class="num 9" data-number='9'>9</button>
+            </div>
+            <div class="row">
+                <button class="num 0" data-number='0'>0</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
