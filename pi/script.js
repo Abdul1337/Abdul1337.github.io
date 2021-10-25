@@ -50,6 +50,7 @@ function updateScore(score){
 function clearAll(){
     if (confirm('Are you sure you want to clear?')) {
         $input.innerHTML = "3."
+        current_digit = 2
         current_score = 0;
         current_mistakes = 0;
         updateScore({current_score, current_mistakes})
@@ -58,7 +59,7 @@ function clearAll(){
 
 function finishAndShowResults(){
     if (current_score > 0){
-        let accuracy = (100 - (current_mistakes/current_score)*100).toFixed(2)
+        let accuracy = (100 - (current_mistakes/(current_score + current_mistakes))*100).toFixed(2)
         $resultsBox.querySelector('#stats_score>span.value').innerHTML = current_score + ' digits'
         $resultsBox.querySelector('#stats_mistakes>span.value').innerHTML = current_mistakes
         $resultsBox.querySelector('#stats_accuracy>span.value').innerHTML = accuracy >= 0 ? accuracy + '%' : '0%' 
