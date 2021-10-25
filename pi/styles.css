@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    overflow-y: hidden;
 }
 .keys{
     display: flex;
@@ -19,7 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     width: 100%;
 }
 .row{
