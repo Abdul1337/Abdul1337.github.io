@@ -5,41 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pi Digits Memorize Test</title>
-    <style>
-        .keys{
-            position: absolute;
-            bottom: 0;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .row{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .num{
-            height: 65px;
-            width: 65px;
-            border-radius: 50%;
-            margin: 5px;
-        }
-        .input_display{
-            border: 1px solid;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="input_display">
-            <span class="prefix">3.</span>
-            <span id="input"></span>
+        <div class="controles">
+            <button class="controle_btn finishBtn" id="finishBtn" >Results</button>
+            <div class="controle_btn score"><span id="score">0</span></div>
+            <div class="controle_btn mistakes"><span id="mistakes">0</span></div>
+            <button class="controle_btn clearBtn" id="clearBtn" >Clear All</button>
+        </div>
+        <div class="input_score_bar" >
+            <div class="input_display input">
+                <span id="input">3.</span>
+            </div>
         </div>
         <div class="keys">
             <div class="row">
@@ -60,6 +39,24 @@
             <div class="row">
                 <button class="num 0" data-number='0'>0</button>
             </div>
+        </div>
+        <div class="results" id="resultsBox">
+            <span class="title">RESULTS</span>
+            <div class="statsBox">
+                <div class="stats" id="stats_score">
+                    <span class="name" >Score</span> 
+                    <span class="value"></span>
+                </div>
+                <div class="stats" id="stats_mistakes">
+                    <span class="name" >Mistakes</span> 
+                    <span class="value"></span>
+                </div>
+                <div class="stats" id="stats_accuracy">
+                    <span class="value"></span>
+                    <span class="name" >Accuracy</span> 
+                </div>
+            </div>
+            <button class="results_close_btn" id="resultsCloseBtn" >Close</button>
         </div>
     </div>
     <script src="script.js"></script>
