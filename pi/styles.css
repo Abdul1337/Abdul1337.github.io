@@ -8,6 +8,7 @@ body{
     /* padding: 2rem; */
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
 }
 .container{
     width: 100%;
@@ -18,16 +19,16 @@ body{
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 .keys{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 15vh;
-    width: 100%;
+    /* position: absolute; */
+    /* bottom: 15vh; */
+    /* width: 100%; */
 }
 .row{
     display: flex;
@@ -136,7 +137,7 @@ body{
 
 .results{
     width: 80%;
-    height: 300px;
+    height: fit-content;
     background: rgb(33, 34, 44);
     border: 2px solid white;
     border-radius: 20px;
@@ -149,6 +150,7 @@ body{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 20px;
 }
 .results > .title{
     margin-top: 20px;
@@ -161,7 +163,7 @@ body{
     width: 80%;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -177,7 +179,7 @@ body{
 .results_close_btn{
     width: 80%;
     height: 30px;
-    position: absolute;
+    /* position: absolute; */
     /* height: 35px; */
     font-size: 1.2em;
     background: rgb(76 80 106);
@@ -185,8 +187,7 @@ body{
     box-shadow: 0 0 1px 3px rgba(57, 58, 80, 0.116);
     border: none;
     border-radius: 5px;
-    /* margin: 40px 0; */
-    bottom: 20px;
+    margin-top: 10px;
 }
 
 #stats_accuracy{
@@ -201,4 +202,18 @@ body{
     font-size: 2.5em;
     color: violet;
 
+}
+
+.flow_container{
+    display: flex;
+    border: 2px solid white;
+    height: 100%;
+}
+
+.start_screen{
+    width: 100vh;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
