@@ -58,6 +58,7 @@ function clearAll(){
         current_score = 0;
         current_mistakes = 0;
         updateScore({current_score, current_mistakes})
+        resetTimer();
     }
 }
 
