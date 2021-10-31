@@ -1,4 +1,10 @@
+:root{
+    --current-progress : 50%;
+
+}
 body{
+    margin: 0;
+    padding:0;
     background: rgb(24, 25, 32);
     display: flex;
     flex-direction: column;
@@ -9,6 +15,23 @@ body{
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
+    color: white;
+    font-family: sans-serif;
+}
+
+.target_select{
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+width: 100%;
+}
+
+.target_select > .header{
+    text-align: center;
 }
 .container{
     width: 100%;
@@ -63,7 +86,7 @@ body{
     color: rgb(176, 169, 200);
     font-family: monospace;
     font-weight: bolder;
-    max-height: 150px;
+    max-height: 50px;
     overflow-y: scroll;
 }
 .input_display.input{
@@ -109,7 +132,7 @@ body{
     color: tomato;
 }
 .controle_btn.clearBtn,
-.controle_btn.finishBtn
+.controle_btn.backBtn
 {
     width: 30%;
 
@@ -216,4 +239,89 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.timer{
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.timer > p{
+    margin: 0;
+}
+
+#seconds{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(209, 8, 209);
+}
+#tens{
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+
+}
+
+.targets {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t_row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.target_btn {
+    padding: 5px;
+    border: 2px solid #ffdc22;
+    margin: 10px;
+    border-radius: 30%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+}
+.selected_target{
+    background: #ffdc22;
+    color: black;
+}
+button#startBtn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: all 0.2s;
+    border-radius: 7px;
+}
+
+button#startBtn:active {
+    background: rgba(255, 255, 255, 0.26);
+    color: white;
+}
+
+.finishBtn{
+    margin: 20px 0;
+}
+.progress_bar {
+    width: 100%;
+    /* margin: 0 19px; */
+}
+
+span#progress {
+    border-bottom: 4px solid #00d600e3;
+    width: var(--current-progress);
+    display: block;
 }
