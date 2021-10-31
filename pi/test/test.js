@@ -179,5 +179,5 @@ function updateTime () {
 }
 
 function handleBack(){
-    window.location.href = "/test"
+    window.location.href = "/pi/test"
 }

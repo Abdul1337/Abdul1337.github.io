@@ -18,5 +18,5 @@ function handleTargetSelect(e){
 }
 
 function handleStart(){
-    window.location.href = "/test/test.html"
+    window.location.href = "/pi/test/test.html"
 }

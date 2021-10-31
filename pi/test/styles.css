@@ -1,6 +1,5 @@
 :root{
-    --current-progress : 50%;
-
+    --current-progress : 0.1%;
 }
 body{
     margin: 0;
