@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="select/select.css">
+    <title>Playing Cards Helper</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Card Picker</h2>
+
+        <section id="cardPicker" >
+                
+                <div class="pick-random-button" >
+                    <button onclick="pickRandomCard()">🎲</button>
+                </div>
+                <div class="card-name">
+                    <div class="custom-select">
+                        <select name="face value" data-face-value>
+                            <option value="" disabled selected>Face Value</option>
+                            <option value="Ace">Ace</option>
+                            <option value="Two">Two</option>
+                            <option value="Three">Three</option>
+                            <option value="Four">Four</option>
+                            <option value="Five">Five</option>
+                            <option value="Six">Six</option>
+                            <option value="Seven">Seven</option>
+                            <option value="Eight">Eight</option>
+                            <option value="Nine">Nine</option>
+                            <option value="Ten">Ten</option>
+                            <option value="Jack">Jack</option>
+                            <option value="Queen">Queen</option>
+                            <option value="King">King</option>
+                        </select>
+                    </div>
+
+                    <span>
+                        of
+                    </span>
+                    <div class="custom-select">
+                        <select name="suit" id="suit" data-suit>
+                            <option value="" disabled selected>Suit Value</option>
+                            <option value="clubs">
+                                <div class="option-suit">
+                                    <span>Clubs</span>
+                                </div>
+                            </option>
+                            <option value="diamonds">
+                                <div class="option-suit">
+                                    <span>Diamonds</span>
+                                </div>
+                            </option>
+                            <option value="hearts">
+                                <div class="option-suit">
+                                    <span>Hearts</span>
+                                </div>
+                            </option>
+                            <option value="spades">
+                                <div class="option-suit">
+                                    <span>Spades</span>
+                                </div>
+                            </option>   
+                        </select>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="card" data-state="active">
+                        <div class="content">
+                            <div class="front">
+                                <img src="assets/png/back.png" alt="card" data-card-image>
+                            </div>
+                            <div class="back">
+                                <!-- <img src="assets/png/back.png" alt="card" data-card-back> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    
+    <script src="strings.js"></script>
+    <script src="script.js"></script>
+    <script src="select/select.js"></script>
+</body>
+</html>
