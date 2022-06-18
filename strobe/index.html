@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Strobe Light</title>
+    <style>
+
+        :root{
+            --color: #000;
+        }
+        body{
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        #strobe{
+            width: 100%;
+            background-color: var(--color);
+            height: 100%;
+            border: 2px solid black;
+
+
+        }
+
+        #strobe.fullscreen{
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            background-color: var(--color);
+        }
+
+        .colorPicker{
+            padding: 20px;
+            font-size: large;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input[type="color"].circle{
+            border-radius: 50%;
+            height: 40px;
+            width: 10%;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            padding: 0;
+        }
+
+        input[type="color"].circle::-moz-color-swatch{
+            border: none;
+            border-radius: 100%;  
+        }
+
+
+        input[type="color"].circle::-webkit-color-swatch-wrapper {
+            padding: 0; 
+        }
+        input[type="color"].circle::-webkit-color-swatch {
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .controles{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 5px;
+        }
+
+        #frequency {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 40px !important;
+            width: 60%;
+            border-radius: 10px;
+            background-color: black;
+            outline: none;
+            padding: 0 5px;
+            margin: 0;
+        }
+
+        #frequency::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 60px;
+            height: 30px;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+        #currentFrequency{
+            width: 10%;
+        }
+        #currentColor{
+            width: 15%;
+            text-transform: capitalize;
+        }
+        #currentFrequency,
+        #currentColor{
+            text-align: center;
+            height: 40px;
+            /* line-height: 40px; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            font-family: sans-serif;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="colorPicker">
+        <span class="controles">
+            <input type="color" id="colorPicker" class="circle">
+            <span id="currentColor"></span>
+            <input type="range" min="1" max="100" value="10" step="1" id="frequency">
+            <span id="currentFrequency"></span>
+        </span>
+        
+    </div>
+    
+    <div id="strobe"></div>
+
+    <script>
+        const strobeContainer = document.getElementById('strobe')
+        const colorPicker = document.getElementById('colorPicker')
+        const frequency = document.getElementById('frequency')
+        const currentFrequency = document.getElementById('currentFrequency')
+        const currentColor = document.getElementById('currentColor')
+        let strobeTimeout;
+        strobeContainer.addEventListener('click', handleFullScreen)
+        colorPicker.addEventListener('input', changeColor)
+        frequency.addEventListener('input', changeFrequency)
+        let isFullscreen = false
+        let fadeBlack = false
+        document.documentElement.style.setProperty('--color', colorPicker.value)
+        currentFrequency.innerHTML = frequency.value + 'Hz'
+        currentColor.innerHTML = colorPicker.value
+
+        function handleFullScreen(e){
+            strobeContainer.classList.toggle('fullscreen')
+            isFullscreen = !isFullscreen
+            if(isFullscreen){
+                startStrobbing()
+            }else{
+                stopStrobbing()
+            }
+        }
+
+        function changeColor(e){
+            document.documentElement.style.setProperty('--color', e.target.value)
+            currentColor.innerHTML = e.target.value
+            console.log({color: e.target.value})
+        }
+
+        function changeFrequency(e){
+            currentFrequency.innerHTML = e.target.value + 'Hz'
+        }
+
+        function startStrobbing(){
+            // const today = new Date();
+            // let ms = today.getMilliseconds();
+            fadeBlack = !fadeBlack
+            document.documentElement.style.setProperty('--color', fadeBlack ? '#000' : colorPicker.value)
+            strobeTimeout = setTimeout(startStrobbing, 1000/parseInt(frequency.value));
+        }
+
+        function stopStrobbing(){
+            document.documentElement.style.setProperty('--color', colorPicker.value)
+            clearTimeout(strobeTimeout);
+        }
+    </script>
+
+</body>
+</html>
