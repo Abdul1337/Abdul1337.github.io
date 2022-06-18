@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link</title>
+</head>
+<body>
+    <h1 class="name" id="name">You Just Reloaded the page and the magic is gone</h1>
+    <script>
+        const queryString = window.location.search;
+        let n = window.localStorage.getItem('n')
+        if (n){
+            document.getElementById('name').innerHTML = n
+            localStorage.clear();
+        }else{
+            const urlParams = new URLSearchParams(queryString);
+            const pN = urlParams.get('n')
+            console.log({pN})
+            if(pN){
+                localStorage.setItem('n', pN)
+                window.location.href = window.location.origin + window.location.pathname;  
+            }
+
+
+        }
+    </script>
+</body>
+</html>

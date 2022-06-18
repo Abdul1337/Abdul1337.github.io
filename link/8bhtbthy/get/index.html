@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Link</h1>
+    <label for="name">Name for Link</label>
+    <input type="text" name="name" id="name">
+    <button id="getLink">Get Link</button>
+    <br>
+    <span>
+        <span>Your Link :</span>
+        <span id="link" >[Link]</span>
+        <button id="copy" >Copy</button>
+        <span id="copied"></span>
+    </span>
+
+    <script>
+        const nameInput = document.getElementById('name')
+        const getLinkButton = document.getElementById('getLink')
+        const linkContainer = document.getElementById('link')
+        const copyButton = document.getElementById('copy')
+        const copiedStatus = document.getElementById('copied')
+        let link = ''
+        getLinkButton.addEventListener('click', getLink)
+        copyButton.addEventListener('click', copyLink)
+
+        function getLink(){
+            value = nameInput.value
+            console.log({value})
+            if (value == '') return
+            link = window.location.origin + '?n=' + value
+            console.log({link})
+            linkContainer.innerHTML = link
+            copiedStatus.innerHTML = ''
+
+        }
+
+        function copyLink(){
+            console.log({link})
+            navigator.clipboard.writeText(link).then(()=>{
+                console.log('copied')
+                copiedStatus.innerHTML = 'Link Copied'
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
