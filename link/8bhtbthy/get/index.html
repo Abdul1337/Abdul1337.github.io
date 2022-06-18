@@ -33,7 +33,7 @@
             value = nameInput.value
             console.log({value})
             if (value == '') return
-            link = `${window.location.origin}/${window.location.pathname.split('/')[1]}?n=${value}`
+            link = `${window.location.origin}/${window.location.pathname.split('/')[1]}?n=${btoa(encodeURIComponent(value))}`
             console.log({link})
             linkContainer.innerHTML = link
             copiedStatus.innerHTML = ''
