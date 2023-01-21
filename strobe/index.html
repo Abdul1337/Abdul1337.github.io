@@ -33,14 +33,14 @@
             background-color: var(--color);
         }
 
-        .colorPicker{
+        /* .colorPicker{
             padding: 20px;
             font-size: large;
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
             gap: 20px;
-        }
+        } */
         input[type="color"].circle{
             border-radius: 50%;
             height: 40px;
@@ -68,6 +68,7 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+            flex-direction: column;
             gap: 5px;
         }
 
@@ -75,7 +76,7 @@
             -webkit-appearance: none;
             appearance: none;
             height: 40px !important;
-            width: 60%;
+            width: 40%;
             border-radius: 10px;
             background-color: black;
             outline: none;
@@ -94,10 +95,10 @@
             border: 2px solid white;
         }
         #currentFrequency{
-            width: 10%;
+            width: 20%;
         }
         #currentColor{
-            width: 15%;
+            width: 60%;
             text-transform: capitalize;
         }
         #currentFrequency,
@@ -111,6 +112,7 @@
             align-items: center;
             font-weight: bolder;
             letter-spacing: 1px;
+            font-size: small;
             font-family: sans-serif;
             border: 2px solid black;
             border-radius: 10px;
@@ -121,15 +123,17 @@
     </style>
 </head>
 <body>
-    <div class="colorPicker">
         <span class="controles">
-            <input type="color" id="colorPicker" class="circle">
-            <span id="currentColor"></span>
-            <input type="range" min="1" max="100" value="10" step="1" id="frequency">
-            <span id="currentFrequency"></span>
+            <div class="colorPicker">
+                <input type="color" id="colorPicker" class="circle">
+                <span id="currentColor"></span>
+            </div>
+            <div>
+                <input type="range" min="1" max="100" value="10" step="1" id="frequency">
+                <span id="currentFrequency"></span>
+            </div>
         </span>
         
-    </div>
     
     <div id="strobe"></div>
 
