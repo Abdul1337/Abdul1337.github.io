@@ -9,50 +9,34 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <!-- <div id="navigation">
-            <span class="title">Connect 4 -</span> <a href="../../">Go Back</a>
-        </div> -->
-        
         <div id="container">
-            <h1 class="header-text"></h1>
-            <p class="text subheader-text">
-            </p>
-
-        
-
             <div class="box-right">
                 <div id="options">
-                    <!-- <p class="header">Algorithm</p>
-                    <p>
-                        <select id="algorithm-select" autocomplete="off">
-                            <option value="minimax">Minimax</option>
-                            <option value="alphabeta" selected>Alpha-Beta</option>
-                        </select>
-                    </p> -->
-    
-                <select id="difficulty" autocomplete="off">
-                    <option value="1">Level 1</option>
-                    <option value="2">Level 2</option>
-                    <option value="3">Level 3</option>
-                    <option value="4" selected="selected">Level 4</option>
-                    <option value="5">Level 5</option>
-                    <option value="6">Level 6</option>
-                    <option value="7">Level 7</option>
-                    <option value="8">Level 8</option>
-                </select>
-                       
-                <button class="save" onclick="Game.restartGame();" type="submit">Reset</button>
+
+                    <select id="difficulty" autocomplete="off">
+                        <option value="1">Level 1</option>
+                        <option value="2">Level 2</option>
+                        <option value="3">Level 3</option>
+                        <option value="4" selected="selected">Level 4</option>
+                        <option value="5">Level 5</option>
+                        <option value="6">Level 6</option>
+                        <option value="7">Level 7</option>
+                        <option value="8">Level 8</option>
+                    </select>
+                    <div id="difficulty_emoji" >😏</div>
+                        
+                    <button id="save" onclick="Game.restartGame();" type="submit">Reset</button>
                 </div>
 
-                <div id="debug" style="display: none;">
-                    <p><strong>AI debugging</strong></p>
+                <!-- <div id="debug" style="display: block;"> -->
+                    <!-- <p><strong>AI debugging</strong></p>
                     <p>Generated with <span id="ai-iterations">?</span> iterations</p>
                     <p>Measured with <span id="ai-time">?</span></p>
                     <p><span id="ai-column">Column: ?</span></p>
                     <p><span id="ai-score">Score: ?</span></p>
-                    <br/>
-                    <p>Status: <span id="status" class="status-running">running</span></p>
-                </div>
+                    <br/> -->
+                    <!-- <p>Status: <span id="status" class="status-running">running</span></p> -->
+                <!-- </div> -->
             </div>
             <div class="box-left">
                 <div id="coin"></div>

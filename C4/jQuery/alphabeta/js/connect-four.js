@@ -75,18 +75,32 @@ Game.prototype.act = function(e) {
  */
 Game.prototype.place = function(column) {
     // If not finished
-    let border_offset = 10
+    let border_offset = 25
     let bottom_offset = 20
-    let size_multiplier = 50
-    let animationSpeed = 750
+    let size_multiplier = 51
+    let animationSpeed = 800
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         for (var y = that.rows - 1; y >= 0; y--) {
             if (document.getElementById('game_board').rows[y].cells[column].className == 'empty') {
+                let placing_cell = document.getElementById('game_board').rows[y].cells[column]
+                let cellRect = placing_cell.getBoundingClientRect()
+                let temp_x = column * size_multiplier
+                let temp_y = y * size_multiplier
+                let firstRowCellRect = document.querySelector('#game_board tr').childNodes[column].getBoundingClientRect()
+                console.log('cellRect : ', cellRect)
+                console.log('placing_cell : ', placing_cell)
+                console.log('firstRowCellRect : ', firstRowCellRect)
+                console.log('x,y : ', [temp_x,temp_y])
+
+                // let coin_x = column * size_multiplier;
+                // let coin_y = y * size_multiplier;
+                let coin_x = cellRect.left;
+                let coin_y = cellRect.top;
+                let coin_start_y = firstRowCellRect.top;
+                
                 if (that.round == 1) {
-                    var coin_x = column * size_multiplier;
-                    var coin_y = y * size_multiplier;
                     // console.log("CPU :", {column, coin_x, coin_y})
-                    $('#coin').attr('class', 'cpu-coin').css({'left': coin_x + border_offset}).fadeIn('fast').animate({'top': coin_y + bottom_offset + 'px'}, animationSpeed, 'easeOutBounce', function() {
+                    $('#coin').attr('class', 'cpu-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin cpu-coin';
                         $('#coin').hide().css({'top': '0px'});
                         
@@ -98,10 +112,8 @@ Game.prototype.place = function(column) {
                         that.updateStatus();
                     });
                 } else {
-                    var coin_x = column * size_multiplier;
-                    var coin_y = y * size_multiplier;
                     console.log("HUM :", {column, coin_x, coin_y})
-                    $('#coin').attr('class', 'human-coin').css({'left': coin_x + border_offset}).fadeIn('fast').animate({'top': coin_y + bottom_offset + 'px'}, animationSpeed, 'easeOutBounce', function() {
+                    $('#coin').attr('class', 'human-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin human-coin';
                         $('#coin').hide().css({'top': '0px'});
                         that.generateComputerDecision();
@@ -134,15 +146,15 @@ Game.prototype.generateComputerDecision = function() {
             var ai_move = that.maximizePlay(that.board, that.depth);
 
             var laufzeit = new Date().getTime() - startzeit;
-            document.getElementById('ai-time').innerHTML = laufzeit.toFixed(2) + 'ms';
+            // document.getElementById('ai-time').innerHTML = laufzeit.toFixed(2) + 'ms';
 
             // Place ai decision
             that.place(ai_move[0]);
 
-            // Debug
-            document.getElementById('ai-column').innerHTML = 'Column: ' + parseInt(ai_move[0] + 1);
-            document.getElementById('ai-score').innerHTML = 'Score: ' + ai_move[1];
-            document.getElementById('ai-iterations').innerHTML = that.iterations;
+            // // Debug
+            // document.getElementById('ai-column').innerHTML = 'Column: ' + parseInt(ai_move[0] + 1);
+            // document.getElementById('ai-score').innerHTML = 'Score: ' + ai_move[1];
+            // document.getElementById('ai-iterations').innerHTML = that.iterations;
 
             document.getElementById('loading').style.display = "none"; // Remove loading message
         }, 250);
@@ -241,7 +253,7 @@ Game.prototype.updateStatus = function() {
     if (that.board.score() == that.score) {
         that.status = 2;
         that.markWin();
-        // alert("You have lost!");
+        alert("You have lost!");
     }
 
     // Tie
@@ -250,20 +262,20 @@ Game.prototype.updateStatus = function() {
         alert("Tie!");
     }
 
-    var html = document.getElementById('status');
-    if (that.status == 0) {
-        html.className = "status-running";
-        html.innerHTML = "running";
-    } else if (that.status == 1) {
-        html.className = "status-won";
-        html.innerHTML = "won";
-    } else if (that.status == 2) {
-        html.className = "status-lost";
-        html.innerHTML = "lost";
-    } else {
-        html.className = "status-tie";
-        html.innerHTML = "tie";
-    }
+    // var html = document.getElementById('status');
+    // if (that.status == 0) {
+    //     html.className = "status-running";
+    //     html.innerHTML = "running";
+    // } else if (that.status == 1) {
+    //     html.className = "status-won";
+    //     html.innerHTML = "won";
+    // } else if (that.status == 2) {
+    //     html.className = "status-lost";
+    //     html.innerHTML = "lost";
+    // } else {
+    //     html.className = "status-tie";
+    //     html.innerHTML = "tie";
+    // }
 }
 
 Game.prototype.markWin = function() {
@@ -291,11 +303,11 @@ Game.prototype.restartGame = function() {
         that.status = 0;
         that.round = 0;
         that.init();
-        document.getElementById('ai-iterations').innerHTML = "?";
-        document.getElementById('ai-time').innerHTML = "?";
-        document.getElementById('ai-column').innerHTML = "Column: ?";
-        document.getElementById('ai-score').innerHTML = "Score: ?";
-        document.getElementById('game_board').className = "";
+        // document.getElementById('ai-iterations').innerHTML = "?";
+        // document.getElementById('ai-time').innerHTML = "?";
+        // document.getElementById('ai-column').innerHTML = "Column: ?";
+        // document.getElementById('ai-score').innerHTML = "Score: ?";
+        // document.getElementById('game_board').className = "";
         that.updateStatus();
 
         // Re-assign hover
@@ -304,6 +316,16 @@ Game.prototype.restartGame = function() {
         });
     }
 }
+
+document.getElementById('difficulty').addEventListener('change', (e)=>{
+    let level = e.target.selectedIndex;
+    let emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
+    let difficulty_emoji = document.getElementById('difficulty_emoji')
+    let emoji = emojis[level];
+    difficulty_emoji.innerHTML = emoji
+
+})
+
 
 /**
  * Start game

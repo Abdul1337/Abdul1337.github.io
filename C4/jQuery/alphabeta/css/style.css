@@ -17,7 +17,11 @@ body {
     color: var(--color2);
     font-family: 'Arial';
     overflow-y: hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
+
 
 a, a:visited{
     color: #551A8B;
@@ -30,10 +34,11 @@ h1 {
 }
 
 #container {
-    position: absolute;
-    left: 50%;
-    margin-top: 50px;
-    margin-left: -255px;
+   height: 100%;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
 }
 
 .box-left {
@@ -74,12 +79,12 @@ h1 {
 
 #coin {
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     display: none;
     left: 0px;
     top: 0px;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     z-index: 2;
     
@@ -187,44 +192,74 @@ h1 {
 
 .box-left {
     position: relative;
-    margin: 10px 10px 10px 0;
-    float: left;
+    /* margin: 10px 10px 10px 0; */
+    /* float: left; */
+    display: flex;
+    justify-content: center;
 }
 
+
+
 #options {
-    font-size: 13px;
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: space-between;
+    border: 4px solid var(--game-board-border);
+    border-radius: 20px;
+    /* margin-bottom: 30px; */
+    margin: 10px;
+    padding: 15px 15px;
+    background-color: var(--game-board-bg-color);
+
+}
+
+#save,
+#difficulty,
+#difficulty_emoji{
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+}
+
+#save,
+#difficulty{
+    border-radius: 15px;
+    outline: none;
+    border: 4px solid var(--game-board-border);
+    background-color: var(--game-board-empty-cell-color);
+    color: var(--color2);
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 15px;
+    font-family: sans-serif;
 }
 
 #difficulty{
     padding-right: 10px;
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
     text-align: center;
+    width: 40%;
 }
-
-
-.save,
-#difficulty{
-    background-color: var(--game-board-bg-color);
-    border: 4px solid var(--game-board-border);
-    border-radius: 15px ;
-    margin: 5px;
-    margin-bottom: 30px;
-    outline: none;
-    width: 50%;
-    cursor: pointer;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 1em;
-    color: var(--color2);
-    text-transform: uppercase;
+#save{
+    width: 40%;
 }
-
+#difficulty_emoji{
+    font-size: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    box-shadow: 0px 1px 15px 10px #00000042
+}
 
 input {
     border: 1px solid #808080;
@@ -287,6 +322,10 @@ select {
     border: 1px solid #808080;
     outline: none;
     width: 140px;
+}
+
+option{
+    background-color: var(--game-board-bg-color);
 }
 
 .text {
