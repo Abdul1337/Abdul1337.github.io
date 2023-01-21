@@ -1,0 +1,354 @@
+:root{
+    --game-board-empty-cell-color : #545c64;
+    --color2 : #F0EDFF;
+    --ai-coin-color : #00c1f0;
+    --human-coin-color : #FF5f57;
+    --color-bg: #29DFB3;
+    --game-board-bg-color : #1f272e;
+    --game-board-border : black;
+    --win-coin-color : #FEFEDF;
+    --win-animation-speed : 0.5s;
+    --ai-turn-bg-color : #3F7CAB;
+    --human-turn-bg-color : #DE8E6E ;
+}
+
+body {
+    background: var(--human-turn-bg-color);
+    color: var(--color2);
+    font-family: 'Arial';
+    overflow-y: hidden;
+}
+
+a, a:visited{
+    color: #551A8B;
+}
+
+h1 {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -255px;
+}
+
+.box-left {
+    overflow: hidden;
+}
+
+#game_board {
+    /* border-collapse:collapse; */
+    background-color: var(--game-board-bg-color);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid var(--game-board-border);
+    padding: 5px;
+
+}
+
+#coinfeld {
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+#game_board td {
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 4px solid var(--game-board-border);
+    background-color: var(--game-board-empty-cell-color);
+}
+
+/* .hover {
+    background-color: #F4F4F4;
+} */
+
+#coin {
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+    left: 0px;
+    top: 0px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    z-index: 2;
+    
+}
+
+#game_board .coin {
+    cursor: default;
+    box-sizing: border-box;
+    /* box-shadow: inset 1px 1px 5px 1px rgb(255 255 255); */
+    z-index: 1;
+    border: 4px solid var(--game-board-border);
+    
+
+}
+
+#game_board tr {
+    width: 100%;
+    height: 100%;
+}
+
+#game_board .human-coin,
+.human-coin {
+    border-radius: 50%;
+    background: var(--human-coin-color);
+}
+
+#game_board .cpu-coin,
+.cpu-coin {
+    border-radius: 50%;
+    background: var(--ai-coin-color);
+}
+
+#game_board .human-coin,
+#game_board .cpu-coin,
+#coin{
+    border: 4px solid var(--game-board-border);
+}
+
+
+#game_board .win {
+    animation: animationFrames var(--win-animation-speed) infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes animationFrames{
+    0%{
+        background-color: var(--win-coin-color);
+    }
+    50% {
+        opacity:0.7;
+        transform: translateY(4px);
+        background-color: var(--win-coin-color);
+    }
+    100% {
+        opacity:1;
+        background-color: var(--win-coin-color);
+    }
+}
+
+@-moz-keyframes animationFrames{
+    50% {
+        opacity:0.6;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes animationFrames {
+    50% {
+        opacity:0.6;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-o-keyframes animationFrames {
+    50% {
+        opacity:0.6;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes animationFrames {
+    50% {
+        opacity:0.6;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+#debug {
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+.box-right {
+    margin: 0;
+    /* float: left; */
+}
+
+.box-left {
+    position: relative;
+    margin: 10px 10px 10px 0;
+    float: left;
+}
+
+#options {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#difficulty{
+    padding-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    text-align: center;
+}
+
+
+.save,
+#difficulty{
+    background-color: var(--game-board-bg-color);
+    border: 4px solid var(--game-board-border);
+    border-radius: 15px ;
+    margin: 5px;
+    margin-bottom: 30px;
+    outline: none;
+    width: 50%;
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--color2);
+    text-transform: uppercase;
+}
+
+
+input {
+    border: 1px solid #808080;
+    margin: 1px;
+    outline: none;
+}
+
+.input {
+    width: 20px;
+}
+
+.save:hover, .save:active {
+    background-color: var(--game-board-empty-cell-color);
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    background: var(--ai-coin-color);
+    color: #fff;
+    padding: 4px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin-top: 10px;
+}
+
+.status-running, .status-won, .status-lost {
+    padding: 0px 2px;
+    color: #333;
+}
+
+.status-running {
+    background: #ccc;
+}
+
+.status-won {
+    background: #5FBF5F;
+}
+
+.status-lost {
+    background: #F36051;
+}
+
+.status-tie {
+    background: #A4E7F0;
+}
+
+select {
+    background: #fff;
+    margin: 1px;
+    border: 1px solid #808080;
+    outline: none;
+    width: 140px;
+}
+
+.text {
+    font-size:12px;
+    font-weight:bold;
+    color: #4C4C4C;
+}
+
+.text a {
+    color:#333;
+}
+
+.header-text {
+    margin-bottom: 5px !important;
+    margin-left: 2px !important;
+}
+
+.subheader-text {
+    margin-left: 3px !important;
+}
+
+#navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333;
+    width: 100%;
+    color: #fff;
+    font-size: 11px;
+}
+
+#navigation .title {
+    padding: 5px 0px 6px 4px;
+}
+
+#navigation a {
+    display: inline-block;
+    padding: 5px 0px;
+    color: #fff;
+    font-size: 11px;
+}
+
+#navigation a:hover {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    #container {
+        margin: 0;
+        top: 50px;
+        left: 0;
+        padding: 0 5px;
+    }
+
+    .box-left {
+        float: none;
+        margin: 0;
+    }
+
+    .box-right {
+        display: block;
+        float: none;
+    }
+}
