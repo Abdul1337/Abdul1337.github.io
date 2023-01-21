@@ -11,6 +11,8 @@ function Game() {
     this.round = 0; // 0: Human, 1: Computer
     this.winning_array = []; // Winning (chips) array
     this.iterations = 0; // Iteration count
+    this.emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
+
     
     that = this;
 
@@ -135,8 +137,7 @@ Game.prototype.place = function(column) {
 Game.prototype.generateComputerDecision = function() {
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         that.iterations = 0; // Reset iteration count
-        document.getElementById('loading').style.display = "block"; // Loading message
-
+        setEmoji('🤔');
         // AI is thinking
         setTimeout(function() {
             // Debug time
@@ -156,8 +157,8 @@ Game.prototype.generateComputerDecision = function() {
             // document.getElementById('ai-score').innerHTML = 'Score: ' + ai_move[1];
             // document.getElementById('ai-iterations').innerHTML = that.iterations;
 
-            document.getElementById('loading').style.display = "none"; // Remove loading message
         }, 250);
+        setEmoji(that.emojis[that.depth - 1])
     }
 }
 
@@ -246,20 +247,22 @@ Game.prototype.updateStatus = function() {
     if (that.board.score() == -that.score) {
         that.status = 1;
         that.markWin();
-        alert("You have won!");
+        setEmoji('😭')
+        showResultAlert("You won!");
     }
 
     // Computer won
     if (that.board.score() == that.score) {
         that.status = 2;
         that.markWin();
-        alert("You have lost!");
+        setEmoji('😎')
+        showResultAlert("You lost!");
     }
 
     // Tie
     if (that.board.isFull()) {
         that.status = 3;
-        alert("Tie!");
+        alert("Draw");
     }
 
     // var html = document.getElementById('status');
@@ -314,18 +317,33 @@ Game.prototype.restartGame = function() {
         $('td').hover(function() {
             $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
         });
+
+        hideResultAlert();
+        setEmoji(that.emojis[that.depth - 1])
     }
 }
 
 document.getElementById('difficulty').addEventListener('change', (e)=>{
     let level = e.target.selectedIndex;
-    let emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
-    let difficulty_emoji = document.getElementById('difficulty_emoji')
-    let emoji = emojis[level];
-    difficulty_emoji.innerHTML = emoji
-
+    that.depth = level + 1;
+    setEmoji(that.emojis[level])
 })
 
+function setEmoji(emoji){
+    let difficulty_emoji = document.getElementById('difficulty_emoji')
+    difficulty_emoji.innerHTML = emoji
+}
+
+function showResultAlert(msg){
+    let alertBox = document.querySelector('.result_alert');
+    alertBox.innerHTML = msg
+    alertBox.style.display = 'block'
+}
+
+function hideResultAlert(){
+    let alertBox = document.querySelector('.result_alert');
+    alertBox.style.display = 'none'
+}
 
 /**
  * Start game

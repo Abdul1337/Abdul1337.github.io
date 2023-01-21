@@ -8,8 +8,8 @@
     --game-board-border : black;
     --win-coin-color : #FEFEDF;
     --win-animation-speed : 0.5s;
-    --ai-turn-bg-color : #3F7CAB;
-    --human-turn-bg-color : #DE8E6E ;
+    --ai-turn-bg-color : #DE8E6E;
+    --human-turn-bg-color : #3F7CAB;
 }
 
 body {
@@ -73,9 +73,29 @@ h1 {
     background-color: var(--game-board-empty-cell-color);
 }
 
-/* .hover {
-    background-color: #F4F4F4;
+/* #game_board td:hover{
+
 } */
+
+.result_alert{
+    /* position: fixed; */
+    /* top: -10%; */
+    /* left: 25%;
+    right: 25%; */
+    margin-top: 10px;
+    border: 4px solid var(--game-board-border);
+    border-radius: 20px;
+    background-color: var(--game-board-empty-cell-color);
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    text-shadow:0px 0px 0px black;
+    z-index: 999;
+    display: none;
+    transition: 0.5s;
+}
+
 
 #coin {
     box-sizing: border-box;
@@ -185,10 +205,7 @@ h1 {
     font-size: 11px;
 }
 
-.box-right {
-    margin: 0;
-    /* float: left; */
-}
+
 
 .box-left {
     position: relative;
@@ -205,15 +222,19 @@ h1 {
     align-items: center;
     justify-content: center;
     justify-content: space-between;
-    border: 4px solid var(--game-board-border);
-    border-radius: 20px;
+    /* margin-bottom: 10px; */
+    /* padding: 15px 15px; */
     /* margin-bottom: 30px; */
-    margin: 10px;
-    padding: 15px 15px;
-    background-color: var(--game-board-bg-color);
 
 }
-
+.box-right {
+    margin: 10px;
+    border: 4px solid var(--game-board-border);
+    border-radius: 20px;
+    background-color: var(--game-board-bg-color);
+    padding: 10px;
+    /* float: left; */
+}
 #save,
 #difficulty,
 #difficulty_emoji{
