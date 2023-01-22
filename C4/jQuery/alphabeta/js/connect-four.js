@@ -2,6 +2,9 @@
  * Minimax (+Alpha-Beta) Implementation 
  * @jQuery version
  */
+
+let viz_array = []
+
 function Game() {
     this.rows = 6; // Height
     this.columns = 7; // Width
@@ -12,7 +15,6 @@ function Game() {
     this.winning_array = []; // Winning (chips) array
     this.iterations = 0; // Iteration count
     this.emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
-
     
     that = this;
 
@@ -56,6 +58,10 @@ Game.prototype.init = function() {
             td[i].attachEvent('click', that.act)
         }
     }
+
+    // Set Helper Text and Emoji
+    setEmoji(that.depth - 1)
+    showResultAlert('Your Turn')
 }
 
 /**
@@ -77,31 +83,20 @@ Game.prototype.act = function(e) {
  */
 Game.prototype.place = function(column) {
     // If not finished
-    let border_offset = 25
-    let bottom_offset = 20
-    let size_multiplier = 51
+    // let size_multiplier = 51
+    console.log({Game, board: that.board})
     let animationSpeed = 800
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         for (var y = that.rows - 1; y >= 0; y--) {
             if (document.getElementById('game_board').rows[y].cells[column].className == 'empty') {
                 let placing_cell = document.getElementById('game_board').rows[y].cells[column]
                 let cellRect = placing_cell.getBoundingClientRect()
-                let temp_x = column * size_multiplier
-                let temp_y = y * size_multiplier
                 let firstRowCellRect = document.querySelector('#game_board tr').childNodes[column].getBoundingClientRect()
-                console.log('cellRect : ', cellRect)
-                console.log('placing_cell : ', placing_cell)
-                console.log('firstRowCellRect : ', firstRowCellRect)
-                console.log('x,y : ', [temp_x,temp_y])
-
-                // let coin_x = column * size_multiplier;
-                // let coin_y = y * size_multiplier;
                 let coin_x = cellRect.left;
                 let coin_y = cellRect.top;
                 let coin_start_y = firstRowCellRect.top;
                 
                 if (that.round == 1) {
-                    // console.log("CPU :", {column, coin_x, coin_y})
                     $('#coin').attr('class', 'cpu-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin cpu-coin';
                         $('#coin').hide().css({'top': '0px'});
@@ -114,7 +109,6 @@ Game.prototype.place = function(column) {
                         that.updateStatus();
                     });
                 } else {
-                    console.log("HUM :", {column, coin_x, coin_y})
                     $('#coin').attr('class', 'human-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin human-coin';
                         $('#coin').hide().css({'top': '0px'});
@@ -137,28 +131,35 @@ Game.prototype.place = function(column) {
 Game.prototype.generateComputerDecision = function() {
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         that.iterations = 0; // Reset iteration count
-        setEmoji('🤔');
         // AI is thinking
         setTimeout(function() {
             // Debug time
             var startzeit = new Date().getTime();
 
+            // Clean Viz Array
+            viz_array = []
             // Algorithm call
             var ai_move = that.maximizePlay(that.board, that.depth);
-
+            console.log('AI Move : ', ai_move)
+            console.log('Iterations : ', that.iterations)
             var laufzeit = new Date().getTime() - startzeit;
             // document.getElementById('ai-time').innerHTML = laufzeit.toFixed(2) + 'ms';
 
             // Place ai decision
             that.place(ai_move[0]);
-
+            updateVizGameBoardPositionCount(0);
+            updateExtraInfo({
+                next_move : 'Col ' + (ai_move[0] + 1),
+                score : ai_move[1],
+                iterations : that.iterations,
+                current_depth : that.depth
+            })
             // // Debug
             // document.getElementById('ai-column').innerHTML = 'Column: ' + parseInt(ai_move[0] + 1);
             // document.getElementById('ai-score').innerHTML = 'Score: ' + ai_move[1];
             // document.getElementById('ai-iterations').innerHTML = that.iterations;
 
-        }, 250);
-        setEmoji(that.emojis[that.depth - 1])
+        }, 100);
     }
 }
 
@@ -169,7 +170,7 @@ Game.prototype.generateComputerDecision = function() {
 Game.prototype.maximizePlay = function(board, depth, alpha, beta) {
     // Call score of our board
     var score = board.score();
-
+    viz_array.push(getVisualzedGameBoardString(board.field));
     // Break
     if (board.isFinished(depth, score)) return [null, score];
 
@@ -183,9 +184,7 @@ Game.prototype.maximizePlay = function(board, depth, alpha, beta) {
         if (new_board.place(column)) {
 
             that.iterations++; // Debug
-
             var next_move = that.minimizePlay(new_board, depth - 1, alpha, beta); // Recursive calling
-
             // Evaluate new move
             if (max[0] == null || next_move[1] > max[1]) {
                 max[0] = column;
@@ -202,7 +201,6 @@ Game.prototype.maximizePlay = function(board, depth, alpha, beta) {
 
 Game.prototype.minimizePlay = function(board, depth, alpha, beta) {
     var score = board.score();
-
     if (board.isFinished(depth, score)) return [null, score];
 
     // Column, score
@@ -226,6 +224,7 @@ Game.prototype.minimizePlay = function(board, depth, alpha, beta) {
             if (alpha >= beta) return min;
         }
     }
+   
     return min;
 }
 
@@ -234,9 +233,11 @@ Game.prototype.switchRound = function(round) {
     let human_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--ai-turn-bg-color');
     // 0 Human, 1 Computer
     if (round == 0) {
+        showResultAlert("Computer is thinking 🤔")
         document.getElementsByTagName('body')[0].style.background = human_bg_color
         return 1;
     } else {
+        showResultAlert('Your Turn')
         document.getElementsByTagName('body')[0].style.background = ai_bg_color
         return 0;
     }
@@ -262,7 +263,8 @@ Game.prototype.updateStatus = function() {
     // Tie
     if (that.board.isFull()) {
         that.status = 3;
-        alert("Draw");
+        setEmoji('🤝')
+        showResultAlert("Draw");
     }
 
     // var html = document.getElementById('status');
@@ -297,11 +299,14 @@ Game.prototype.markWin = function() {
     }
 }
 
-Game.prototype.restartGame = function() {
-    if (confirm('Game is going to be restarted.\nAre you sure?')) {
+Game.prototype.restartGame = function(after_select=false) {
+    
+    let difficulty = document.getElementById('difficulty');
+    let depth = difficulty.options[difficulty.selectedIndex].value;
+    let confirmation_msg = after_select ? `Updated Level to ${depth} and Restart` : 'Game is going to be Restarted.'
+
+    if (confirm(confirmation_msg + '\nAre you sure?')) {
         // Dropdown value
-        var difficulty = document.getElementById('difficulty');
-        var depth = difficulty.options[difficulty.selectedIndex].value;
         that.depth = depth;
         that.status = 0;
         that.round = 0;
@@ -317,21 +322,23 @@ Game.prototype.restartGame = function() {
         $('td').hover(function() {
             $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
         });
-
-        hideResultAlert();
-        setEmoji(that.emojis[that.depth - 1])
+        setEmoji(that.depth - 1)
+    }else{
+        difficulty.selectedIndex = that.depth - 1
     }
 }
 
 document.getElementById('difficulty').addEventListener('change', (e)=>{
-    let level = e.target.selectedIndex;
-    that.depth = level + 1;
-    setEmoji(that.emojis[level])
+    Game.restartGame(after_select=true);
 })
 
 function setEmoji(emoji){
     let difficulty_emoji = document.getElementById('difficulty_emoji')
-    difficulty_emoji.innerHTML = emoji
+    if (typeof emoji == 'number'){
+        difficulty_emoji.innerHTML = that.emojis[emoji]
+    }else{
+        difficulty_emoji.innerHTML = emoji
+    }
 }
 
 function showResultAlert(msg){
@@ -345,16 +352,72 @@ function hideResultAlert(){
     alertBox.style.display = 'none'
 }
 
+function getVisualzedGameBoardString(field){
+    let str = (field.map(arr => (arr.map(elem=>elem != null ? (elem == 0 ? '🔴' : '🔵') : '⚪')).join(''))).join('<br>')
+    return str
+}
+
+function updateExtraInfo(info, append = false){
+    let extra_info = document.querySelector('#extra_info')
+    let info_html_template = '<span>key:value</span>'
+    let info_html = Object.keys(info).map(key => info_html_template.replace('key', key).replace('value', info[key])).join('<br>')
+    
+    if(append){
+        extra_info.innerHTML += info_html
+    }else{
+        extra_info.innerHTML = info_html
+    }
+}
+
+function startVisualizing(){
+    if(viz_array.length > 0){
+        updateVizArea()
+    }
+}
+
+// function updateVizArea(position){
+//     let viz_area_html = document.querySelector('#viz_area')
+//     let interval = setInterval(function() {
+//         viz_area_html.innerHTML = position
+//         console.log('Interval')
+//     },1000)
+//     clearInterval(interval)
+// }
+let viz_iteration = 0
+let viz_timeout = null
+function updateVizArea() {
+    let viz_area_html = document.querySelector('#viz_area')
+    viz_timeout = setTimeout(function() {
+      viz_area_html.innerHTML = viz_array[viz_iteration]
+      updateVizGameBoardPositionCount(viz_iteration)
+      viz_iteration++;
+      if (viz_iteration < viz_array.length) {
+        updateVizArea();
+      }
+    }, 10)
+  }
+
+
+function stopVisualizing(){
+    console.log(viz_timeout)
+    clearTimeout(viz_timeout);
+}
+
+function updateVizGameBoardPositionCount(count){
+    let viz_count_html = document.querySelector('#viz_count');
+    viz_count_html.innerHTML = `${count+1}/${viz_array.length}`
+}
+
 /**
  * Start game
  */
 function Start() {
     window.Game = new Game();
 
-    // Hover background, now using jQuery
-    $('td').hover(function() {
-        $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
-    });
+    // // Hover background, now using jQuery
+    // $('td').hover(function() {
+    //     $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
+    // });
 }
 
 window.onload = function() {

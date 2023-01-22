@@ -23,7 +23,7 @@
                         <option value="7">Level 7</option>
                         <option value="8">Level 8</option>
                     </select>
-                    <div id="difficulty_emoji" >😏</div>
+                    <div id="difficulty_emoji" ></div>
                         
                     <button id="save" onclick="Game.restartGame();" type="submit">Reset</button>
                 </div>
@@ -33,7 +33,16 @@
             <div class="box-left">
                 <div id="coin"></div>
                 <table id="game_board" cellpadding="0"></table> 
-                <div id="loading">Let me think...</div>
+                <!-- <div id="loading">Let me think...</div> -->
+            </div>
+            <div id="extra_info">Start Playing to see extra stuff</div>
+            <div id="viz_box">
+                <div>Game Board Positions: <span id="viz_count">...</span></div>
+                <div class="viz_stats" >
+                    <button class="viz_button" id="start_viz" onclick="startVisualizing()">Start</button>
+                    <button class="viz_button" id="stop_viz" onclick="stopVisualizing()">Stop</button>
+                </div>
+                <div id="viz_area" >⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪</div>
             </div>
             <span style="color: black;font-size: 0.75em; text-align: center;">Version 1.2</span>
         </div>
