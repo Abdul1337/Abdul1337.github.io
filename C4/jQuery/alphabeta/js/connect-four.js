@@ -4,7 +4,7 @@
  */
 
 let viz_array = []
-
+let sound_effects = {}
 function Game() {
     this.rows = 6; // Height
     this.columns = 7; // Width
@@ -15,7 +15,6 @@ function Game() {
     this.winning_array = []; // Winning (chips) array
     this.iterations = 0; // Iteration count
     this.emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
-    
     that = this;
 
     that.init();
@@ -74,6 +73,7 @@ Game.prototype.act = function(e) {
     if (!($('#coin').is(":animated"))) {
         if (that.round == 0) {
             that.place(element.cellIndex);
+            playSound('hit');
         }
     }
 }
@@ -100,7 +100,6 @@ Game.prototype.place = function(column) {
                     $('#coin').attr('class', 'cpu-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin cpu-coin';
                         $('#coin').hide().css({'top': '0px'});
-                        
                         if (!that.board.place(column)) {
                             return alert("Invalid move!");
                         }
@@ -128,6 +127,14 @@ Game.prototype.place = function(column) {
     }
 }
 
+function simulateHumanMove(column){
+    var td = document.getElementById('game_board').getElementsByTagName("td");
+    if(td[column]){
+        console.log({column, element : td[column]})
+        td[column].click();
+    }
+}
+
 Game.prototype.generateComputerDecision = function() {
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         that.iterations = 0; // Reset iteration count
@@ -147,6 +154,7 @@ Game.prototype.generateComputerDecision = function() {
 
             // Place ai decision
             that.place(ai_move[0]);
+            playSound('hit')
             updateVizGameBoardPositionCount(0);
             updateExtraInfo({
                 next_move : 'Col ' + (ai_move[0] + 1),
@@ -154,6 +162,7 @@ Game.prototype.generateComputerDecision = function() {
                 iterations : that.iterations,
                 current_depth : that.depth
             })
+            
             // // Debug
             // document.getElementById('ai-column').innerHTML = 'Column: ' + parseInt(ai_move[0] + 1);
             // document.getElementById('ai-score').innerHTML = 'Score: ' + ai_move[1];
@@ -238,6 +247,7 @@ Game.prototype.switchRound = function(round) {
         return 1;
     } else {
         showResultAlert('Your Turn')
+        // that.generateComputerDecision();
         document.getElementsByTagName('body')[0].style.background = ai_bg_color
         return 0;
     }
@@ -248,6 +258,7 @@ Game.prototype.updateStatus = function() {
     if (that.board.score() == -that.score) {
         that.status = 1;
         that.markWin();
+        playSound('winner');
         setEmoji('😭')
         showResultAlert("You won!");
     }
@@ -257,6 +268,7 @@ Game.prototype.updateStatus = function() {
         that.status = 2;
         that.markWin();
         setEmoji('😎')
+        playSound('looser');
         showResultAlert("You lost!");
     }
 
@@ -266,7 +278,6 @@ Game.prototype.updateStatus = function() {
         setEmoji('🤝')
         showResultAlert("Draw");
     }
-
     // var html = document.getElementById('status');
     // if (that.status == 0) {
     //     html.className = "status-running";
@@ -285,8 +296,8 @@ Game.prototype.updateStatus = function() {
 
 Game.prototype.markWin = function() {
     let root = document.querySelector(':root')
-    let ai_bg_color = getComputedStyle(root).getPropertyValue('--human-turn-bg-color');
-    let human_bg_color = getComputedStyle(root).getPropertyValue('--ai-turn-bg-color');
+    let ai_bg_color = getComputedStyle(root).getPropertyValue('--ai-turn-bg-color');
+    let human_bg_color = getComputedStyle(root).getPropertyValue('--human-turn-bg-color');
     
     for (var i = 0; i < that.winning_array.length; i++) {
         var name = document.getElementById('game_board').rows[that.winning_array[i][0]].cells[that.winning_array[i][1]].className;
@@ -301,8 +312,9 @@ Game.prototype.markWin = function() {
 
 Game.prototype.restartGame = function(after_select=false) {
     
-    let difficulty = document.getElementById('difficulty');
-    let depth = difficulty.options[difficulty.selectedIndex].value;
+    let difficulty = document.getElementById('difficulty_slider');
+    let depth = difficulty.value;
+    document.getElementById('diff_level').innerHTML = depth
     let confirmation_msg = after_select ? `Updated Level to ${depth} and Restart` : 'Game is going to be Restarted.'
 
     if (confirm(confirmation_msg + '\nAre you sure?')) {
@@ -328,8 +340,15 @@ Game.prototype.restartGame = function(after_select=false) {
     }
 }
 
-document.getElementById('difficulty').addEventListener('change', (e)=>{
-    Game.restartGame(after_select=true);
+// document.getElementById('difficulty').addEventListener('change', (e)=>{
+//     Game.restartGame(after_select=true);
+// })
+
+document.getElementById('difficulty_slider').addEventListener('input', (e)=>{
+    console.log(e.target.value)
+    setEmoji(e.target.value - 1)
+    document.getElementById('slider_value').innerHTML = e.target.value
+    showResultAlert('Click Start to play with Level ' + e.target.value)
 })
 
 function setEmoji(emoji){
@@ -397,6 +416,38 @@ function updateVizArea() {
     }, 10)
   }
 
+function playSound(sound_name){
+    switch (sound_name) {
+        case 'winner':
+            setTimeout(()=>{
+                if(sound_effects.win){
+                    sound_effects.win.play();
+                    console.log(sound_effects.win)
+                }
+            },100)
+            break;
+        case 'looser':
+            setTimeout(()=>{
+                if(sound_effects.laugh){
+                    sound_effects.laugh.play();
+                    console.log(sound_effects.laugh)
+                }
+            },100)
+            break;
+        case 'hit':
+            setTimeout(()=>{
+                if(sound_effects.hit){
+                    sound_effects.hit.play();
+                    console.log(sound_effects.hit)
+                }
+            },400)
+            break;
+        default:
+            break;
+    }
+ 
+}
+
 
 function stopVisualizing(){
     console.log(viz_timeout)
@@ -414,6 +465,7 @@ function updateVizGameBoardPositionCount(count){
 function Start() {
     window.Game = new Game();
 
+    // that.generateComputerDecision();
     // // Hover background, now using jQuery
     // $('td').hover(function() {
     //     $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
@@ -421,5 +473,13 @@ function Start() {
 }
 
 window.onload = function() {
-    Start()
+    Start();
+    loadSounds();
 };
+
+
+function loadSounds(){
+    sound_effects.hit = new Audio('assets/hit_2.wav');
+    sound_effects.win = new Audio('assets/win_1.wav');
+    sound_effects.laugh = new Audio('assets/laugh_2.wav');
+}

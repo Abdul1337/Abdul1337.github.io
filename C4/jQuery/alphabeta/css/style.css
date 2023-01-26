@@ -82,7 +82,7 @@ h1 {
     /* top: -10%; */
     /* left: 25%;
     right: 25%; */
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border: 4px solid var(--game-board-border);
     border-radius: 20px;
     background-color: var(--game-board-empty-cell-color);
@@ -239,8 +239,7 @@ h1 {
 #difficulty,
 #difficulty_emoji{
     cursor: pointer;
-    text-transform: uppercase;
-    height: 60px;
+    /* text-transform: uppercase; */
 }
 
 #save,
@@ -254,21 +253,20 @@ h1 {
     letter-spacing: 3px;
     font-size: 15px;
     font-family: sans-serif;
+    height: 50px;
+    width: 40%;
+    text-transform: uppercase;
 }
 
 #difficulty{
-    padding-right: 10px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
     text-align: center;
+    display: flex;
     width: 40%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
-#save{
-    width: 40%;
-}
+
 #difficulty_emoji{
     font-size: 45px;
     line-height: 45px;
@@ -446,6 +444,7 @@ option{
     padding: 10px;
 }
 
+
 .viz_button{
     background-color: var(--game-board-empty-cell-color);
     color: var(--color2);
@@ -464,3 +463,64 @@ option{
     width: 100%;
     font-size: smaller;
 }
+
+#stats_for_nerds{
+    display: none;
+}
+
+
+
+.sliderContainer{
+    border-radius: 10px;
+    border: 4px solid var(--game-board-border);
+    background: var(--game-board-empty-cell-color);
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+    padding: 5px;
+  }
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 20px;
+    outline: none;
+    /* opacity: 0.7; */
+    margin: 0px 0px;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background-color: transparent;
+    border: none
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: var(--ai-coin-color);
+    border: 3px solid var(--color2);
+    cursor: pointer;
+  }
+
+  #slider_value{
+    height: 20px;
+    width: 10%;
+    font-weight: bolder;
+    text-align: center;
+  }
+/* 
+#win_svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    padding: 5px;
+} */

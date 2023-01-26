@@ -13,19 +13,14 @@
             <div class="box-right">
                 <div id="options">
 
-                    <select id="difficulty" autocomplete="off">
-                        <option value="1">Level 1</option>
-                        <option value="2">Level 2</option>
-                        <option value="3">Level 3</option>
-                        <option value="4" selected="selected">Level 4</option>
-                        <option value="5">Level 5</option>
-                        <option value="6">Level 6</option>
-                        <option value="7">Level 7</option>
-                        <option value="8">Level 8</option>
-                    </select>
+                    <div id="difficulty">Level&nbsp;<span id="diff_level" >4</span></div>
                     <div id="difficulty_emoji" ></div>
                         
-                    <button id="save" onclick="Game.restartGame();" type="submit">Reset</button>
+                    <button id="save" onclick="Game.restartGame();" type="submit">Start</button>
+                </div>
+                <div class="sliderContainer" >
+                    <input type="range" min="1" max="8" value="4" step="1" class="slider" id="difficulty_slider">
+                    <span id="slider_value" >4</span>
                 </div>
                 <div class="result_alert"></div>
 
@@ -33,18 +28,24 @@
             <div class="box-left">
                 <div id="coin"></div>
                 <table id="game_board" cellpadding="0"></table> 
+                <!-- <svg id="win_svg">
+                    <line x1="100" y1="10" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+                </svg> -->
                 <!-- <div id="loading">Let me think...</div> -->
             </div>
-            <div id="extra_info">Start Playing to see extra stuff</div>
-            <div id="viz_box">
-                <div>Game Board Positions: <span id="viz_count">...</span></div>
-                <div class="viz_stats" >
-                    <button class="viz_button" id="start_viz" onclick="startVisualizing()">Start</button>
-                    <button class="viz_button" id="stop_viz" onclick="stopVisualizing()">Stop</button>
+            <div id="stats_for_nerds" >
+                <div id="extra_info">Start Playing to see extra stuff</div>
+                <div id="viz_box">
+                    <div>Game Board Positions: <span id="viz_count">...</span></div>
+                    <div class="viz_stats" >
+                        <button class="viz_button" id="start_viz" onclick="startVisualizing()">Start</button>
+                        <button class="viz_button" id="stop_viz" onclick="stopVisualizing()">Stop</button>
+                    </div>
+                    <div id="viz_area" >⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪</div>
                 </div>
-                <div id="viz_area" >⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪<br>⚪⚪⚪⚪⚪⚪⚪</div>
             </div>
-            <span style="color: black;font-size: 0.75em; text-align: center;">Version 1.5</span>
+            
+            <span style="color: black;font-size: 0.75em; text-align: center;">Version 1.6</span>
         </div>
 
         <script src="js/jquery-1.11.2.min.js"></script>
