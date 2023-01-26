@@ -10,6 +10,10 @@
     </head>
     <body>
         <div id="container">
+            <div class="settings" >
+                <button id="setting_sound" class="setting_button sound" onclick="toggleSound()" >🔊</button>
+                <button id="setting_stats" class="setting_button stats" onclick="toggleStatsForNerds()" >Stats</button>
+            </div>
             <div class="box-right">
                 <div id="options">
 
@@ -25,6 +29,7 @@
                 <div class="result_alert"></div>
 
             </div>
+            
             <div class="box-left">
                 <div id="coin"></div>
                 <table id="game_board" cellpadding="0"></table> 
@@ -45,13 +50,14 @@
                 </div>
             </div>
             
-            <span style="color: black;font-size: 0.75em; text-align: center;">Version 1.6</span>
+            <span style="color: black;font-size: 0.75em; text-align: center;" >Version <span id="version">1.6</span></span>
         </div>
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/board.js"></script>
         <script src="js/connect-four.js"></script>
+        <script src="js/helpers.js"></script>
 
         <script>
         $('#algorithm-select').change(function() {

@@ -3,8 +3,7 @@
  * @jQuery version
  */
 
-let viz_array = []
-let sound_effects = {}
+
 function Game() {
     this.rows = 6; // Height
     this.columns = 7; // Width
@@ -127,13 +126,6 @@ Game.prototype.place = function(column) {
     }
 }
 
-function simulateHumanMove(column){
-    var td = document.getElementById('game_board').getElementsByTagName("td");
-    if(td[column]){
-        console.log({column, element : td[column]})
-        td[column].click();
-    }
-}
 
 Game.prototype.generateComputerDecision = function() {
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
@@ -323,11 +315,6 @@ Game.prototype.restartGame = function(after_select=false) {
         that.status = 0;
         that.round = 0;
         that.init();
-        // document.getElementById('ai-iterations').innerHTML = "?";
-        // document.getElementById('ai-time').innerHTML = "?";
-        // document.getElementById('ai-column').innerHTML = "Column: ?";
-        // document.getElementById('ai-score').innerHTML = "Score: ?";
-        // document.getElementById('game_board').className = "";
         that.updateStatus();
 
         // Re-assign hover
@@ -340,139 +327,16 @@ Game.prototype.restartGame = function(after_select=false) {
     }
 }
 
-// document.getElementById('difficulty').addEventListener('change', (e)=>{
-//     Game.restartGame(after_select=true);
-// })
-
-document.getElementById('difficulty_slider').addEventListener('input', (e)=>{
-    console.log(e.target.value)
-    setEmoji(e.target.value - 1)
-    document.getElementById('slider_value').innerHTML = e.target.value
-    showResultAlert('Click Start to play with Level ' + e.target.value)
-})
-
-function setEmoji(emoji){
-    let difficulty_emoji = document.getElementById('difficulty_emoji')
-    if (typeof emoji == 'number'){
-        difficulty_emoji.innerHTML = that.emojis[emoji]
-    }else{
-        difficulty_emoji.innerHTML = emoji
-    }
-}
-
-function showResultAlert(msg){
-    let alertBox = document.querySelector('.result_alert');
-    alertBox.innerHTML = msg
-    alertBox.style.display = 'block'
-}
-
-function hideResultAlert(){
-    let alertBox = document.querySelector('.result_alert');
-    alertBox.style.display = 'none'
-}
-
-function getVisualzedGameBoardString(field){
-    let str = (field.map(arr => (arr.map(elem=>elem != null ? (elem == 0 ? '🔴' : '🔵') : '⚪')).join(''))).join('<br>')
-    return str
-}
-
-function updateExtraInfo(info, append = false){
-    let extra_info = document.querySelector('#extra_info')
-    let info_html_template = '<span>key:value</span>'
-    let info_html = Object.keys(info).map(key => info_html_template.replace('key', key).replace('value', info[key])).join('<br>')
-    
-    if(append){
-        extra_info.innerHTML += info_html
-    }else{
-        extra_info.innerHTML = info_html
-    }
-}
-
-function startVisualizing(){
-    if(viz_array.length > 0){
-        updateVizArea()
-    }
-}
-
-// function updateVizArea(position){
-//     let viz_area_html = document.querySelector('#viz_area')
-//     let interval = setInterval(function() {
-//         viz_area_html.innerHTML = position
-//         console.log('Interval')
-//     },1000)
-//     clearInterval(interval)
-// }
-let viz_iteration = 0
-let viz_timeout = null
-function updateVizArea() {
-    let viz_area_html = document.querySelector('#viz_area')
-    viz_timeout = setTimeout(function() {
-      viz_area_html.innerHTML = viz_array[viz_iteration]
-      updateVizGameBoardPositionCount(viz_iteration)
-      viz_iteration++;
-      if (viz_iteration < viz_array.length) {
-        updateVizArea();
-      }
-    }, 10)
-  }
-
-function playSound(sound_name){
-    switch (sound_name) {
-        case 'winner':
-            setTimeout(()=>{
-                if(sound_effects.win){
-                    sound_effects.win.play();
-                    console.log(sound_effects.win)
-                }
-            },100)
-            break;
-        case 'looser':
-            setTimeout(()=>{
-                if(sound_effects.laugh){
-                    sound_effects.laugh.play();
-                    console.log(sound_effects.laugh)
-                }
-            },100)
-            break;
-        case 'hit':
-            setTimeout(()=>{
-                if(sound_effects.hit){
-                    sound_effects.hit.play();
-                    console.log(sound_effects.hit)
-                }
-            },400)
-            break;
-        default:
-            break;
-    }
- 
-}
-
-
-function stopVisualizing(){
-    console.log(viz_timeout)
-    clearTimeout(viz_timeout);
-}
-
-function updateVizGameBoardPositionCount(count){
-    let viz_count_html = document.querySelector('#viz_count');
-    viz_count_html.innerHTML = `${count+1}/${viz_array.length}`
-}
 
 /**
  * Start game
  */
 function Start() {
     window.Game = new Game();
-
-    // that.generateComputerDecision();
-    // // Hover background, now using jQuery
-    // $('td').hover(function() {
-    //     $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
-    // });
 }
 
 window.onload = function() {
+    setVersion();
     Start();
     loadSounds();
 };
@@ -482,4 +346,6 @@ function loadSounds(){
     sound_effects.hit = new Audio('assets/hit_2.wav');
     sound_effects.win = new Audio('assets/win_1.wav');
     sound_effects.laugh = new Audio('assets/laugh_2.wav');
+    sound_effects.click = new Audio('assets/click_1.wav');
+    sound_effects.slider = new Audio('assets/click_short.wav');
 }
