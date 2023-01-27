@@ -29,7 +29,7 @@ Game.prototype.place_pvsp = function(column, player) {
     // let size_multiplier = 51
     console.log({Game, board: that.board})
 
-    let animationSpeed = 800
+    let animationSpeed = 350
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         for (var y = that.rows - 1; y >= 0; y--) {
             if (document.getElementById('game_board').rows[y].cells[column].className == 'empty') {
@@ -44,6 +44,7 @@ Game.prototype.place_pvsp = function(column, player) {
                 if (that.round == 1) {
                     $('#coin').attr('class', 'cpu-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin cpu-coin';
+                        markLastMove(document.getElementById('game_board').rows[y].cells[column]);
                         $('#coin').hide().css({'top': '0px'});
                         if (!that.board.place(column)) {
                             return alert("Invalid move!");
@@ -57,6 +58,7 @@ Game.prototype.place_pvsp = function(column, player) {
                 if (that.round == 0) {
                     $('#coin').attr('class', 'human-coin').css({'left': coin_x, 'top': coin_start_y}).fadeIn('fast').animate({'top': coin_y + 'px'}, animationSpeed, 'easeOutBounce', function() {
                         document.getElementById('game_board').rows[y].cells[column].className = 'coin human-coin';
+                        markLastMove(document.getElementById('game_board').rows[y].cells[column]);
                         $('#coin').hide().css({'top': '0px'});
                         // that.generateComputerDecision();
                         
@@ -76,17 +78,17 @@ Game.prototype.place_pvsp = function(column, player) {
 
 
 Game.prototype.switchRound_pvsp = function(round) {
-    let ai_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--human-turn-bg-color');
-    let human_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--ai-turn-bg-color');
+    let human_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--human-turn-bg-color');
+    let ai_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--ai-turn-bg-color');
     // 0 Human, 1 Computer
     if (round == 0) {
-        showResultAlert("Blue's Turn")
-        document.getElementsByTagName('body')[0].style.background = human_bg_color
+        showResultAlert("Blue's Turn", color='var(--ai-turn-bg-color)')
+        document.getElementsByTagName('body')[0].style.background = ai_bg_color
         return 1;
     } else {
-        showResultAlert("Red's Turn")
+        showResultAlert("Red's Turn", color='var(--human-turn-bg-color)')
         // // that.generateComputerDecision();
-        document.getElementsByTagName('body')[0].style.background = ai_bg_color
+        document.getElementsByTagName('body')[0].style.background = human_bg_color
         return 0;
     }
 }
@@ -132,4 +134,29 @@ Game.prototype.updateStatus_pvsp = function() {
     //     html.className = "status-tie";
     //     html.innerHTML = "tie";
     // }
+}
+
+
+
+Game.prototype.restartGame_pvsp = function() {
+    
+    // let difficulty = document.getElementById('difficulty_slider');
+    // let depth = difficulty.value;
+    // document.getElementById('diff_level').innerHTML = depth
+    // let confirmation_msg = after_select ? `Updated Level to ${depth} and Restart` : 'Game is going to be Restarted.'
+
+    if (confirm('Game will be Restarted' + '\nAre you sure?')) {
+        // Dropdown value
+        // that.depth = depth;
+        that.status = 0;
+        that.round = 0;
+        that.init();
+        that.updateStatus();
+        showResultAlert('Start the Game, Red\'s Turn')
+        // Re-assign hover
+        // $('td').hover(function() {
+        //     $(this).parents('table').find('col:eq('+$(this).index()+')').toggleClass('hover');
+        // });
+        // setEmoji(that.depth - 1)
+    }
 }

@@ -1,4 +1,4 @@
-const VERSION = '2.0' // Update manually
+const VERSION = '2.1' // Update manually
 
 
 let viz_array = []
@@ -37,10 +37,15 @@ function setEmoji(emoji){
     }
 }
 
-function showResultAlert(msg){
+function showResultAlert(msg, color='default'){
     let alertBox = document.querySelector('.result_alert');
     alertBox.innerHTML = msg
     alertBox.style.display = 'block'
+    if(color != 'default'){
+        alertBox.style.color = color
+    }else{
+        alertBox.style.color = 'var(--color2)'
+    }
 }
 
 function hideResultAlert(){
@@ -186,4 +191,25 @@ function togglePvsP(){
 
 function setVersion(){
     document.getElementById('version').innerText = VERSION
+}
+
+function markLastMove(elem){
+    let lastMove = document.getElementsByClassName('last-move')[0];
+    if(lastMove){
+        lastMove.classList.remove('last-move');
+    }
+    elem.classList.add('last-move');
+}
+
+function removeLastMove(){
+    let lastMove = document.getElementsByClassName('last-move')[0];
+    if(lastMove){
+        lastMove.classList.remove('last-move');
+    }
+}
+
+
+
+function restartGame_pvsp(){
+    Game.restartGame_pvsp();
 }

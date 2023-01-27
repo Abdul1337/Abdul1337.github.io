@@ -8,6 +8,7 @@
     --game-board-border : black;
     --win-coin-color : #FEFEDF;
     --win-animation-speed : 0.5s;
+    --lastMoveFlicker-animation-speed: 0.5s;
     --ai-turn-bg-color : #3F7CAB;
     --human-turn-bg-color : #DE8E6E;
 }
@@ -547,10 +548,12 @@ option{
     display: flex;
     justify-content: center;
     align-items: center;
-   
     background-color: transparent;
     border: none;
     color: var(--color2);
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 5px 7px;
 }
 
 .setting_button.stats{
@@ -563,20 +566,49 @@ option{
 }
 
 .setting_button.sound{
-    font-size: 15px;
-    border: 2px solid white;
+    font-size: 20px !important;
+    /* border: 2px solid white; */
     padding: 3px;
     width: 40px;
-    height: 40px;
+    /* height: 40px; */
     border-radius: 100px;
 }
 
-.setting_button.playing_mode{
-    width: 20%;
+.setting_button.playing_mode,
+.setting_button.restart,
+.setting_button.sound
+{
+    /* width: 20%; */
     font-size: 15px;
-    border: 2px solid var(--color2);
-    padding: 3px;
+    border: 4px solid var(--game-board-border);
+    padding: 5px 20px;
+    background-color: var(--game-board-empty-cell-color);
     border-radius: 10px;
     color: var(--color2);
     text-decoration: none;
+}
+
+
+td.last-move{
+    color: red;
+    opacity: 0.8;
+}
+
+
+
+#game_board td.last-move {
+    animation: lastMoveFlicker var(--lastMoveFlicker-animation-speed) infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes lastMoveFlicker{
+    0%{
+        opacity: 1;
+    }
+    50% {
+        opacity:0.7;
+    }
+    100% {
+        opacity:1;
+    }
 }

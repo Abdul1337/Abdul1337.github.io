@@ -299,7 +299,7 @@ Game.prototype.markWin = function() {
     let root = document.querySelector(':root')
     let ai_bg_color = getComputedStyle(root).getPropertyValue('--ai-turn-bg-color');
     let human_bg_color = getComputedStyle(root).getPropertyValue('--human-turn-bg-color');
-    
+    removeLastMove();
     for (var i = 0; i < that.winning_array.length; i++) {
         var name = document.getElementById('game_board').rows[that.winning_array[i][0]].cells[that.winning_array[i][1]].className;
         if(name.includes('cpu')){
