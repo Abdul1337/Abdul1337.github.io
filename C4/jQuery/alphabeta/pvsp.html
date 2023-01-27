@@ -12,22 +12,22 @@
         <div id="container">
             <div class="settings" >
                 <button id="setting_sound" class="setting_button sound" onclick="toggleSound()" >🔊</button>
-                <a id="setting_playing_mode" class="setting_button playing_mode" href="./pvsp.html" >P vs P</a>
+                <a id="setting_playing_mode" class="setting_button playing_mode" href="./index.html" >P vs AI</a>
                 <button id="setting_stats" class="setting_button stats" onclick="toggleStatsForNerds()" >Stats</button>
             </div>
             <div class="box-right">
-                <div id="options">
+                <!-- <div id="options">
 
                     <div id="difficulty">Level&nbsp;<span id="diff_level" >4</span></div>
                     <div id="difficulty_emoji" ></div>
                         
                     <button id="save" onclick="Game.restartGame();" type="submit">Start</button>
-                </div>
-                <div class="sliderContainer" >
+                </div> -->
+                <!-- <div class="sliderContainer" >
                     <input type="range" min="1" max="8" value="4" step="1" class="slider" id="difficulty_slider">
                     <span id="slider_value" >4</span>
-                </div>
-                <div class="result_alert"></div>
+                </div> -->
+                <div class="result_alert show">Start the Game, Red's Turn</div>
 
             </div>
             
@@ -53,14 +53,16 @@
             
             <span style="color: black;font-size: 0.75em; text-align: center;" >Version <span id="version">1.6</span></span>
         </div>
+
         <script>
-            const PVSP = false
+            const PVSP = true
         </script>
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
+        <script src="js/helpers.js"></script>
         <script src="js/board.js"></script>
         <script src="js/connect-four.js"></script>
-        <script src="js/helpers.js"></script>
+        <script src="js/player-vs-player.js"></script>
 
         <script>
         $('#algorithm-select').change(function() {

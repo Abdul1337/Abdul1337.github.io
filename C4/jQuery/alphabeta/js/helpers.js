@@ -1,4 +1,4 @@
-const VERSION = '1.7' // Update manually
+const VERSION = '2.0' // Update manually
 
 
 let viz_array = []
@@ -18,12 +18,15 @@ function simulateHumanMove(column){
 //     Game.restartGame(after_select=true);
 // })
 
-document.getElementById('difficulty_slider').addEventListener('input', (e)=>{
-    setEmoji(e.target.value - 1)
-    document.getElementById('slider_value').innerHTML = e.target.value
-    playSound('slider')
-    showResultAlert('Click Start to play with Level ' + e.target.value)
-})
+if(document.getElementById('difficulty_slider')){
+    document.getElementById('difficulty_slider').addEventListener('input', (e)=>{
+        setEmoji(e.target.value - 1)
+        document.getElementById('slider_value').innerHTML = e.target.value
+        playSound('slider')
+        showResultAlert('Click Start to play with Level ' + e.target.value)
+    })
+}
+
 
 function setEmoji(emoji){
     let difficulty_emoji = document.getElementById('difficulty_emoji')

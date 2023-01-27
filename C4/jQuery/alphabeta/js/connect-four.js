@@ -15,11 +15,11 @@ function Game() {
     this.iterations = 0; // Iteration count
     this.emojis = ["🙂","🤨","🤓","😠","😡", "😈", "💀", "👽"]
     that = this;
-
     that.init();
 }
 
 Game.prototype.init = function() {
+    console.log(PVSP)
     // Generate 'real' board
     // Create 2-dimensional array
     var game_board = new Array(that.rows);
@@ -48,24 +48,29 @@ Game.prototype.init = function() {
 
     // Action listeners
     var td = document.getElementById('game_board').getElementsByTagName("td");
-
+    let clickHandler = PVSP ? that.act_pvsp : that.act
     for (var i = 0; i < td.length; i++) {
         if (td[i].addEventListener) {
-            td[i].addEventListener('click', that.act, false);
+            td[i].addEventListener('click', clickHandler, false);
         } else if (td[i].attachEvent) {
-            td[i].attachEvent('click', that.act)
+            td[i].attachEvent('click', clickHandler)
         }
     }
 
     // Set Helper Text and Emoji
-    setEmoji(that.depth - 1)
-    showResultAlert('Your Turn')
+    if(!PVSP){
+        setEmoji(that.depth - 1)
+        showResultAlert('Your Turn')
+    }
+    
 }
 
 /**
  * On-click event
  */
 Game.prototype.act = function(e) {
+    console.log('In act');
+    
     var element = e.target || window.event.srcElement;
 
     // Check if not in animation and start with human
@@ -77,10 +82,13 @@ Game.prototype.act = function(e) {
     }
 }
 
+
 /**
  * Place coin
  */
 Game.prototype.place = function(column) {
+    console.log('In place');
+
     // If not finished
     // let size_multiplier = 51
     console.log({Game, board: that.board})
@@ -230,6 +238,7 @@ Game.prototype.minimizePlay = function(board, depth, alpha, beta) {
 }
 
 Game.prototype.switchRound = function(round) {
+    console.log('In switchRound : Round ->', round)
     let ai_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--human-turn-bg-color');
     let human_bg_color = getComputedStyle(document.documentElement).getPropertyValue('--ai-turn-bg-color');
     // 0 Human, 1 Computer
@@ -336,8 +345,14 @@ function Start() {
 }
 
 window.onload = function() {
-    setVersion();
+
+    if(PVSP){
+        console.log('PVSP enabled');
+    }else{
+        console.log('PVSP disabled');
+    }
     Start();
+    setVersion();
     loadSounds();
 };
 

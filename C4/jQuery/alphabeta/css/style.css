@@ -96,6 +96,10 @@ h1 {
     transition: 0.5s;
 }
 
+.result_alert.show{
+    display: block;
+}
+
 
 #coin {
     box-sizing: border-box;
@@ -543,9 +547,7 @@ option{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 100px;
+   
     background-color: transparent;
     border: none;
     color: var(--color2);
@@ -555,4 +557,26 @@ option{
     font-size: 15px;
     border: 2px solid white;
     padding: 3px;
+    border-radius: 10px;
+    width: 20%;
+
+}
+
+.setting_button.sound{
+    font-size: 15px;
+    border: 2px solid white;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+
+.setting_button.playing_mode{
+    width: 20%;
+    font-size: 15px;
+    border: 2px solid var(--color2);
+    padding: 3px;
+    border-radius: 10px;
+    color: var(--color2);
+    text-decoration: none;
 }

@@ -44,7 +44,11 @@ Board.prototype.place = function(column) {
                 break; // Break from loop after inserting
             }
         }
-        this.player = this.game.switchRound(this.player);
+        if(PVSP){
+            this.player = this.game.switchRound_pvsp(this.player);
+        }else{
+            this.player = this.game.switchRound(this.player);
+        }
         return true;
     } else {
         return false;
