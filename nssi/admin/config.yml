@@ -6,6 +6,12 @@ backend:
   # you'll need to enable GitHub authentication.
   # See: https://decapcms.org/docs/authentication-backends/#github-backend
 
+
+backend:
+  name: git-gateway
+  repo: Abdul1337/Abdul1337.github.io
+  branch: master
+
 # Optional: Enable Netlify Identity for GitHub authentication (recommended for private repos)
 # publish_mode: editorial_workflow # Enable drafts, reviews, and publishing control
 
